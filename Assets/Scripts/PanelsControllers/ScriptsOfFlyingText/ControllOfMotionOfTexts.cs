@@ -22,7 +22,7 @@ public class ControllOfMotionOfTexts : MonoBehaviour
         transform.Translate(Vector * Time.deltaTime);
     }
 
-    public void StartMotion(int fruitCoins)
+    public void StartMotion(float fruitCoins)
     {
         transform.localScale = Vector3.one;
         TextConverter(fruitCoins);
@@ -34,10 +34,12 @@ public class ControllOfMotionOfTexts : MonoBehaviour
         GetComponent<Animation>().Play();
     }
 
-    public void TextConverter(int FruitCoins)
+    public void TextConverter(float FruitCoins)
     {
-        if (FruitCoins < 999) GetComponent<Text>().text = "+" + FruitCoins.ToString("0");
-        if (FruitCoins > 999 && FruitCoins < 999999)  GetComponent<Text>().text = "+" + (FruitCoins / 1000).ToString("0") + "k";
-        if (FruitCoins > 999999 && FruitCoins < 999999999)  GetComponent<Text>().text = "+" + (FruitCoins / (1000 * 1000)).ToString("0") + "M";
+        if (FruitCoins <= 999) GetComponent<Text>().text = "+" + FruitCoins.ToString("0");
+        if (FruitCoins > 999 && FruitCoins <= 9999)  GetComponent<Text>().text = "+" + Math.Round((decimal) (FruitCoins / 1000),1) + "k";
+        if (FruitCoins > 9999 && FruitCoins <= 999999)  GetComponent<Text>().text = "+" + (FruitCoins / 1000).ToString("0") + "k";
+        if (FruitCoins > 999999 && FruitCoins <= 99999999)  GetComponent<Text>().text = "+" + Math.Round((decimal) (FruitCoins / (1000 * 1000)),1) + "M";
+        if (FruitCoins > 99999999 && FruitCoins <= 999999999)  GetComponent<Text>().text = "+" + (FruitCoins / (1000 * 1000)).ToString("0") + "M";
     }
 }

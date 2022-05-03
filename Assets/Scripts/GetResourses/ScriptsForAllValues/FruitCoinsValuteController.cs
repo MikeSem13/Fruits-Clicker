@@ -164,5 +164,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
     {
         BasicValue += MainMulti; 
         PlayerPrefs.SetInt("FruitCoins", BasicValue);
+        PlayerPrefs.SetInt("FruitCoinsBillion", BillionValue);
+        PlayerPrefs.SetInt("FruitCoinsQuintillion", QuintillionValue);
     }
 }

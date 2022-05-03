@@ -29,7 +29,7 @@ public class ShowCountOfFruitsText : MonoBehaviour
    {
       for (int i = 0; i < BuyFruit.AllFruitsDesctiber.Count; i++)
       {
-         if (BuyFruit.AllFruitsDesctiber[i].IsBuying)
+         if (BuyFruit.AllFruitsDesctiber[i].IsUnlocked)
          {
             CountOfUnlockedFruits = i + 1;
          }

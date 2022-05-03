@@ -150,5 +150,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
    {
       BasicValue += MultiFruitCoinsAfterRebirth;
       PlayerPrefs.SetInt("MultiFruitCoins", BasicValue);
+      PlayerPrefs.SetInt("MultiFruitCoinsBillion", BillionValue);
+      PlayerPrefs.SetInt("MultiFruitCoinsQuintillion", QuintillionValue);
    }
 }

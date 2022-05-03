@@ -7,7 +7,10 @@ public class PanelManager : Singleton<PanelManager>
 {
     public List<PanelModel> PanelModels = new List<PanelModel>();
 
-    private List<PanelModel> ListOfShowPanels = new List<PanelModel>();
+    private List<PanelModel> _listOfShowPanels = new List<PanelModel>();
+
+    public List<PanelModel> ListOfShowPanels { get { return _listOfShowPanels; } }
+        
     public void ShowPanel(string panelId)
     {
         PanelModel panelModel = PanelModels.FirstOrDefault(model => model.PanelId == panelId);
@@ -16,16 +19,16 @@ public class PanelManager : Singleton<PanelManager>
         {
             panelModel.GameObjectPanel.SetActive(true);
             panelModel.Animator.SetTrigger("Apear");
-            panelModel.BackGround.SetActive(true);
-            panelModel.BackGround.GetComponent<Animator>().SetTrigger("Apear");
+            if(panelModel.BackGround != null) panelModel.BackGround.SetActive(true);
+            if(panelModel.BackGround != null) panelModel.BackGround.GetComponent<Animator>().SetTrigger("Apear");
             panelModel.IsShowing = true;
 
             ListOfShowPanels.Add(new PanelModel()
             {
                 PanelId = panelId,
-                GameObjectPanel = gameObject,
-                BackGround = gameObject,
-                IsShowing = isActiveAndEnabled
+                GameObjectPanel = panelModel.GameObjectPanel,
+                BackGround = panelModel.BackGround,
+                IsShowing = panelModel.IsShowing
             });
         }
     }
@@ -33,11 +36,11 @@ public class PanelManager : Singleton<PanelManager>
     public void HideLastPanel()
     {
         PanelModel lastPanel = ListOfShowPanels[ListOfShowPanels.Count - 1];
-
-        Debug.Log("asdas");
         
         lastPanel.GameObjectPanel.SetActive(false);
-        lastPanel.BackGround.SetActive(false);
+        if(lastPanel.BackGround != null) lastPanel.BackGround.SetActive(false);
         lastPanel.IsShowing = false;
+        
+        ListOfShowPanels.Remove(lastPanel);
     }
 }

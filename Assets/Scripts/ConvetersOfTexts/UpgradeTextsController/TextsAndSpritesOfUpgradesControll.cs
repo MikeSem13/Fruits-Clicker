@@ -63,30 +63,52 @@ public class TextsAndSpritesOfUpgradesControll : MonoBehaviour
         {
             case Values.Basic:
             {
-                if(Buttons[i].price[Buttons[i].CurrentLevel] < 999)TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel].ToString();
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 1).ToString() + "k";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 9999 ) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 0).ToString() + "k";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999 &&  Buttons[i].price[Buttons[i].CurrentLevel] <= 99999999) TextsOfPrice[i].fontSize = 90;
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999999) TextsOfPrice[i].fontSize = 80;
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 999999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / (1000 * 1000), 1).ToString() + "M";
+               ConvertPriceOfBasicValueText(i);
             }
                 break;
             case Values.Billons:
-                TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel] + "B";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 1).ToString() + "T";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 9999 ) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 0).ToString() + "T";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999 &&  Buttons[i].price[Buttons[i].CurrentLevel] <= 99999999) TextsOfPrice[i].fontSize = 90;
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999999 ) TextsOfPrice[i].fontSize = 80;
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 999999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / (1000 * 1000), 1).ToString() + "q";
+                ConvertPriceOfBiggerValuesText(i,"B","T","q");
                 break;
             case Values.Quintillions:
-                TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel] + "Q";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 1).ToString() + "S";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 9999 ) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 0).ToString() + "S";
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999 &&  Buttons[i].price[Buttons[i].CurrentLevel] <= 99999999) TextsOfPrice[i].fontSize = 90;
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999999) TextsOfPrice[i].fontSize = 80;
-                if (Buttons[i].price[Buttons[i].CurrentLevel] > 999999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / (1000 * 1000), 1).ToString() + "s";
+                ConvertPriceOfBiggerValuesText(i,"Q","S", "s");
                 break;
+        }
+    }
+
+    public void ConvertPriceOfBasicValueText(int i)
+    {
+        if (Buttons[i].price[Buttons[i].CurrentLevel] <= 999)
+        {
+            TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel].ToString();
+            TextsOfPrice[i].fontSize = 102;
+        }
+        if (Buttons[i].price[Buttons[i].CurrentLevel] > 999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / 1000, 1) + "k";
+        if (Buttons[i].price[Buttons[i].CurrentLevel] > 9999) TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel] / 1000 + "k";
+        if(Buttons[i].price[Buttons[i].CurrentLevel] > 99999) TextsOfPrice[i].fontSize = 90;
+        if (Buttons[i].price[Buttons[i].CurrentLevel] > 999999) TextsOfPrice[i].text = Math.Round(Buttons[i].price[Buttons[i].CurrentLevel] / (1000 * 1000), 1) + "M";
+        if (Buttons[i].price[Buttons[i].CurrentLevel] > 99999999)
+        {
+            TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel] / (1000 * 1000)+ "M";
+            TextsOfPrice[i].fontSize = 80;
+        }
+    }
+
+    public void ConvertPriceOfBiggerValuesText(int i, string _firstSymbwol, string _secondSymbwol, string _thirdSymbwol)
+    {
+        if (Buttons[i].price[Buttons[i].CurrentLevel] <= 9)
+        {
+            TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel] + _firstSymbwol;
+            TextsOfPrice[i].fontSize = 97;
+        }
+        if (Buttons[i].price[Buttons[i].CurrentLevel] > 9)
+        {
+            TextsOfPrice[i].text = Buttons[i].price[Buttons[i].CurrentLevel] + _firstSymbwol;
+            TextsOfPrice[i].fontSize = 102;
+        }
+
+        if (Buttons[i].price[Buttons[i].CurrentLevel] > 99)
+        {
+            TextsOfPrice[i].fontSize = 87;
         }
     }
 

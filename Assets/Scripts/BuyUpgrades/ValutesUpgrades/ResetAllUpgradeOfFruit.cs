@@ -13,8 +13,6 @@ public class ResetAllUpgradeOfFruit : MonoBehaviour
    // Method to Reset All Upgrades After Rebirth
    public void ResetUpgrades()
    {
-      FruitCoins.MultiFromClick = 1;
-      
       for (int i = 0; i < Upgrades.Buttons.Count; i++)
       {
          if (Upgrades.Buttons[i].TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade)

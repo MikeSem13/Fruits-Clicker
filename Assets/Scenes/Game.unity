@@ -320,9 +320,9 @@ MonoBehaviour:
           m_StringArgument: AppleAnimationInList
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 18198823}
+        m_TargetAssemblyTypeName: ShowPanelButton, Assembly-CSharp
+        m_MethodName: DoShowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -374,9 +374,9 @@ MonoBehaviour:
   price: 0
   multi: 1
   CountOfMultiAwaking: 0
-  IsUnlocked: 0
+  IsUnlocked: 1
   IsBuying: 1
-  IsSelected: 0
+  IsSelected: 1
   IsAwaking: 0
   CurrentClickOfLevel: 0
   CountOfClicksToLevelUpFruit: f4010000e2040000d0070000b80b00009411000070170000401f000010270000d4300000983a0000204e0000a861000030750000b8880000409c000060ea000080380100a0860100f049020000000000
@@ -1873,13 +1873,14 @@ MonoBehaviour:
   TypesOfMultiFruitCoinsUpgrades: 0
   Values: 0
   price:
-  - 8100
-  - 66000
-  - 520000
-  - 7900000
-  - 44000000
-  multi: 050000000e0000002200000060000000f5000000
-  MaxLevel: 5
+  - 4200
+  - 39000
+  - 275000
+  - 3500000
+  - 15000000
+  - 67000000
+  multi: 05000000100000003b000000bd0000009d010000dd040000
+  MaxLevel: 6
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
 --- !u!1 &226733658
@@ -2668,7 +2669,7 @@ RectTransform:
   - {fileID: 1457493269}
   - {fileID: 1686859679}
   m_Father: {fileID: 1245000992}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2748,16 +2749,20 @@ MonoBehaviour:
     Animator: {fileID: 1245000993}
   - PanelId: PanelOfInformAboutRebirth
     GameObjectPanel: {fileID: 839628839}
-    BackGround: {fileID: 257623341}
+    BackGround: {fileID: 0}
     Animator: {fileID: 839628843}
   - PanelId: PanelOfStatisticAboutRebirth
     GameObjectPanel: {fileID: 752306102}
-    BackGround: {fileID: 257623341}
+    BackGround: {fileID: 0}
     Animator: {fileID: 752306106}
   - PanelId: PanelForInformOfFruits
     GameObjectPanel: {fileID: 257623341}
-    BackGround: {fileID: 917578026}
+    BackGround: {fileID: 0}
     Animator: {fileID: 257623345}
+  - PanelId: PanelOfLockFruits
+    GameObjectPanel: {fileID: 1844332945}
+    BackGround: {fileID: 2044158674}
+    Animator: {fileID: 1844332949}
 --- !u!1 &278162675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,7 +2863,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 489.1903, y: -61}
-  m_SizeDelta: {x: 390.0926, y: 171.3}
+  m_SizeDelta: {x: 390.0926, y: 216.079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298673140
 MonoBehaviour:
@@ -3718,7 +3723,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 820.4504, y: 882.6249}
+  m_SizeDelta: {x: 798.39, y: 858.893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395444786
 MonoBehaviour:
@@ -4087,13 +4092,14 @@ MonoBehaviour:
   TypesOfMultiFruitCoinsUpgrades: 0
   Values: 0
   price:
-  - 250
-  - 950
-  - 2800
-  - 23000
-  - 210000
-  multi: 0100000002000000030000000800000016000000
-  MaxLevel: 5
+  - 125
+  - 650
+  - 1400
+  - 11000
+  - 120000
+  - 1300000
+  multi: 01000000020000000300000009000000220000007d000000
+  MaxLevel: 6
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
 --- !u!114 &450269325
@@ -4660,12 +4666,12 @@ MonoBehaviour:
   TypesOfMultiFruitCoinsUpgrades: 0
   Values: 1
   price:
-  - 6.4
-  - 19
-  - 62
-  - 189
-  - 624
-  multi: 540100009803000040060000800c000088130000
+  - 11
+  - 27
+  - 51
+  - 138
+  - 374
+  multi: 8e430000e85f00006b80000045af000031070100
   MaxLevel: 5
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
@@ -5962,7 +5968,7 @@ RectTransform:
   - {fileID: 977142025}
   - {fileID: 1036438432}
   m_Father: {fileID: 1245000992}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6505,7 +6511,7 @@ RectTransform:
   - {fileID: 462881612}
   - {fileID: 1901981009}
   m_Father: {fileID: 1245000992}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6957,99 +6963,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910746159}
-  m_CullTransparentMesh: 1
---- !u!1 &917578026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 917578027}
-  - component: {fileID: 917578030}
-  - component: {fileID: 917578029}
-  - component: {fileID: 917578028}
-  m_Layer: 5
-  m_Name: BlackBackGroundOfInformPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &917578027
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917578026}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1245000992}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.0205078, y: -40.25641}
-  m_SizeDelta: {x: 78.90075, y: 748.0404}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &917578028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917578026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &917578029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917578026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.09433961, g: 0.085884646, b: 0.085884646, a: 0.5803922}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &917578030
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917578026}
   m_CullTransparentMesh: 1
 --- !u!1 &930165869
 GameObject:
@@ -7586,6 +7499,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194229}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7658,6 +7572,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e92a3af5a244c942a7cd68d33f1f935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8341,11 +8267,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036438431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e44a63c9b06517c4d824830e6f5b4e37, type: 3}
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 752306102}
-  BlackGround: {fileID: 0}
+  PanelManager: {fileID: 266568130}
 --- !u!95 &1036438434
 Animator:
   serializedVersion: 3
@@ -8421,9 +8346,9 @@ MonoBehaviour:
           m_StringArgument: ClickOnInformButtonAnimation
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 1036438433}
+        m_TargetAssemblyTypeName: HidePanelButton, Assembly-CSharp
+        m_MethodName: DoHidePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8657,9 +8582,9 @@ MonoBehaviour:
           m_StringArgument: BananaAnimationInList
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 18198823}
+        m_TargetAssemblyTypeName: ShowPanelButton, Assembly-CSharp
+        m_MethodName: DoShowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8712,7 +8637,7 @@ MonoBehaviour:
   multi: 2
   CountOfMultiAwaking: 0
   IsUnlocked: 0
-  IsBuying: 1
+  IsBuying: 0
   IsSelected: 0
   IsAwaking: 0
   CurrentClickOfLevel: 0
@@ -9430,12 +9355,12 @@ MonoBehaviour:
   TypesOfMultiFruitCoinsUpgrades: 0
   Values: 0
   price:
-  - 430000000
-  - 1.2
-  - 2.7
-  - 5.4
-  - 15
-  multi: 7d000000a5000000180100009a010000da020000
+  - 800000000
+  - 1.9
+  - 3.4
+  - 7.1
+  - 16
+  multi: 211200002d1c00000a2a0000a2360000dd4b0000
   MaxLevel: 5
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
@@ -11226,8 +11151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -137, y: -64.501}
-  m_SizeDelta: {x: 390.0926, y: 171.3}
+  m_AnchoredPosition: {x: -126, y: -56.473}
+  m_SizeDelta: {x: 390.093, y: 216.079}
   m_Pivot: {x: 0.5, y: 0.49999872}
 --- !u!1 &1228640073
 GameObject:
@@ -11535,7 +11460,6 @@ RectTransform:
   - {fileID: 1840906669}
   - {fileID: 1708032730}
   - {fileID: 1812574749}
-  - {fileID: 917578027}
   - {fileID: 2044158675}
   - {fileID: 257623344}
   - {fileID: 839628840}
@@ -12594,13 +12518,14 @@ MonoBehaviour:
   TypesOfMultiFruitCoinsUpgrades: 0
   Values: 0
   price:
-  - 1600000
-  - 18000000
-  - 91000000
-  - 260000000
-  - 620000000
-  multi: 35000000a9000000600100006d02000030040000
-  MaxLevel: 5
+  - 630000
+  - 6700000
+  - 41000000
+  - 136000000
+  - 377000000
+  - 666000000
+  multi: 530000001001000035030000230700003c0a0000d10e0000
+  MaxLevel: 6
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
 --- !u!1 &1313734488
@@ -12769,6 +12694,7 @@ GameObject:
   - component: {fileID: 1328068721}
   - component: {fileID: 1328068720}
   - component: {fileID: 1328068719}
+  - component: {fileID: 1328068722}
   m_Layer: 5
   m_Name: ButtonOfAwakeFruit
   m_TagString: Untagged
@@ -12841,18 +12767,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuyAwaking, Assembly-CSharp
-        m_MethodName: StartAwaking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
         m_MethodName: ClosePanel
         m_Mode: 1
@@ -12902,6 +12816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328068717}
   m_CullTransparentMesh: 1
+--- !u!114 &1328068722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328068717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelManager: {fileID: 266568130}
 --- !u!1 &1339980292
 GameObject:
   m_ObjectHideFlags: 0
@@ -13048,7 +12975,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: +0
@@ -13207,9 +13134,9 @@ MonoBehaviour:
           m_StringArgument: OrangeAnimationInList
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 18198823}
+        m_TargetAssemblyTypeName: ShowPanelButton, Assembly-CSharp
+        m_MethodName: DoShowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14596,7 +14523,7 @@ MonoBehaviour:
   TextsOfFruits:
   - {fileID: 1598852567}
   - {fileID: 1472315908}
-  BoardsOfUnlock: 0100000003000000
+  BoardsOfUnlock: 000000000100000003000000
 --- !u!1 &1498891415
 GameObject:
   m_ObjectHideFlags: 0
@@ -14682,9 +14609,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 266568130}
+        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
+        m_MethodName: HideLastPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15076,7 +15003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00000095367}
   m_SizeDelta: {x: 775.7635, y: 887.0853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558081277
@@ -15598,9 +15525,9 @@ MonoBehaviour:
           m_StringArgument: ClickOnInformButtonAnimation
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 2142535968}
+        m_TargetAssemblyTypeName: ShowCountOfFruitsText, Assembly-CSharp
+        m_MethodName: GetUnlockFruits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15610,9 +15537,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2142535968}
-        m_TargetAssemblyTypeName: ShowCountOfFruitsText, Assembly-CSharp
-        m_MethodName: GetUnlockFruits
+      - m_Target: {fileID: 1584283572}
+        m_TargetAssemblyTypeName: HidePanelButton, Assembly-CSharp
+        m_MethodName: DoHidePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15669,11 +15596,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584283567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e44a63c9b06517c4d824830e6f5b4e37, type: 3}
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 257623341}
-  BlackGround: {fileID: 0}
+  PanelManager: {fileID: 266568130}
 --- !u!95 &1584283573
 Animator:
   serializedVersion: 3
@@ -16324,6 +16250,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1261134479}
+          m_TargetAssemblyTypeName: ConvertingMultiFruitCoins, Assembly-CSharp
+          m_MethodName: ConvertFruitCoinsToMultiFruitCoins
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1191477985}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: FruitsPanelAnimation
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1600823975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16552,6 +16502,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 633663479}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: UpgradeButtonAnimation
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &1649909340
@@ -18164,6 +18126,7 @@ GameObject:
   - component: {fileID: 1817761865}
   - component: {fileID: 1817761864}
   - component: {fileID: 1817761863}
+  - component: {fileID: 1817761862}
   m_Layer: 5
   m_Name: LockOfOrange
   m_TagString: Untagged
@@ -18190,6 +18153,20 @@ RectTransform:
   m_AnchoredPosition: {x: 398.4, y: -137}
   m_SizeDelta: {x: 361.5854, y: 353.3083}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1817761862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817761860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec600cd939603845bb2032dbb0fd04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelManager: {fileID: 266568130}
+  PanelId: PanelOfLockFruits
 --- !u!95 &1817761863
 Animator:
   serializedVersion: 3
@@ -18265,9 +18242,9 @@ MonoBehaviour:
           m_StringArgument: LockClickAnimation
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 1817761862}
+        m_TargetAssemblyTypeName: ShowPanelButton, Assembly-CSharp
+        m_MethodName: DoShowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18744,6 +18721,7 @@ GameObject:
   - component: {fileID: 1844332946}
   - component: {fileID: 1844332948}
   - component: {fileID: 1844332947}
+  - component: {fileID: 1844332949}
   m_Layer: 5
   m_Name: PanelOfLockFruits
   m_TagString: Untagged
@@ -18765,7 +18743,7 @@ RectTransform:
   - {fileID: 930165870}
   - {fileID: 1498891416}
   m_Father: {fileID: 1245000992}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -18810,6 +18788,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844332945}
   m_CullTransparentMesh: 1
+--- !u!95 &1844332949
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844332945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c4b2ad114715aa49a5bf88ae5286f03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1849719731
 GameObject:
   m_ObjectHideFlags: 0
@@ -19010,6 +19007,7 @@ GameObject:
   - component: {fileID: 1852899930}
   - component: {fileID: 1852899932}
   - component: {fileID: 1852899934}
+  - component: {fileID: 1852899933}
   m_Layer: 5
   m_Name: LockOfBanana
   m_TagString: Untagged
@@ -19130,9 +19128,9 @@ MonoBehaviour:
           m_StringArgument: LockClickAnimation
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 1817761862}
+        m_TargetAssemblyTypeName: ShowPanelButton, Assembly-CSharp
+        m_MethodName: DoShowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19154,6 +19152,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1852899933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852899928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec600cd939603845bb2032dbb0fd04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelManager: {fileID: 266568130}
+  PanelId: PanelOfLockFruits
 --- !u!95 &1852899934
 Animator:
   serializedVersion: 3
@@ -19784,9 +19796,9 @@ MonoBehaviour:
           m_StringArgument: ClickOnInformButtonAnimation
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 1901981014}
+        m_TargetAssemblyTypeName: HidePanelButton, Assembly-CSharp
+        m_MethodName: DoHidePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19862,11 +19874,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1901981008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e44a63c9b06517c4d824830e6f5b4e37, type: 3}
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 839628839}
-  BlackGround: {fileID: 0}
+  PanelManager: {fileID: 266568130}
 --- !u!1 &1920152740
 GameObject:
   m_ObjectHideFlags: 0
@@ -19881,6 +19892,7 @@ GameObject:
   - component: {fileID: 1920152742}
   - component: {fileID: 1920152746}
   - component: {fileID: 1920152745}
+  - component: {fileID: 1920152747}
   m_Layer: 5
   m_Name: RebirthButton
   m_TagString: Untagged
@@ -19953,8 +19965,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1288674499}
-        m_TargetAssemblyTypeName: BuyFruits, Assembly-CSharp
-        m_MethodName: StartRebirthAnimation
+        m_TargetAssemblyTypeName: BuyRebirth, Assembly-CSharp
+        m_MethodName: StartRebith
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20037,6 +20049,19 @@ MonoBehaviour:
   ActiveBuyRebirthButton: {fileID: 2893777669117545954, guid: de8b2a506b24dcd46a2ec94df91144ef, type: 3}
   NonActiveBuyRebirthButton: {fileID: 8975302872623177582, guid: 56c4659b360088b4891eeb9fe9a10503, type: 3}
   FruitCoins: {fileID: 591847393}
+--- !u!114 &1920152747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920152740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelManager: {fileID: 266568130}
 --- !u!1 &1931540066
 GameObject:
   m_ObjectHideFlags: 0
@@ -20113,7 +20138,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -20288,6 +20313,7 @@ GameObject:
   - component: {fileID: 1946175726}
   - component: {fileID: 1946175725}
   - component: {fileID: 1946175724}
+  - component: {fileID: 1946175727}
   m_Layer: 5
   m_Name: ButtonOfBuyFruit
   m_TagString: Untagged
@@ -20422,6 +20448,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946175722}
   m_CullTransparentMesh: 1
+--- !u!114 &1946175727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946175722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelManager: {fileID: 266568130}
 --- !u!1 &1978327847
 GameObject:
   m_ObjectHideFlags: 0
@@ -21202,6 +21241,9 @@ GameObject:
   - component: {fileID: 2044158675}
   - component: {fileID: 2044158677}
   - component: {fileID: 2044158676}
+  - component: {fileID: 2044158680}
+  - component: {fileID: 2044158678}
+  - component: {fileID: 2044158679}
   m_Layer: 5
   m_Name: BlackBackGroundOfLockPanels
   m_TagString: Untagged
@@ -21221,7 +21263,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245000992}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21266,6 +21308,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044158674}
   m_CullTransparentMesh: 1
+--- !u!95 &2044158678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044158674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27b7960743f16394e895df29734ebdc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2044158679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044158674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11432bae00aa13b4e93a2dbce31901b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelManager: {fileID: 266568130}
+--- !u!114 &2044158680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044158674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2044158679}
+          m_TargetAssemblyTypeName: HidePanelButton, Assembly-CSharp
+          m_MethodName: DoHidePanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2048136705
 GameObject:
   m_ObjectHideFlags: 0

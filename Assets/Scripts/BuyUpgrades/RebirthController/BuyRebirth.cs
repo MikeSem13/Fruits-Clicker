@@ -41,12 +41,12 @@ public class BuyRebirth : MonoBehaviour
          CountOfRebirth++;
          FruitCoins.ResetAllFruitCoinsAndMultiForRebirth();
       }
+      StartRebirthAnimation();
    }
    
    // Method for Start Rebirth Animation
    public void StartRebirthAnimation()
    {
       ButtonOfRebirth.GetComponent<Animator>().Play("ButtonOfRebirthAnimation");
-      Invoke("StartRebith",0.10f);
    }
 }

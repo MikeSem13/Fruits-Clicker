@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ConvertingMultiFruitCoins : MonoBehaviour
@@ -8,6 +5,8 @@ public class ConvertingMultiFruitCoins : MonoBehaviour
     public FruitCoinsValuteController FruitCoins;
     public MultiFruitCoinsValueController MultiFruitCoins;
 
+    private int _multiOfAdd;
+    
     public void ConvertFruitCoinsToMultiFruitCoins()
     {
         int FruitCoinsToConvert = FruitCoins.BillionValue;

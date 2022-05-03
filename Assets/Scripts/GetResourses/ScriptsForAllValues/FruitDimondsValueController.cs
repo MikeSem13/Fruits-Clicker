@@ -152,6 +152,9 @@ public class FruitDimondsValueController : MonoBehaviour, IValuteController
    {
       Chance = Random.Range(0, 100);
       if (Chance < percent) BasicValue += MainMulti;
+      
       PlayerPrefs.SetInt("FruitDimonds", BasicValue);
+      PlayerPrefs.SetInt("FruitDimondsBillion", BillionValue);
+      PlayerPrefs.SetInt("FruitDimondsQuintillion", QuintillionValue);
    }
 }

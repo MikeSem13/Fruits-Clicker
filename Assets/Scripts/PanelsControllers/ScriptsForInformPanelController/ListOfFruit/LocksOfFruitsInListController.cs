@@ -18,28 +18,40 @@ public class LocksOfFruitsInListController : MonoBehaviour
 
    private void Update()
    {
-       for (int i = 0; i < BuyFruit.AllFruitsDesctiber.Count; i++)
-       {
-           SetCountUnlockedFruits(BuyFruit.AllFruitsDesctiber[i]);   
-       }
+      SetEnableLocksOfFruits();
    }
 
-   // Method to Show Locks follow count of rebirth
-   public void SetCountUnlockedFruits(DescriberForFruitsInList Describer)
+
+   public void SetEnableLocksOfFruits()
    {
-       for (int i = 0; i < BoardsOfUnlock.Count; i++)
+       SetCountUnlockedFruits();
+       
+       for (int i = 1; i < BuyFruit.AllFruitsDesctiber.Count; i++)
        {
-           if (Rebirth.CountOfRebirth >= BoardsOfUnlock[i])
+           if (BuyFruit.AllFruitsDesctiber[i].IsUnlocked)
            {
-               Locks[i].SetActive(false);
-               TextsOfFruits[i].gameObject.SetActive(true);
-               Describer.IsUnlocked = true;
+               Locks[i - 1].SetActive(false);
+               TextsOfFruits[i - 1].gameObject.SetActive(true);
            }
            else
            {
-               Locks[i].SetActive(true);
-               TextsOfFruits[i].gameObject.SetActive(false);
-               Describer.IsUnlocked = false;
+               Locks[i - 1].SetActive(true);
+               TextsOfFruits[i - 1].gameObject.SetActive(false);
+           }
+       }
+   }
+   
+   public void SetCountUnlockedFruits()
+   {
+       for (int i = 0; i < BuyFruit.AllFruitsDesctiber.Count; i++)
+       {
+           if (Rebirth.CountOfRebirth >= BoardsOfUnlock[i])
+           {
+               BuyFruit.AllFruitsDesctiber[i].IsUnlocked = true;
+           }
+           else
+           {
+               BuyFruit.AllFruitsDesctiber[i].IsUnlocked = false;
            }
        }
    }
