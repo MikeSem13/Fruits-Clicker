@@ -65,15 +65,15 @@ public class ValuteController : MonoBehaviour
         {
             case Values.Basic:
                 Valute.BasicValue += -price;
-                PlayerPrefs.SetInt("FruitCoins", IFruitCoins.BasicValue);
+                PlayerPrefs.SetFloat("FruitCoins", IFruitCoins.BasicValue);
                 break;
             case Values.Billons:
                 Valute.BillionValue += -price;
-                PlayerPrefs.SetInt("FruitCoinsBillion", IFruitCoins.BillionValue);
+                PlayerPrefs.SetFloat("FruitCoinsBillion", IFruitCoins.BillionValue);
                 break;
             case Values.Quintillions:
                 Valute.QuintillionValue += -price;
-                PlayerPrefs.SetInt("FruitCoinsQuintillion", IFruitCoins.QuintillionValue);
+                PlayerPrefs.SetFloat("FruitCoinsQuintillion", IFruitCoins.QuintillionValue);
                 break;
         }
     }
@@ -156,17 +156,17 @@ public enum Valutes
 
 public interface IValuteController
 {
-    public int BasicValue { get; set; }
+    public float BasicValue { get; set; }
     
-    public int BillionValue { get; set; }
+    public float BillionValue { get; set; }
     
-    public int QuintillionValue { get; set; }
+    public float QuintillionValue { get; set; }
     
-    public int MainMulti { get; set; }
+    public float MainMulti { get; set; }
     
-    public int BillionMainMulti { get; set; }
+    public float BillionMainMulti { get; set; }
     
-    public int QuintillioniMainMulti { get; set; }
+    public float QuintillioniMainMulti { get; set; }
     
     public Values GetValuesOfValute();
     public void SetValuesOfValute(Values Value);

@@ -9,7 +9,7 @@ public class ConvertingMultiFruitCoins : MonoBehaviour
     
     public void ConvertFruitCoinsToMultiFruitCoins()
     {
-        int FruitCoinsToConvert = FruitCoins.BillionValue;
+        float FruitCoinsToConvert = FruitCoins.BillionValue;
       
         float StorageOfMultiFruitCoins = 0;
       
@@ -38,6 +38,6 @@ public class ConvertingMultiFruitCoins : MonoBehaviour
 
             FruitCoinsToConvert -= 1;
         }
-        MultiFruitCoins.MultiFruitCoinsAfterRebirth = (int)StorageOfMultiFruitCoins * MultiFruitCoins.MainMulti;
+        MultiFruitCoins.MultiFruitCoinsAfterRebirth = StorageOfMultiFruitCoins * MultiFruitCoins.MainMulti;
     }
 }

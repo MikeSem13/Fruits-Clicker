@@ -28,7 +28,7 @@ public class ConvertAwakingMultiController : MonoBehaviour
          if (Fruits.AllFruitsDesctiber[i].Awaking == TypesOfAwaking.MultiFruitCoinsAwaking)
          {
             MultiFruitCoins.MultiFromAwakingMultiFruit += Fruits.AllFruitsDesctiber[i].CountOfMultiAwaking - 1;  
-            PlayerPrefs.SetInt("MultiAwakingMultiFruit", MultiFruitCoins.MultiFromAwakingMultiFruit);
+            PlayerPrefs.SetFloat("MultiAwakingMultiFruit", MultiFruitCoins.MultiFromAwakingMultiFruit);
          }
       }
    }

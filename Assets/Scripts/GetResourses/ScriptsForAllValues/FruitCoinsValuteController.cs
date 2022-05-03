@@ -14,16 +14,16 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
     public Values CurrentValueOfMulti;
 
     [Header("Размеры валют")]
-    [SerializeField]private int basicValue;
-    [SerializeField]private int billionValue;
-    [SerializeField]private int quintillionValue;
+    [SerializeField]private float basicValue;
+    [SerializeField]private float billionValue;
+    [SerializeField]private float quintillionValue;
     
     [Header("Размеры множителей")]
-    [SerializeField]private int mainMulti;
-    [SerializeField]private int BillionmainMulti;
-    [SerializeField]private int QuintillionmainMulti;
+    [SerializeField]private float mainMulti;
+    [SerializeField]private float BillionmainMulti;
+    [SerializeField]private float QuintillionmainMulti;
 
-    public int BasicValue
+    public float BasicValue
     {
         get { return basicValue; }
         set
@@ -34,7 +34,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         }
     }
 
-    public int BillionValue
+    public float BillionValue
     {
         get { return billionValue;}
         set
@@ -44,7 +44,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         }
     }
 
-    public int QuintillionValue
+    public float QuintillionValue
     {
         get { return quintillionValue; }
         set
@@ -55,7 +55,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         }
     }
 
-    public int MainMulti
+    public float MainMulti
     {
         get { return mainMulti; }
         set
@@ -65,7 +65,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         }
     }
     
-    public int BillionMainMulti
+    public float BillionMainMulti
     {
         get { return BillionmainMulti; }
         set
@@ -75,7 +75,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         }
     }
     
-    public int QuintillioniMainMulti
+    public float QuintillioniMainMulti
     {
         get { return QuintillionmainMulti; }
         set
@@ -163,8 +163,8 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
     public void AddValute()
     {
         BasicValue += MainMulti; 
-        PlayerPrefs.SetInt("FruitCoins", BasicValue);
-        PlayerPrefs.SetInt("FruitCoinsBillion", BillionValue);
-        PlayerPrefs.SetInt("FruitCoinsQuintillion", QuintillionValue);
+        PlayerPrefs.SetFloat("FruitCoins", BasicValue);
+        PlayerPrefs.SetFloat("FruitCoinsBillion", BillionValue);
+        PlayerPrefs.SetFloat("FruitCoinsQuintillion", QuintillionValue);
     }
 }

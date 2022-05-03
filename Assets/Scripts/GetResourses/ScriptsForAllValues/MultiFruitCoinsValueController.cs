@@ -14,16 +14,16 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
    public Values CurrentValueOfMulti;
 
    [Header("Размеры валют")]
-   [SerializeField]private int basicValue;
-   [SerializeField]private int billionValue;
-   [SerializeField]private int quintillionValue;
+   [SerializeField]private float basicValue;
+   [SerializeField]private float billionValue;
+   [SerializeField]private float quintillionValue;
    
    [Header("Размеры множителей")]
-   [SerializeField]private int mainMulti;
-   [SerializeField]private int BillionmainMulti;
-   [SerializeField]private int QuintillionmainMulti;
+   [SerializeField]private float mainMulti;
+   [SerializeField]private float BillionmainMulti;
+   [SerializeField]private float QuintillionmainMulti;
    
-   public int BasicValue
+   public float BasicValue
    {
       get { return basicValue; }
       set
@@ -34,7 +34,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
       }
    }
 
-   public int BillionValue
+   public float BillionValue
    {
       get { return billionValue;}
       set
@@ -44,7 +44,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
       }
    }
 
-   public int QuintillionValue
+   public float QuintillionValue
    {
       get { return quintillionValue; }
       set
@@ -55,7 +55,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
       }
    }
 
-   public int MainMulti
+   public float MainMulti
    {
       get { return mainMulti; }
       set
@@ -65,7 +65,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
       }
    }
    
-   public int BillionMainMulti
+   public float BillionMainMulti
    {
       get { return BillionmainMulti; }
       set
@@ -75,7 +75,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
       }
    }
     
-   public int QuintillioniMainMulti
+   public float QuintillioniMainMulti
    {
       get { return QuintillionmainMulti; }
       set
@@ -86,11 +86,11 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
    }
 
    [Header("Множители для МультифруктКоинов")]
-   public int MultiOfMultiFruitCoinsForRebirth;
+   public float MultiOfMultiFruitCoinsForRebirth;
    
-   public int MultiFromAwakingMultiFruit;
+   public float MultiFromAwakingMultiFruit;
    
-   public int MultiFruitCoinsAfterRebirth;
+   public float MultiFruitCoinsAfterRebirth;
 
    private void Start()
    {
@@ -112,7 +112,7 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
    public void AddMultiOfMultiFruitCoinsFroRebirth()
    {
       MultiOfMultiFruitCoinsForRebirth++;
-      PlayerPrefs.SetInt("MultiMultoFruitCoinsOfRebirth", MultiOfMultiFruitCoinsForRebirth);
+      PlayerPrefs.SetFloat("MultiMultoFruitCoinsOfRebirth", MultiOfMultiFruitCoinsForRebirth);
    }
    
    public void SetMainMultiMultiFruitCoins()
@@ -149,8 +149,8 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
    public void AddValute()
    {
       BasicValue += MultiFruitCoinsAfterRebirth;
-      PlayerPrefs.SetInt("MultiFruitCoins", BasicValue);
-      PlayerPrefs.SetInt("MultiFruitCoinsBillion", BillionValue);
-      PlayerPrefs.SetInt("MultiFruitCoinsQuintillion", QuintillionValue);
+      PlayerPrefs.SetFloat("MultiFruitCoins", BasicValue);
+      PlayerPrefs.SetFloat("MultiFruitCoinsBillion", BillionValue);
+      PlayerPrefs.SetFloat("MultiFruitCoinsQuintillion", QuintillionValue);
    }
 }

@@ -32,7 +32,7 @@ public class ConvertTextForRebirth : MonoBehaviour
       ConvertAnyStringValueOfStatisticPanel(TextForCurrentFruit, "Текущий фрукт: ",Fruits.CurrentFruitInString);
    }
 
-   public void ConvertAnyValueOfStatisticPanel(Text TextMulti, String NameOfString, int multi)
+   public void ConvertAnyValueOfStatisticPanel(Text TextMulti, String NameOfString, float multi)
    {
       if (multi <= 999) TextMulti.text = NameOfString + multi.ToString();
       if (multi > 999 && multi <= 999999) TextMulti.text = NameOfString + (multi / 1000).ToString() + "k";

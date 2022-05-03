@@ -15,7 +15,7 @@ public class BuyUpgrades : MonoBehaviour
     public Sprite ActibeToBuy;
     public Sprite NonActiveToBuy;
 
-    public int ValueForBuy;
+    public float ValueForBuy;
 
     public void SubscribeAllButtons(BuyButtons Button)
     {

@@ -41,7 +41,7 @@ public class ConvertAnyValueToText : MonoBehaviour
        }
    }
 
-   public void ConvertMoreHightValues(int Value, Text TextOfValue, string Firstvalue, string SecondValue, string ThirdValue)
+   public void ConvertMoreHightValues(float Value, Text TextOfValue, string Firstvalue, string SecondValue, string ThirdValue)
    {
        if (Value > 0 && Value <= 9) TextOfValue.text = Math.Round((double)Value,1) + Firstvalue;
        if (Value > 9 && Value <= 999) TextOfValue.text = (Value) + Firstvalue;
