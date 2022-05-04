@@ -48,12 +48,15 @@ public class ValuteController : MonoBehaviour
         {
             case Valutes.FruitCoins:
                 TakeAnyValue(IFruitCoins,Value,price);
+                FruitCoins.SaveAllValues();
                 break;
             case Valutes.FruitDimonds:
                 TakeAnyValue(IFruitDimonds,Value,price);
+                FruitDimonds.SaveAllValues();
                 break;
             case Valutes.MultiFruitCoins:
                 TakeAnyValue(IMultiFruitCoins,Value,price);
+                MultiFruitCoins.SaveAllValues();
                 break;
         }
     }
@@ -64,15 +67,12 @@ public class ValuteController : MonoBehaviour
         {
             case Values.Basic:
                 Valute.BasicValue += -price;
-                PlayerPrefs.SetFloat("FruitCoins", IFruitCoins.BasicValue);
                 break;
             case Values.Billons:
                 Valute.BillionValue += -price;
-                PlayerPrefs.SetFloat("FruitCoinsBillion", IFruitCoins.BillionValue);
                 break;
             case Values.Quintillions:
                 Valute.QuintillionValue += -price;
-                PlayerPrefs.SetFloat("FruitCoinsQuintillion", IFruitCoins.QuintillionValue);
                 break;
         }
     }

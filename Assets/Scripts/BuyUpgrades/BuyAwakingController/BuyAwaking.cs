@@ -8,7 +8,9 @@ public class BuyAwaking : MonoBehaviour
    public ChancesOfAwaking Chance;
    public BuyFruit Fruits;
    public ConvertAwakingMultiController ConvertAwakingMultiController;
-
+   public HidePanelButton HidePanel;
+   
+   
    private void Start()
    {
       for (int i = 0; i < Fruits.AllFruitsDesctiber.Count; i++)
@@ -37,9 +39,13 @@ public class BuyAwaking : MonoBehaviour
 
    public void StartAwaking()
    {
-      Chance.GenerateATypeOfBoost();
-      ConvertAwakingMultiController.SetMultisOfAwaking();
-      Fruits.AllFruitsDesctiber[Fruits.ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsAwaking = true;
+      if (Fruits.AllFruitsDesctiber[Fruits.ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsAwaking == false)
+      {
+         Chance.GenerateATypeOfBoost();
+         ConvertAwakingMultiController.SetMultisOfAwaking();
+         Fruits.AllFruitsDesctiber[Fruits.ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsAwaking = true;
+         HidePanel.DoHidePanel();
+      }
    }
 }
 

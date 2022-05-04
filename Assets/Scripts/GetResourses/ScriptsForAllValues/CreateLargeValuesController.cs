@@ -43,16 +43,19 @@ public class CreateLargeValuesController : MonoBehaviour
             case global::Valutes.FruitCoins:
             {
                 StartOfConvertToNextValues(Valutes.IFruitCoins);
+                ConvertAfterStartNextValues(Valutes.FruitCoins);
             }
                 break;
             case global::Valutes.FruitDimonds:
             {
                 StartOfConvertToNextValues(Valutes.IFruitDimonds);
+                ConvertAfterStartNextValues(Valutes.FruitDimonds);
             }
                 break;
             case global::Valutes.MultiFruitCoins:
             {
                 StartOfConvertToNextValues(Valutes.IMultiFruitCoins);
+                ConvertAfterStartNextValues(Valutes.MultiFruitCoins);
             }
                 break;
         }
@@ -66,20 +69,18 @@ public class CreateLargeValuesController : MonoBehaviour
             Valute.BillionValue += 1;
             Valute.BasicValue -= BoardOfAddValutes;
         }
-        else ConvertAfterStartNextValues(Valute);
         if (Valute.BillionValue >= BoardOfAddValutes && Valute.QuintillionValue < 1)
         { 
             Valute.QuintillionValue += 1; 
             Valute.BillionValue -= BoardOfAddValutes;
         }
-        else ConvertAfterStartNextValues(Valute);
     }
 
     public void ConvertAfterStartNextValues(IValuteController Valute)
     {
         if (Valute.BillionValue >= 1)
         {
-            if (Valute.BasicValue > 100000000)
+            if (Valute.BasicValue >= 100000000)
             {
                 Valute.BillionValue += 0.1f;
                 Valute.BasicValue += -100000000;
@@ -87,7 +88,7 @@ public class CreateLargeValuesController : MonoBehaviour
         }
         if (Valute.QuintillionValue >= 1)
         {
-            if (Valute.BillionValue > 100000000)
+            if (Valute.BillionValue >= 100000000)
             {
                 Valute.QuintillionValue += 0.1f;
                 Valute.BillionValue += -100000000;

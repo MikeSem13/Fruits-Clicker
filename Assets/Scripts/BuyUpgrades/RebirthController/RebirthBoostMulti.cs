@@ -6,12 +6,11 @@ using UnityEngine.Serialization;
 public class RebirthBoostMulti : MonoBehaviour
 {
    // Needed Classes
-   public BuyRebirth Rebith;
-   public FruitCoinsValuteController FruitCoins;
+   public ValuteController Valute;
 
    // Method to define multi of Rebirth
-   public void Update()
+   public void SetMultiOfRebirth()
    { 
-      FruitCoins.MultiOfRebirth = (Rebith.CountOfRebirth / 100) + 1;
+      Valute.FruitCoins.MultiOfRebirth = (Valute.MultiFruitCoins.BasicValue / 100);
    }
 }

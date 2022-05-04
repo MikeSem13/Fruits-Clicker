@@ -11,11 +11,11 @@ public class ConvertMultiFruitCoinsAfterPresigeToText : MonoBehaviour
     public FruitCoinsValuteController FruitCoins;
 
     // Texts to Convert
-    public Text TextOfMultiFruitCoinsAfterPresige;
+    public Text TextOfMultiFruitCoinsAfterPrestige;
 
     // Convert Value Of MultiFruitCoins to text
-    private void Update()
+    private void SetMultiFruitCoinsAfterPrestige()
     {
-        TextOfMultiFruitCoinsAfterPresige.text = (FruitCoins.BasicValue / (1000 * 1000)).ToString();
+        TextOfMultiFruitCoinsAfterPrestige.text = (FruitCoins.BasicValue / (1000 * 1000)).ToString();
     }
 }

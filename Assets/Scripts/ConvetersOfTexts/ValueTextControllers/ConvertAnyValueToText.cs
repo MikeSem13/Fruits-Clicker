@@ -24,11 +24,11 @@ public class ConvertAnyValueToText : MonoBehaviour
        switch (Values)
        {
            case Values.Basic:
-               if (ValuteController.BasicValue <= 999) TextOfValute.text = ValuteController.BasicValue.ToString("0");
-               if (ValuteController.BasicValue > 999 && ValuteController.BasicValue <= 9999) TextOfValute.text = Math.Round((double)ValuteController.BasicValue / 1000,1) + "k";
-               if (ValuteController.BasicValue > 9999 && ValuteController.BasicValue <= 999999) TextOfValute.text = (ValuteController.BasicValue / 1000).ToString("0") + "k";
-               if (ValuteController.BasicValue > 999999 && ValuteController.BasicValue <= 9999999) TextOfValute.text = Math.Round((double)ValuteController.BasicValue / (1000 * 1000),1) + "M";
-               if (ValuteController.BasicValue > 9999999 && ValuteController.BasicValue <= 999999999) TextOfValute.text = (ValuteController.BasicValue / (1000 * 1000)).ToString("0") + "M";
+               if (ValuteController.BasicValue < 1000) TextOfValute.text = ValuteController.BasicValue.ToString("0");
+               if (ValuteController.BasicValue >= 1000) TextOfValute.text = Math.Round(ValuteController.BasicValue / 1000,1) + "k";
+               if (ValuteController.BasicValue >= 10000) TextOfValute.text = (ValuteController.BasicValue / 1000).ToString("0") + "k";
+               if (ValuteController.BasicValue >= 999500) TextOfValute.text = Math.Round(ValuteController.BasicValue / (1000 * 1000),1) + "M";
+               if (ValuteController.BasicValue >= 10000000) TextOfValute.text = (ValuteController.BasicValue / (1000 * 1000)).ToString("0") + "M";
                break;
            case Values.Billons:
               ConvertMoreHightValues(ValuteController.BillionValue,TextOfValute,"B","T","q");
@@ -43,11 +43,11 @@ public class ConvertAnyValueToText : MonoBehaviour
 
    public void ConvertMoreHightValues(float Value, Text TextOfValue, string Firstvalue, string SecondValue, string ThirdValue)
    {
-       if (Value >= 1 && Value <= 9) TextOfValue.text = Math.Round((double)Value,1) + Firstvalue;
-       if (Value > 9 && Value <= 999) TextOfValue.text = (Value).ToString("0") + Firstvalue;
-       if (Value > 999 && Value <= 9999) TextOfValue.text =  Math.Round((double)Value / 1000,1) + SecondValue;
-       if (Value > 9999 && Value <= 999999) TextOfValue.text = (Value / 1000).ToString("0") + SecondValue;
-       if (Value > 999999 && Value <= 9999999) TextOfValue.text =  Math.Round((double)Value / (1000 * 1000),1) + ThirdValue;
-       if (Value > 9999999 && Value <= 999999999) TextOfValue.text = (Value / (1000 * 1000)).ToString("0") + ThirdValue;
+       if (Value >= 1) TextOfValue.text = Math.Round(Value,1) + Firstvalue;
+       if (Value >= 10) TextOfValue.text = (Value).ToString("0") + Firstvalue;
+       if (Value >= 1000) TextOfValue.text =  Math.Round(Value / 1000,1) + SecondValue;
+       if (Value >= 10000) TextOfValue.text = (Value / 1000).ToString("0") + SecondValue;
+       if (Value >= 999500) TextOfValue.text =  Math.Round(Value / (1000 * 1000),1) + ThirdValue;
+       if (Value >= 10000000) TextOfValue.text = (Value / (1000 * 1000)).ToString("0") + ThirdValue;
    }
 }

@@ -22,28 +22,32 @@ public class ConvertTextForRebirth : MonoBehaviour
    public Text TextOfMultiFruitCoins;
    
    //Convert All values to Texts of Rebirth
-   private void Update()
+   public void SetAllStatisticValues()
    {
-      ConvertAnyValueOfStatisticPanel(TextForMultiOfFruits, "Множитель Фруктов: ", FruitsCoins.MultiOfFruits);
-      ConvertAnyValueOfStatisticPanel(TextOfCountOfRebirth, "Количевство перерождений: ", Rebirth.CountOfRebirth);
-      ConvertValuesWithTouch(TextOfMultiOfRebirth, "Множитель перерождений: ", FruitsCoins.MultiOfRebirth);
-      ConvertAnyValueOfStatisticPanel(TextOfMultiFruitCoins, "Множитель фрукткоинов: ", FruitsCoins.MultiFromClick);
-      ConvertAnyValueOfStatisticPanel(TextOfMultiFruitCoinsAfterPrestige, "", MultiFruitCoins.MultiFruitCoinsAfterRebirth);
+      ConvertAnyValueOfRebirthPanel(TextForMultiOfFruits, "Множитель Фруктов: ", FruitsCoins.MultiOfFruits);
+      ConvertAnyValueOfRebirthPanel(TextOfCountOfRebirth, "Количевство перерождений: ", Rebirth.CountOfRebirth);
+      ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoins, "Множитель фрукткоинов: ", FruitsCoins.MultiFromClick);
       ConvertAnyStringValueOfStatisticPanel(TextForCurrentFruit, "Текущий фрукт: ",Fruits.CurrentFruitInString);
    }
 
-   public void ConvertValuesWithTouch(Text TextMulti, String NameOfString, float multi)
+   public void SetAllMainRebirthPanelValues()
    {
-      if (multi <= 999) TextMulti.text = NameOfString + Math.Round(multi, 2);
-      if (multi > 999 && multi <= 999999) TextMulti.text = NameOfString + Math.Round(multi / 1000, 2) + "k";
-      if (multi > 999999 && multi <= 999999999) TextMulti.text = NameOfString + Math.Round(multi / (1000 * 1000), 2) + "M";
+      ConvertValuesWithTouch(TextOfMultiOfRebirth, "Множитель перерождений: ", FruitsCoins.MultiOfRebirth);
+      ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoinsAfterPrestige, "", MultiFruitCoins.MultiFruitCoinsAfterRebirth);
    }
    
-   public void ConvertAnyValueOfStatisticPanel(Text TextMulti, String NameOfString, float multi)
+   public void ConvertValuesWithTouch(Text TextMulti, String NameOfString, float multi)
    {
-      if (multi <= 999) TextMulti.text = NameOfString + multi;
-      if (multi > 999 && multi <= 999999) TextMulti.text = NameOfString + (multi / 1000) + "k";
-      if (multi > 999999 && multi <= 999999999) TextMulti.text = NameOfString + (multi / (1000 * 1000)) + "M";
+      if (multi <= 999) TextMulti.text = NameOfString + Math.Round(multi,1);
+      if (multi > 999) TextMulti.text = NameOfString + Math.Round(multi / 1000, 1) + "k";
+      if (multi > 999999) TextMulti.text = NameOfString + Math.Round(multi / (1000 * 1000), 1) + "M";
+   }
+   
+   public void ConvertAnyValueOfRebirthPanel(Text TextMulti, String NameOfString, float multi)
+   {
+      if (multi <= 999) TextMulti.text = NameOfString + (int)multi;
+      if (multi > 999) TextMulti.text = NameOfString + (int)(multi / 1000) + "k";
+      if (multi > 999999) TextMulti.text = NameOfString + (int)(multi / (1000 * 1000)) + "M";
    }
    
    public void ConvertAnyStringValueOfStatisticPanel(Text TextStringValue, String NameOfString, String Value)

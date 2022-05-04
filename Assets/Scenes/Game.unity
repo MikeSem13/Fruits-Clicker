@@ -3019,8 +3019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 533.4374, y: -5.180404}
-  m_SizeDelta: {x: 225.802, y: 121.2192}
+  m_AnchoredPosition: {x: 533.4374, y: -0.0000014305}
+  m_SizeDelta: {x: 225.802, y: 131.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327918992
 MonoBehaviour:
@@ -6440,7 +6440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fruts: {fileID: 1272295349}
-  GenerateCountOfBoostControll: {fileID: 0}
+  GenerateCountOfBoostControll: {fileID: 834010863}
   ChancesOfTypeBoost: 500000001100000003000000
   ChancesOfTypeCountBoost: 460000001900000005000000
   AwakingRewards: 010000000200000003000000
@@ -6460,9 +6460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f72dd720c314b44b830e4a5445377c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chance: {fileID: 0}
+  Chance: {fileID: 834010864}
   Fruits: {fileID: 1272295349}
-  ConvertAwakingMultiController: {fileID: 0}
+  ConvertAwakingMultiController: {fileID: 834010862}
+  HidePanel: {fileID: 1328068722}
 --- !u!4 &834010866
 Transform:
   m_ObjectHideFlags: 0
@@ -7845,8 +7846,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: -324}
-  m_SizeDelta: {x: 716.8654, y: 208.43}
+  m_AnchoredPosition: {x: 0.0000076294, y: -324}
+  m_SizeDelta: {x: 958.98, y: 208.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977142026
 MonoBehaviour:
@@ -11074,7 +11075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FruitCoins: {fileID: 591847393}
-  TextOfMultiFruitCoinsAfterPresige: {fileID: 910746161}
+  TextOfMultiFruitCoinsAfterPrestige: {fileID: 0}
 --- !u!1 &1223948681
 GameObject:
   m_ObjectHideFlags: 0
@@ -11691,6 +11692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FruitCoins: {fileID: 591847393}
   MultiFruitCoins: {fileID: 591847391}
+  TextOfMultiFruitCoinsAfterPrestige: {fileID: 0}
 --- !u!114 &1261134480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12211,6 +12213,7 @@ GameObject:
   - component: {fileID: 1288674501}
   - component: {fileID: 1288674502}
   - component: {fileID: 1288674504}
+  - component: {fileID: 1288674503}
   m_Layer: 0
   m_Name: RebirthController
   m_TagString: Untagged
@@ -12285,6 +12288,21 @@ MonoBehaviour:
   - "\u042F\u0431\u043B\u043E\u043A\u043E"
   - "\u0411\u0430\u043D\u0430\u043D"
   - "\u0410\u043F\u0435\u043B\u044C\u0441\u0438\u043D"
+--- !u!114 &1288674503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288674498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78d301744ddc984dac6c47f538acfd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoostMulti: {fileID: 1288674504}
+  ConverterMultiFruitCoins: {fileID: 1261134479}
+  ConverterOfTetxtsRebirthPanels: {fileID: 1944039171}
 --- !u!114 &1288674504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12297,8 +12315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2c6764ca77faf47ba4b58cf0599424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rebith: {fileID: 1288674499}
-  FruitCoins: {fileID: 591847393}
+  Valute: {fileID: 591847389}
 --- !u!1 &1299254630
 GameObject:
   m_ObjectHideFlags: 0
@@ -12767,9 +12784,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TweenOfOpenAndClosePanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 834010865}
+        m_TargetAssemblyTypeName: BuyAwaking, Assembly-CSharp
+        m_MethodName: StartAwaking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15149,7 +15166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4199f907058b948a7f74c81b60181b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FruitCoins: {fileID: 0}
+  FruitCoins: {fileID: 591847393}
   Upgrades: {fileID: 1572411483}
 --- !u!4 &1563987390
 Transform:
@@ -16246,9 +16263,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1261134479}
-          m_TargetAssemblyTypeName: ConvertingMultiFruitCoins, Assembly-CSharp
-          m_MethodName: ConvertFruitCoinsToMultiFruitCoins
+        - m_Target: {fileID: 1288674503}
+          m_TargetAssemblyTypeName: LoadAllValuesOfRebirthPanel, Assembly-CSharp
+          m_MethodName: LoadValuesOfRebirthPanel
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -21893,8 +21910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 650, y: -4.0975}
-  m_SizeDelta: {x: 238.6767, y: 110.147}
+  m_AnchoredPosition: {x: 650, y: -0.000041962}
+  m_SizeDelta: {x: 238.677, y: 118.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113842421
 MonoBehaviour:
