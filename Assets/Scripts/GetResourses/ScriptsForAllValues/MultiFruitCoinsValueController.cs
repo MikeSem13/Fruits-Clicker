@@ -94,9 +94,9 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
 
    private void Start()
    {
-      BasicValue = PlayerPrefs.GetInt("MultiFruitCoins");
-      BillionValue = PlayerPrefs.GetInt("MultiFruitCoinsBillion");
-      QuintillionValue = PlayerPrefs.GetInt("MultiFruitCoinsQuintillion");
+      BasicValue = PlayerPrefs.GetFloat("MultiFruitCoins");
+      BillionValue = PlayerPrefs.GetFloat("MultiFruitCoinsBillion");
+      QuintillionValue = PlayerPrefs.GetFloat("MultiFruitCoinsQuintillion");
       
       MultiOfMultiFruitCoinsForRebirth = PlayerPrefs.GetInt("MultiMultoFruitCoinsOfRebirth");
       MultiFromAwakingMultiFruit = PlayerPrefs.GetInt("MultiAwakingMultiFruit");

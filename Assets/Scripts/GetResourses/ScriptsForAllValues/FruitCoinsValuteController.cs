@@ -89,21 +89,18 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
     
     public int MultiFromClick;
     public int MultiOfBonus;
-    public int MultiOfRebirth;
+    public float MultiOfRebirth;
     public int MultiOfFruits;
     public int MultiOfGoldOrDimondsFruits;
     public int MultiFromAwakingFruitCoins;
 
     private void Start()
     {
-        BasicValue = PlayerPrefs.GetInt("FruitCoins");
-        BillionValue = PlayerPrefs.GetInt("FruitCoinsBillion");
-        QuintillionValue = PlayerPrefs.GetInt("FruitCoinsQuintillion");
+        LoadAllValues();
         
-        MainMulti = PlayerPrefs.GetInt("FruitCoinsMulti");
         MultiFromClick = PlayerPrefs.GetInt("FruitCoinsClickMulti");
         MultiOfBonus = PlayerPrefs.GetInt("FruitCoinsBonusMulti");
-        MultiOfRebirth = PlayerPrefs.GetInt("FruitCoinsRebirthMulti");
+        MultiOfRebirth = PlayerPrefs.GetFloat("FruitCoinsRebirthMulti");
         MultiOfFruits = PlayerPrefs.GetInt("FruitCoinsFruitMulti");
         MultiOfGoldOrDimondsFruits = PlayerPrefs.GetInt("FruitCoinsGoldAndDimondsMulti");
         MultiFromAwakingFruitCoins = PlayerPrefs.GetInt("FruitCoinsAwakingMulti");
@@ -111,6 +108,20 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         CheckMultis();
     }
 
+    public void SaveAllValues()
+    {
+        PlayerPrefs.SetFloat("FruitCoins", BasicValue);
+        PlayerPrefs.SetFloat("FruitCoinsBillion", BillionValue);
+        PlayerPrefs.SetFloat("FruitCoinsQuintillion", QuintillionValue);
+    }
+
+    public void LoadAllValues()
+    {
+        BasicValue = PlayerPrefs.GetFloat("FruitCoins");
+        BillionValue = PlayerPrefs.GetFloat("FruitCoinsBillion");
+        QuintillionValue = PlayerPrefs.GetFloat("FruitCoinsQuintillion");
+    }
+    
     private void Update()
     {
         SetMainMultiFruitCoins();
@@ -128,6 +139,9 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         QuintillionValue = 0;
         
         MultiFromClick = 1;
+
+        PlayerPrefs.SetFloat("FruitCoinsClickMulti", MultiFromClick);
+        SaveAllValues();
     }
     
     public void CheckMultis()
@@ -162,9 +176,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
 
     public void AddValute()
     {
-        BasicValue += (int)MainMulti; 
-        PlayerPrefs.SetFloat("FruitCoins", BasicValue);
-        PlayerPrefs.SetFloat("FruitCoinsBillion", BillionValue);
-        PlayerPrefs.SetFloat("FruitCoinsQuintillion", QuintillionValue);
+        BasicValue += (int)MainMulti;
+        SaveAllValues();
     }
 }

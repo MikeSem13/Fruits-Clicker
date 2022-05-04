@@ -93,11 +93,10 @@ public class FruitDimondsValueController : MonoBehaviour, IValuteController
 
    private void Start()
    {
-      BasicValue = PlayerPrefs.GetInt("FruitDimonds");
-      BillionValue = PlayerPrefs.GetInt("FruitDimondsBillion");
-      QuintillionValue = PlayerPrefs.GetInt("FruitDimondsQuintillion");
+      BasicValue = PlayerPrefs.GetFloat("FruitDimonds");
+      BillionValue = PlayerPrefs.GetFloat("FruitDimondsBillion");
+      QuintillionValue = PlayerPrefs.GetFloat("FruitDimondsQuintillion");
       
-      MainMulti = PlayerPrefs.GetInt("FruitDimondsMulti");
       MultiDimondsFromClick = PlayerPrefs.GetInt("FruitDimondsClickMulti");
       MultiFromAwakingFruitDimonds = PlayerPrefs.GetInt("FruitDimondsAwakingMulti");
       percent = PlayerPrefs.GetFloat("PersentOfDimonds");

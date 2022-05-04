@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52f264846eb7b45aa731076e72c40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Upgrades: {fileID: 0}
+  Upgrades: {fileID: 1851672235}
 --- !u!1 &18198816
 GameObject:
   m_ObjectHideFlags: 0
@@ -7484,7 +7484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40d6e8b162213b4cb97bb8a403ab09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Upgrades: {fileID: 0}
+  Upgrades: {fileID: 1851672235}
   LevelOfFruit: {fileID: 2129077091}
 --- !u!1 &963194225
 GameObject:
@@ -12234,6 +12234,7 @@ MonoBehaviour:
   MultiFruitCoins: {fileID: 591847391}
   Valutes: {fileID: 591847389}
   ResetUpgrades: {fileID: 1563987389}
+  HideButton: {fileID: 1920152747}
   ButtonOfRebirth: {fileID: 1920152742}
   CountOfRebirth: 0
 --- !u!4 &1288674500
@@ -12296,7 +12297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2c6764ca77faf47ba4b58cf0599424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Valute: {fileID: 591847389}
+  Rebith: {fileID: 1288674499}
   FruitCoins: {fileID: 591847393}
 --- !u!1 &1299254630
 GameObject:
@@ -18966,6 +18967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1851672234}
+  - component: {fileID: 1851672235}
   m_Layer: 0
   m_Name: UpgradesControll
   m_TagString: Untagged
@@ -18989,6 +18991,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1851672235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851672233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac15d8137005d642b32447b96d6b5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Valute: {fileID: 591847389}
 --- !u!1 &1852899928
 GameObject:
   m_ObjectHideFlags: 0
@@ -19229,7 +19244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1130cc30488a1b44a150812ae4f74c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Upgrades: {fileID: 0}
+  Upgrades: {fileID: 1851672235}
   BonusMulti: {fileID: 1261134480}
   TimerController: {fileID: 278162678}
   GoldBoost: {fileID: 278162676}
@@ -20872,49 +20887,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003391818}
   m_CullTransparentMesh: 1
---- !u!1 &2011790311
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2011790313}
-  - component: {fileID: 2011790312}
-  m_Layer: 0
-  m_Name: Big integer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2011790312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011790311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7306a12a070a442ad20404b8972b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2011790313
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011790311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1470592, y: 4.3820295, z: -34.138866}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2024669231
 GameObject:
   m_ObjectHideFlags: 0
@@ -21733,7 +21705,7 @@ MonoBehaviour:
   - 901
   - 1592
   multi: 
-  MaxLevel: 20
+  MaxLevel: 10
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
 --- !u!1 &2057104309
