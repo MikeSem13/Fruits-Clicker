@@ -101,12 +101,7 @@ public class FruitDimondsValueController : MonoBehaviour, IValuteController
 
       CheckMultisAndpercent();
    }
-
-   private void Update()
-   {
-      SetMainMultiFruitDimonds();
-   }
-
+   
    public void SaveAllValues()
    {
       PlayerPrefs.SetFloat("FruitDimonds", BasicValue);
@@ -161,6 +156,7 @@ public class FruitDimondsValueController : MonoBehaviour, IValuteController
    
    public void AddValute()
    {
+      SetMainMultiFruitDimonds();
       Chance = Random.Range(0, 100);
       if (Chance < percent) BasicValue += MainMulti;
       

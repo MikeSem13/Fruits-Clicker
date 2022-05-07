@@ -25,9 +25,9 @@ public class ConvertAnyValueToText : MonoBehaviour
        {
            case Values.Basic:
                if (ValuteController.BasicValue < 1000) TextOfValute.text = ValuteController.BasicValue.ToString("0");
-               if (ValuteController.BasicValue >= 1000) TextOfValute.text = Math.Round(ValuteController.BasicValue / 1000,1) + "k";
+               if (ValuteController.BasicValue >= 1000) TextOfValute.text = (ValuteController.BasicValue / 1000).ToString("#.#") + "k";
                if (ValuteController.BasicValue >= 10000) TextOfValute.text = (ValuteController.BasicValue / 1000).ToString("0") + "k";
-               if (ValuteController.BasicValue >= 999500) TextOfValute.text = Math.Round(ValuteController.BasicValue / (1000 * 1000),1) + "M";
+               if (ValuteController.BasicValue >= 999500) TextOfValute.text = (ValuteController.BasicValue / (1000 * 1000)).ToString("#.#") + "M";
                if (ValuteController.BasicValue >= 10000000) TextOfValute.text = (ValuteController.BasicValue / (1000 * 1000)).ToString("0") + "M";
                break;
            case Values.Billons:
@@ -43,11 +43,11 @@ public class ConvertAnyValueToText : MonoBehaviour
 
    public void ConvertMoreHightValues(float Value, Text TextOfValue, string Firstvalue, string SecondValue, string ThirdValue)
    {
-       if (Value >= 1) TextOfValue.text = Math.Round(Value,1) + Firstvalue;
+       if (Value >= 1) TextOfValue.text = Value.ToString("#.#") + Firstvalue;
        if (Value >= 10) TextOfValue.text = (Value).ToString("0") + Firstvalue;
-       if (Value >= 1000) TextOfValue.text =  Math.Round(Value / 1000,1) + SecondValue;
+       if (Value >= 1000) TextOfValue.text =  (Value / 1000).ToString("#.#") + SecondValue;
        if (Value >= 10000) TextOfValue.text = (Value / 1000).ToString("0") + SecondValue;
-       if (Value >= 999500) TextOfValue.text =  Math.Round(Value / (1000 * 1000),1) + ThirdValue;
+       if (Value >= 999500) TextOfValue.text = (Value / (1000 * 1000)).ToString("#.#") + ThirdValue;
        if (Value >= 10000000) TextOfValue.text = (Value / (1000 * 1000)).ToString("0") + ThirdValue;
    }
 }

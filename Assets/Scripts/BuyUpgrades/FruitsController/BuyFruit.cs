@@ -8,9 +8,10 @@ public class BuyFruit : MonoBehaviour
 {
    // Needed Classes
    public FruitCoinsValuteController FruitCoins;
-   public ValuteController Valutes;
+   public TakeValuteController TakeValute;
    public ControllCurrentFruitInList ControllCurrentFruitInList;
    public FruitsController ControllFruits;
+   public HidePanelButton HideButton;
    public List<DescriberForFruitsInList> Desctiber;
    public List<DescriberForFruitsInList> AllFruitsDesctiber;
 
@@ -26,11 +27,12 @@ public class BuyFruit : MonoBehaviour
    // Method Of Buy Fruits
    public void BuyFruits()
    {
-      if (Valutes.IMultiFruitCoins.BasicValue >= Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price & Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying == false)
+      if (TakeValute.Valute.IMultiFruitCoins.BasicValue >= Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price & Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying == false)
       {
-         Valutes.TakeAnyValueOfValute(global::Valutes.MultiFruitCoins, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].ValueOfPriceFruit, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price);
+         TakeValute.TakeAnyValueOfValute(global::Valutes.MultiFruitCoins, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].ValueOfPriceFruit, Values.Basic,Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price);
          SetMultiOfFruits();
          Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying = true;
+         HideButton.DoHidePanel();
       }
    }
 

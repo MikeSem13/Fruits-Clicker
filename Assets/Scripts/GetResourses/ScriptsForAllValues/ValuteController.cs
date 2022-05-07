@@ -41,41 +41,6 @@ public class ValuteController : MonoBehaviour
                 break;
         }
     }
-
-    public void TakeAnyValueOfValute(Valutes valute,Values Value,int price)
-    {
-        switch (valute)
-        {
-            case Valutes.FruitCoins:
-                TakeAnyValue(IFruitCoins,Value,price);
-                FruitCoins.SaveAllValues();
-                break;
-            case Valutes.FruitDimonds:
-                TakeAnyValue(IFruitDimonds,Value,price);
-                FruitDimonds.SaveAllValues();
-                break;
-            case Valutes.MultiFruitCoins:
-                TakeAnyValue(IMultiFruitCoins,Value,price);
-                MultiFruitCoins.SaveAllValues();
-                break;
-        }
-    }
-    
-    public void TakeAnyValue(IValuteController Valute,Values Value,int price)
-    {
-        switch (Value)
-        {
-            case Values.Basic:
-                Valute.BasicValue += -price;
-                break;
-            case Values.Billons:
-                Valute.BillionValue += -price;
-                break;
-            case Values.Quintillions:
-                Valute.QuintillionValue += -price;
-                break;
-        }
-    }
 }
 
 public enum Valutes

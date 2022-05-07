@@ -101,12 +101,6 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
       
       CheckMultisOfMultiFruitCoins();
    }
-
-   private void Update()
-   {
-      SetMainMultiMultiFruitCoins();
-   }
-
    public void SaveAllValues()
    {
       PlayerPrefs.SetFloat("MultiFruitCoins", BasicValue);
@@ -160,9 +154,9 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
 
    public void AddValute()
    {
+      SetMainMultiMultiFruitCoins();
+      
       BasicValue += MultiFruitCoinsAfterRebirth;
-      PlayerPrefs.SetFloat("MultiFruitCoins", BasicValue);
-      PlayerPrefs.SetFloat("MultiFruitCoinsBillion", BillionValue);
-      PlayerPrefs.SetFloat("MultiFruitCoinsQuintillion", QuintillionValue);
+      SaveAllValues();
    }
 }

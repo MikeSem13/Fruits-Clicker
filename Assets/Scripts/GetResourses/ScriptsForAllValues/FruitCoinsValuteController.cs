@@ -11,6 +11,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
     public Valutes Valute;
     
     public Values CurrentValue;
+
     public Values CurrentValueOfMulti;
 
     [Header("Размеры валют")]
@@ -121,11 +122,6 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
         BillionValue = PlayerPrefs.GetFloat("FruitCoinsBillion");
         QuintillionValue = PlayerPrefs.GetFloat("FruitCoinsQuintillion");
     }
-    
-    private void Update()
-    {
-        SetMainMultiFruitCoins();
-    }
 
     public void SetMainMultiFruitCoins()
     {
@@ -176,6 +172,7 @@ public class FruitCoinsValuteController : MonoBehaviour, IValuteController
 
     public void AddValute()
     {
+        SetMainMultiFruitCoins();
         BasicValue += (int)MainMulti;
         SaveAllValues();
     }
