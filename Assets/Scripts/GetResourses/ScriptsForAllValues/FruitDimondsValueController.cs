@@ -93,23 +93,29 @@ public class FruitDimondsValueController : MonoBehaviour, IValuteController
 
    private void Start()
    {
-      BasicValue = PlayerPrefs.GetInt("FruitDimonds");
-      BillionValue = PlayerPrefs.GetInt("FruitDimondsBillion");
-      QuintillionValue = PlayerPrefs.GetInt("FruitDimondsQuintillion");
+      LoadAllValues();
       
-      MainMulti = PlayerPrefs.GetInt("FruitDimondsMulti");
       MultiDimondsFromClick = PlayerPrefs.GetInt("FruitDimondsClickMulti");
       MultiFromAwakingFruitDimonds = PlayerPrefs.GetInt("FruitDimondsAwakingMulti");
       percent = PlayerPrefs.GetFloat("PersentOfDimonds");
 
       CheckMultisAndpercent();
    }
-
-   private void Update()
+   
+   public void SaveAllValues()
    {
-      SetMainMultiFruitDimonds();
+      PlayerPrefs.SetFloat("FruitDimonds", BasicValue);
+      PlayerPrefs.SetFloat("FruitDimondsBillion", BillionValue);
+      PlayerPrefs.SetFloat("FruitDimondsQuintillion", QuintillionValue);
    }
 
+   public void LoadAllValues()
+   {
+      BasicValue = PlayerPrefs.GetFloat("FruitDimonds");
+      BillionValue = PlayerPrefs.GetFloat("FruitDimondsBillion");
+      QuintillionValue = PlayerPrefs.GetFloat("FruitDimondsQuintillion");
+   }
+   
    public void SetMainMultiFruitDimonds()
    {
       MainMulti = MultiDimondsFromClick * MultiFromAwakingFruitDimonds;
@@ -150,6 +156,7 @@ public class FruitDimondsValueController : MonoBehaviour, IValuteController
    
    public void AddValute()
    {
+      SetMainMultiFruitDimonds();
       Chance = Random.Range(0, 100);
       if (Chance < percent) BasicValue += MainMulti;
       

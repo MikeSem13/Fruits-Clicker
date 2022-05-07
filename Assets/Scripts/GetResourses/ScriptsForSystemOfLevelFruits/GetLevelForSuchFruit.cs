@@ -27,7 +27,7 @@ public class GetLevelForSuchFruit : MonoBehaviour
        
        for (int i = 0; i < Describers.Count; i++)
        {
-           Describers[i].CountOfClicksToLevelUpFruit[Describers[i].LevelOfFruit] = PlayerPrefs.GetInt(i + "CountClicks");
+           Describers[i].CurrentClickOfLevel = PlayerPrefs.GetInt("CountClicks" + i);
        }
    }
 
@@ -40,7 +40,7 @@ public class GetLevelForSuchFruit : MonoBehaviour
 
        for (int i = 0; i < Describers.Count; i++)
        {
-           PlayerPrefs.SetInt(i + "CountClicks", Describers[i].CountOfClicksToLevelUpFruit[Describers[i].LevelOfFruit]);   
+           PlayerPrefs.SetInt("CountClicks" + i, Describers[i].CurrentClickOfLevel);   
        }
    }
 

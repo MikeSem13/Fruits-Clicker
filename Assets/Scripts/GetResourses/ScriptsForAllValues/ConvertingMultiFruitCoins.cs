@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ConvertingMultiFruitCoins : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class ConvertingMultiFruitCoins : MonoBehaviour
     public MultiFruitCoinsValueController MultiFruitCoins;
 
     private int _multiOfAdd;
-    
+
     public void ConvertFruitCoinsToMultiFruitCoins()
     {
         float FruitCoinsToConvert = FruitCoins.BillionValue;
@@ -15,13 +16,17 @@ public class ConvertingMultiFruitCoins : MonoBehaviour
       
         float FirstCountOfCoins = 1f;
         float SecondCountOfCoins = 0.5f;
+        float ThirdCountOfCoins = 0.25f;
+        float FourthCountOfCoins = 0.10f;
 
         int FirstMark = 15;
         int SecondMark = 250;
+        int ThirdMark = 1000;
+        int FourthMark = 75000;
 
-        int LastMark = SecondMark;
+        int LastMark = FourthMark;
         
-        for (int i = 0; FruitCoinsToConvert > 0 ; i++)
+        for (int i = 0; FruitCoinsToConvert >= 1 ; i++)
         {
             if (i < FirstMark)
             {
@@ -31,9 +36,17 @@ public class ConvertingMultiFruitCoins : MonoBehaviour
             {
                 StorageOfMultiFruitCoins += SecondCountOfCoins;
             }
+            else if(i < ThirdMark)
+            {
+                StorageOfMultiFruitCoins += ThirdCountOfCoins;
+            }
+            else if(i < FourthMark)
+            {
+                StorageOfMultiFruitCoins += FourthCountOfCoins;
+            }
             else if(i > LastMark)
             {
-                StorageOfMultiFruitCoins += SecondCountOfCoins;
+                StorageOfMultiFruitCoins += FourthCountOfCoins;
             }
 
             FruitCoinsToConvert -= 1;

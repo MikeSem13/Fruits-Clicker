@@ -17,7 +17,7 @@ public class CreateATextsOfFruitCoins : MonoBehaviour
    {
       ControllOfMotionOfTexts TextClone = Instantiate(Text.gameObject).GetComponent<ControllOfMotionOfTexts>();
       TextClone.transform.SetParent(Spawner.transform);
-      TextClone.StartMotion((int) FruitCoins.MainMulti);
+      TextClone.StartMotion(FruitCoins.MainMulti);
       Destroy(TextClone.gameObject, 3.5f);
    }
 

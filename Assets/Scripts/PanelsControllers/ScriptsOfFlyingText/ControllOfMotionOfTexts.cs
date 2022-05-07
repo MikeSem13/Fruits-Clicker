@@ -13,8 +13,6 @@ public class ControllOfMotionOfTexts : MonoBehaviour
     public bool Move;
 
     private Vector2 Vector;
-    public int MultiOfSpeed;
-    
 
     private void FixedUpdate()
     {
@@ -37,9 +35,9 @@ public class ControllOfMotionOfTexts : MonoBehaviour
     public void TextConverter(float FruitCoins)
     {
         if (FruitCoins <= 999) GetComponent<Text>().text = "+" + FruitCoins.ToString("0");
-        if (FruitCoins > 999 && FruitCoins <= 9999)  GetComponent<Text>().text = "+" + Math.Round((decimal) (FruitCoins / 1000),1) + "k";
+        if (FruitCoins > 999 && FruitCoins <= 9999)  GetComponent<Text>().text = "+" + Math.Round((FruitCoins / 1000),1) + "k";
         if (FruitCoins > 9999 && FruitCoins <= 999999)  GetComponent<Text>().text = "+" + (FruitCoins / 1000).ToString("0") + "k";
-        if (FruitCoins > 999999 && FruitCoins <= 99999999)  GetComponent<Text>().text = "+" + Math.Round((decimal) (FruitCoins / (1000 * 1000)),1) + "M";
-        if (FruitCoins > 99999999 && FruitCoins <= 999999999)  GetComponent<Text>().text = "+" + (FruitCoins / (1000 * 1000)).ToString("0") + "M";
+        if (FruitCoins > 999999 && FruitCoins <= 9999999)  GetComponent<Text>().text = "+" + Math.Round((FruitCoins / (1000 * 1000)),1) + "M";
+        if (FruitCoins > 9999999 && FruitCoins <= 999999999)  GetComponent<Text>().text = "+" + (FruitCoins / (1000 * 1000)).ToString("0") + "M";
     }
 }

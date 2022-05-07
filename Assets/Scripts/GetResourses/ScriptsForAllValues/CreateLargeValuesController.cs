@@ -42,36 +42,60 @@ public class CreateLargeValuesController : MonoBehaviour
         {
             case global::Valutes.FruitCoins:
             {
-                ConvertToNextValues(Valutes.IFruitCoins);
+                StartOfConvertToNextValues(Valutes.IFruitCoins);
+                ConvertAfterStartNextValues(Valutes.FruitCoins);
             }
                 break;
             case global::Valutes.FruitDimonds:
             {
-                ConvertToNextValues(Valutes.IFruitDimonds);
+                StartOfConvertToNextValues(Valutes.IFruitDimonds);
+                ConvertAfterStartNextValues(Valutes.FruitDimonds);
             }
                 break;
             case global::Valutes.MultiFruitCoins:
             {
-                ConvertToNextValues(Valutes.IMultiFruitCoins);
+                StartOfConvertToNextValues(Valutes.IMultiFruitCoins);
+                ConvertAfterStartNextValues(Valutes.MultiFruitCoins);
             }
                 break;
         }
     }
     
-    public void ConvertToNextValues(IValuteController Valute)
+    
+    public void StartOfConvertToNextValues(IValuteController Valute)
     {
-        if (Valute.BasicValue >= BoardOfAddValutes)
+        if (Valute.BasicValue >= BoardOfAddValutes && Valute.BillionValue < 1)
         {
             Valute.BillionValue += 1;
             Valute.BasicValue -= BoardOfAddValutes;
         }
-        if (Valute.BillionValue >= BoardOfAddValutes)
+        if (Valute.BillionValue >= BoardOfAddValutes && Valute.QuintillionValue < 1)
         { 
             Valute.QuintillionValue += 1; 
             Valute.BillionValue -= BoardOfAddValutes;
         }
     }
 
+    public void ConvertAfterStartNextValues(IValuteController Valute)
+    {
+        if (Valute.BillionValue >= 1)
+        {
+            if (Valute.BasicValue >= 100000000)
+            {
+                Valute.BillionValue += 0.1f;
+                Valute.BasicValue += -100000000;
+            }
+        }
+        if (Valute.QuintillionValue >= 1)
+        {
+            if (Valute.BillionValue >= 100000000)
+            {
+                Valute.QuintillionValue += 0.1f;
+                Valute.BillionValue += -100000000;
+            }
+        }
+    }
+    
     public void ControllValueOfValute(Valutes Valute)
     {
         switch (Valute)
@@ -91,9 +115,9 @@ public class CreateLargeValuesController : MonoBehaviour
     public void ControllTypeOfValueAnyValute(IValuteController ValuteController)
     {
         // FruitСoins Values
-        if (ValuteController.BillionValue == 0) ValuteController.SetValuesOfValute(Values.Basic);
-        if (ValuteController.BillionValue > 0) ValuteController.SetValuesOfValute(Values.Billons);
-        if (ValuteController.QuintillionValue > 0) ValuteController.SetValuesOfValute(Values.Quintillions);
+        if (ValuteController.BillionValue < 1) ValuteController.SetValuesOfValute(Values.Basic);
+        if (ValuteController.BillionValue >= 1) ValuteController.SetValuesOfValute(Values.Billons);
+        if (ValuteController.QuintillionValue >= 1) ValuteController.SetValuesOfValute(Values.Quintillions);
     }
 }
 

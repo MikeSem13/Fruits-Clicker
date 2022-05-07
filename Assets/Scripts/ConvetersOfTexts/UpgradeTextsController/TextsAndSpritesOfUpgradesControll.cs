@@ -116,8 +116,11 @@ public class TextsAndSpritesOfUpgradesControll : MonoBehaviour
     {
         if (Buttons[i].TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade)
         {
-            if(Buttons[i].multi[Buttons[i].CurrentLevel] <= 999) TextsOfMulti[i].text = "+" + Buttons[i].multi[Buttons[i].CurrentLevel].ToString();   
-            if(Buttons[i].multi[Buttons[i].CurrentLevel] > 999) TextsOfMulti[i].text = "+" + Math.Round((float)Buttons[i].multi[Buttons[i].CurrentLevel] / 1000, 1) + "k";   
+            if(Buttons[i].multi[Buttons[i].CurrentLevel] <= 999) TextsOfMulti[i].text = "+" + Buttons[i].multi[Buttons[i].CurrentLevel];   
+            if(Buttons[i].multi[Buttons[i].CurrentLevel] > 999) TextsOfMulti[i].text = "+" + Math.Round((float)Buttons[i].multi[Buttons[i].CurrentLevel] / 1000, 1) + "k";
+            if(Buttons[i].multi[Buttons[i].CurrentLevel] > 9999) TextsOfMulti[i].text = "+" + Buttons[i].multi[Buttons[i].CurrentLevel] / 1000;   
+            if(Buttons[i].multi[Buttons[i].CurrentLevel] > 999999) TextsOfMulti[i].text = "+" + Math.Round((float)Buttons[i].multi[Buttons[i].CurrentLevel] / (1000 * 1000), 1) + "M";
+            if(Buttons[i].multi[Buttons[i].CurrentLevel] > 9999999) TextsOfMulti[i].text = "+" + Buttons[i].multi[Buttons[i].CurrentLevel] / (1000 / 1000) + "M";
         }
     }
 }

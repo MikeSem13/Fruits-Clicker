@@ -41,13 +41,18 @@ public class ConvertTextsOfInformPanel : MonoBehaviour
         TextOfMultiFruit.text = Describer.multi.ToString();
         TextOfMultiAwaking.text = Describer.CountOfMultiAwaking.ToString();
 
-        if (Describer.fruits == Fruits.Apple) TextOfNameFruit.text = "Яблоко";
-        if (Describer.fruits == Fruits.Banana) TextOfNameFruit.text = "Банан";
-        if (Describer.fruits == Fruits.Orange) TextOfNameFruit.text = "Апельсин";
-        
+        SetNameOfFruit(Describer,Fruits.Apple,"Яблоко");
+        SetNameOfFruit(Describer,Fruits.Banana,"Банан");
+        SetNameOfFruit(Describer,Fruits.Orange,"Апельсин");
+
         SetSpritesAndTexts(Describer);
     }
 
+    public void SetNameOfFruit(DescriberForFruitsInList Describer, Fruits fruit, string NameOfFruit)
+    {
+        if (Describer.fruits == fruit) TextOfNameFruit.text = NameOfFruit;
+    }
+    
     public void SetSpritesAndTexts(DescriberForFruitsInList Describer)
     {
         if (Describer.CurrentAwakingInString == TypesOfAwaking.FruitCoinsAwaking.ToString())

@@ -7,11 +7,10 @@ public class RebirthBoostMulti : MonoBehaviour
 {
    // Needed Classes
    public ValuteController Valute;
-   public FruitCoinsValuteController FruitCoins;
 
    // Method to define multi of Rebirth
-   public void Update()
+   public void SetMultiOfRebirth()
    { 
-      FruitCoins.MultiOfRebirth = (int)(Valute.IMultiFruitCoins.BasicValue / 10) + 1;
+      Valute.FruitCoins.MultiOfRebirth = (Valute.MultiFruitCoins.BasicValue / 100);
    }
 }

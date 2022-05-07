@@ -19,8 +19,11 @@ public class TextMaxControllerForUpgrades : MonoBehaviour
         Converter.ImagesOFButtons[i].gameObject.SetActive(false);
         if (Converter.Buttons[i].TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade)
         {
-            if(Converter.Buttons[i].multi.Sum() < 999)Converter.TextsOfMulti[i].text = "+" + Converter.Buttons[i].multi.Sum();   
-            if(Converter.Buttons[i].multi.Sum() > 999)Converter.TextsOfMulti[i].text = "+" + (Converter.Buttons[i].multi.Sum() / 1000)+ "k";   
+            if(Converter.Buttons[i].multi.Sum() < 999) Converter.TextsOfMulti[i].text = "+" + Converter.Buttons[i].multi.Sum();   
+            if(Converter.Buttons[i].multi.Sum() > 999) Converter.TextsOfMulti[i].text = "+" + Math.Round((float)Converter.Buttons[i].multi.Sum() / 1000, 1) + "k";
+            if(Converter.Buttons[i].multi.Sum() > 9999) Converter.TextsOfMulti[i].text = "+" + (Converter.Buttons[i].multi.Sum() / 1000) + "k";   
+            if(Converter.Buttons[i].multi.Sum() > 999999)  Converter.TextsOfMulti[i].text = "+" + Math.Round((float)Converter.Buttons[i].multi.Sum() / (1000 * 1000), 1) + "M";
+            if(Converter.Buttons[i].multi.Sum() > 9999999)  Converter.TextsOfMulti[i].text = "+" + (Converter.Buttons[i].multi.Sum() / (1000 * 1000)) + "M";   
         }
     }
 }

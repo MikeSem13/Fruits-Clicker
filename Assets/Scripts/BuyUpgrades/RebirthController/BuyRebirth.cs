@@ -13,22 +13,23 @@ public class BuyRebirth : MonoBehaviour
    public MultiFruitCoinsValueController MultiFruitCoins;
    public ValuteController Valutes;
    public ResetAllUpgradeOfFruit ResetUpgrades;
+   public HidePanelButton HideButton;
 
    // Button For Rebirth
    public Button ButtonOfRebirth;
 
    // Variabels for rebirth parametres
-   public int CountOfRebirth;
+   public float CountOfRebirth;
 
    // Save All Variables
    private void Start()
    {
-      CountOfRebirth = PlayerPrefs.GetInt("Crebirth");
+      CountOfRebirth = PlayerPrefs.GetFloat("Crebirth");
    }
 
    private void Update()
    {
-      PlayerPrefs.SetInt("Crebirth", CountOfRebirth);
+      PlayerPrefs.SetFloat("Crebirth", CountOfRebirth);
    }
 
    // Method for Start Rebirth
@@ -36,6 +37,7 @@ public class BuyRebirth : MonoBehaviour
    {
       if (MultiFruitCoins.MultiFruitCoinsAfterRebirth > 0)
       {
+         HideButton.DoHidePanel();
          ResetUpgrades.ResetUpgrades();
          Valutes.IMultiFruitCoins.AddValute();
          CountOfRebirth++;

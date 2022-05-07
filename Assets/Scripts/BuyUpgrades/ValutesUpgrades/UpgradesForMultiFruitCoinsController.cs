@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class UpgradesForMultiFruitCoinsController : MonoBehaviour
 {
-    public ValuteController Valutes;
+    public UpgradesController Upgrades;
     public GetLevelForSuchFruit LevelOfFruit;
 
     public void BuyMultiFruitUpgrades(BuyButtons BuyButton)
@@ -15,9 +15,9 @@ public class UpgradesForMultiFruitCoinsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel)
             {
-                if (Valutes.IMultiFruitCoins.BasicValue >= BuyButton.price[BuyButton.CurrentLevel])
+                if (Upgrades.TakeValute.Valute.IMultiFruitCoins.BasicValue >= BuyButton.price[BuyButton.CurrentLevel])
                 {
-                    Valutes.BuyUpgradeWithoutMultiForAnyValue(BuyButton,global::Valutes.MultiFruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                    Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,global::Valutes.MultiFruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
                     LevelOfFruit.AddCountOfScoresForClick();   
                 }
             }   
@@ -27,10 +27,10 @@ public class UpgradesForMultiFruitCoinsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel) 
             {
-                if (Valutes.IMultiFruitCoins.BasicValue >= BuyButton.price[BuyButton.CurrentLevel])
+                if (Upgrades.TakeValute.Valute.IMultiFruitCoins.BasicValue >= BuyButton.price[BuyButton.CurrentLevel])
                 {
-                    Valutes.BuyUpgradeWithoutMultiForAnyValue(BuyButton,global::Valutes.MultiFruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
-                    Valutes.MultiFruitCoins.AddMultiOfMultiFruitCoinsFroRebirth();   
+                    Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,global::Valutes.MultiFruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                    Upgrades.TakeValute.Valute.MultiFruitCoins.AddMultiOfMultiFruitCoinsFroRebirth();   
                 }
             }   
         }
@@ -39,10 +39,10 @@ public class UpgradesForMultiFruitCoinsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel)
             {
-                if (Valutes.IMultiFruitCoins.BasicValue >= BuyButton.price[BuyButton.CurrentLevel])
+                if (Upgrades.TakeValute.Valute.IMultiFruitCoins.BasicValue >= BuyButton.price[BuyButton.CurrentLevel])
                 {
-                    Valutes.BuyUpgradeWithoutMultiForAnyValue(BuyButton,global::Valutes.MultiFruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
-                    Valutes.AddClickMulti(global::Valutes.MultiFruitCoins,1);   
+                    Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,global::Valutes.MultiFruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                    Upgrades.TakeValute.Valute.AddClickMulti(global::Valutes.MultiFruitCoins,1);   
                 }
             }   
         }

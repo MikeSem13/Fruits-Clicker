@@ -94,21 +94,27 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
 
    private void Start()
    {
-      BasicValue = PlayerPrefs.GetInt("MultiFruitCoins");
-      BillionValue = PlayerPrefs.GetInt("MultiFruitCoinsBillion");
-      QuintillionValue = PlayerPrefs.GetInt("MultiFruitCoinsQuintillion");
+      LoadAllValues();
       
-      MultiOfMultiFruitCoinsForRebirth = PlayerPrefs.GetInt("MultiMultoFruitCoinsOfRebirth");
-      MultiFromAwakingMultiFruit = PlayerPrefs.GetInt("MultiAwakingMultiFruit");
+      MultiOfMultiFruitCoinsForRebirth = PlayerPrefs.GetFloat("MultiMultoFruitCoinsOfRebirth");
+      MultiFromAwakingMultiFruit = PlayerPrefs.GetFloat("MultiAwakingMultiFruit");
       
       CheckMultisOfMultiFruitCoins();
    }
-
-   private void Update()
+   public void SaveAllValues()
    {
-      SetMainMultiMultiFruitCoins();
+      PlayerPrefs.SetFloat("MultiFruitCoins", BasicValue);
+      PlayerPrefs.SetFloat("MultiFruitCoinsBillion", BillionValue);
+      PlayerPrefs.SetFloat("MultiFruitCoinsQuintillion", QuintillionValue);
    }
 
+   public void LoadAllValues()
+   {
+      BasicValue = PlayerPrefs.GetFloat("MultiFruitCoins");
+      BillionValue = PlayerPrefs.GetFloat("MultiFruitCoinsBillion");
+      QuintillionValue = PlayerPrefs.GetFloat("MultiFruitCoinsQuintillion");
+   }
+   
    public void AddMultiOfMultiFruitCoinsFroRebirth()
    {
       MultiOfMultiFruitCoinsForRebirth++;
@@ -148,9 +154,9 @@ public class MultiFruitCoinsValueController : MonoBehaviour, IValuteController
 
    public void AddValute()
    {
+      SetMainMultiMultiFruitCoins();
+      
       BasicValue += MultiFruitCoinsAfterRebirth;
-      PlayerPrefs.SetFloat("MultiFruitCoins", BasicValue);
-      PlayerPrefs.SetFloat("MultiFruitCoinsBillion", BillionValue);
-      PlayerPrefs.SetFloat("MultiFruitCoinsQuintillion", QuintillionValue);
+      SaveAllValues();
    }
 }

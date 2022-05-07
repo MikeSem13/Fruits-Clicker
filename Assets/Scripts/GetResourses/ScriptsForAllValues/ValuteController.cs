@@ -12,7 +12,6 @@ public class ValuteController : MonoBehaviour
     public FruitDimondsValueController FruitDimonds;
     public MultiFruitCoinsValueController MultiFruitCoins;
 
-    
     public IValuteController IFruitCoins;
     public IValuteController IFruitDimonds;
     public IValuteController IMultiFruitCoins;
@@ -39,109 +38,6 @@ public class ValuteController : MonoBehaviour
             case Valutes.FruitDimonds:
                 GetComponent<FruitDimondsValueController>().MultiDimondsFromClick += RewardMulti;
                 PlayerPrefs.SetInt("FruitDimondsClickMulti", GetComponent<FruitDimondsValueController>().MultiDimondsFromClick);
-                break;
-        }
-    }
-
-    public void TakeAnyValueOfValute(Valutes valute,Values Value,int price)
-    {
-        switch (valute)
-        {
-            case Valutes.FruitCoins:
-                TakeAnyValue(IFruitCoins,Value,price);
-                break;
-            case Valutes.FruitDimonds:
-                TakeAnyValue(IFruitDimonds,Value,price);
-                break;
-            case Valutes.MultiFruitCoins:
-                TakeAnyValue(IMultiFruitCoins,Value,price);
-                break;
-        }
-    }
-    
-    public void TakeAnyValue(IValuteController Valute,Values Value,int price)
-    {
-        switch (Value)
-        {
-            case Values.Basic:
-                Valute.BasicValue += -price;
-                PlayerPrefs.SetFloat("FruitCoins", IFruitCoins.BasicValue);
-                break;
-            case Values.Billons:
-                Valute.BillionValue += -price;
-                PlayerPrefs.SetFloat("FruitCoinsBillion", IFruitCoins.BillionValue);
-                break;
-            case Values.Quintillions:
-                Valute.QuintillionValue += -price;
-                PlayerPrefs.SetFloat("FruitCoinsQuintillion", IFruitCoins.QuintillionValue);
-                break;
-        }
-    }
-
-    public void BuyUpgradeWithMultiForAnyValue(BuyButtons BuyButtons, Valutes valute, Values Value, int price, int multi)
-    {
-        switch (Value)
-        {
-            case Values.Basic:
-                if (IFruitCoins.BasicValue > price)
-                {
-                    BuyButtons.CurrentLevel++;
-                    TakeAnyValueOfValute(Valutes.FruitCoins, Value, price);
-                    AddClickMulti(valute, multi);
-                }
-
-                break;
-            case Values.Billons:
-                if (IFruitCoins.BillionValue > price)
-                {
-                    BuyButtons.CurrentLevel++;
-                    TakeAnyValueOfValute(Valutes.FruitCoins, Value, price);
-                    AddClickMulti(valute, multi);
-                }
-
-                break;
-            case Values.Quintillions:
-                if (IFruitCoins.QuintillionValue > price)
-                {
-                    BuyButtons.CurrentLevel++;
-                    TakeAnyValueOfValute(Valutes.FruitCoins, Value, price);
-                    AddClickMulti(valute, multi);
-                }
-                break;
-        }
-    }
-
-    public void BuyUpgradeWithoutMultiForAnyValue(BuyButtons BuyButtons,Valutes valute,Values Value,int price)
-    {
-        switch (valute)
-        {
-            case Valutes.FruitDimonds:
-            {
-                BuyButtons.CurrentLevel++;
-                ChooseValueToTakeForUpgrades(valute,Value,price);
-            } 
-                break;
-            case Valutes.MultiFruitCoins:
-            {
-                BuyButtons.CurrentLevel++;
-                ChooseValueToTakeForUpgrades(valute,Value,price);
-            } 
-                break;
-        }
-    }
-
-    public void ChooseValueToTakeForUpgrades(Valutes valute,Values Value,int price)
-    {
-        switch (Value)
-        {
-            case Values.Basic:
-                TakeAnyValueOfValute(valute,Value,price);   
-                break;
-            case Values.Billons:
-                TakeAnyValueOfValute(valute,Value,price);   
-                break;
-            case Values.Quintillions:
-                TakeAnyValueOfValute(valute,Value,price);   
                 break;
         }
     }

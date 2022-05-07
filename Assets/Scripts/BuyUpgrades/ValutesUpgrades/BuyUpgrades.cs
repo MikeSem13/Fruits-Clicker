@@ -40,55 +40,24 @@ public class BuyUpgrades : MonoBehaviour
             if (Button.CurrentLevel < Button.MaxLevel - 1) ValueOfMinusLevel = 0;
             if (Button.CurrentLevel == Button.MaxLevel) ValueOfMinusLevel = 1;
          
-            if (ValueForBuy >= Button.price[Button.CurrentLevel - ValueOfMinusLevel] & Button.CurrentLevel < Button.MaxLevel)
-            {
-                Button.BackgroundOfButton.sprite = ActibeToBuy;
-            }
-            else
-            {
-                Button.BackgroundOfButton.sprite = NonActiveToBuy;
-            }
+            if (ValueForBuy >= Button.price[Button.CurrentLevel - ValueOfMinusLevel] & Button.CurrentLevel < Button.MaxLevel) Button.BackgroundOfButton.sprite = ActibeToBuy;
+            else Button.BackgroundOfButton.sprite = NonActiveToBuy;
 
-            if (Button.CurrentLevel == Button.MaxLevel)
-            {
-                Button.BackgroundOfButton.sprite = ActibeToBuy;
-            }
+            if (Button.CurrentLevel == Button.MaxLevel) Button.BackgroundOfButton.sprite = ActibeToBuy;
         }
     }
 
     public void SetValuteForBuy(BuyButtons Button, ValuteController ValuteController )
     {
-        if (Button.TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade)
-        {
-           SetValueForBuy(Button,ValuteController.IFruitCoins);
-        }
-      
-        if (Button.TypeOfUpgrade == TypesOfUpgrades.DimondsUpgrade)
-        {
-            SetValueForBuy(Button,ValuteController.IFruitDimonds);
-        }
-
-        if (Button.TypeOfUpgrade == TypesOfUpgrades.MultiFruitCoinsUpgrade)
-        {
-            SetValueForBuy(Button,ValuteController.IMultiFruitCoins);
-        }
+        if (Button.TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade) SetValueForBuy(Button,ValuteController.IFruitCoins);
+        if (Button.TypeOfUpgrade == TypesOfUpgrades.DimondsUpgrade) SetValueForBuy(Button,ValuteController.IFruitDimonds);
+        if (Button.TypeOfUpgrade == TypesOfUpgrades.MultiFruitCoinsUpgrade) SetValueForBuy(Button,ValuteController.IMultiFruitCoins);
     }
     
     public void SetValueForBuy(BuyButtons Button,IValuteController ValuteController)
     {
-        if (Button.Values == Values.Basic)
-        {
-            ValueForBuy = ValuteController.BasicValue;
-        }
-      
-        if (Button.Values == Values.Billons)
-        {
-            ValueForBuy = ValuteController.BillionValue;
-        }
-
-        if (Button.Values == Values.Quintillions)
-        {
-            ValueForBuy = ValuteController.QuintillionValue;
-        }
+        if (Button.Values == Values.Basic) ValueForBuy = ValuteController.BasicValue;
+        if (Button.Values == Values.Billons) ValueForBuy = ValuteController.BillionValue;
+        if (Button.Values == Values.Quintillions) ValueForBuy = ValuteController.QuintillionValue;
     }
 }
