@@ -12,8 +12,7 @@ public class DescriberForFruitsInList : MonoBehaviour
     public Fruits fruits;
     public TypesOfAwaking Awaking;
     public TypesOfCountBoost TypeOfCountBoost;
-    public Values ValueOfPriceFruit;
-    
+
     [Header("Переменные определяющие тип фрукта")]
     public String CurrentAwakingInString;
     public int LevelOfFruit;

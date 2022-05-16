@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class GoldAndDimondBoostController : MonoBehaviour
 {
-    public ValuteController Valutes;
-
     public float Chance;
     public float ProcentOfDimondBoost = 0.1f;
     
@@ -36,14 +34,14 @@ public class GoldAndDimondBoostController : MonoBehaviour
     {
         if (BoostActive == false)
         {
-            Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 1;
+            //Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 1;
         }
         if (BoostActive)
         {
             Chance = Random.Range(0f, 100f);
-            if (Chance < ProcentOfDimondBoost) Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 100;
-            else Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 10;
+            //if (Chance < ProcentOfDimondBoost) Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 100;
+            //else Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 10;
         }
-        PlayerPrefs.SetInt("FruitCoinsGoldAndDimondsMulti", Valutes.FruitCoins.MultiOfGoldOrDimondsFruits);
+        //PlayerPrefs.SetInt("FruitCoinsGoldAndDimondsMulti", Valutes.FruitCoins.MultiOfGoldOrDimondsFruits);
     }
 }

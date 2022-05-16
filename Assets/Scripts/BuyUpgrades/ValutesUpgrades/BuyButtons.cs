@@ -16,7 +16,6 @@ public class BuyButtons : MonoBehaviour, IPointerClickHandler
     public TypesOfDinondsUpgrades TypesOfDinondsUpgrades;
     public TypesOfMultiFruitCoinsUpgrades TypesOfMultiFruitCoinsUpgrades;
     [Header("Типы Размеров цен апргрейдов")]
-    public Values Values;
 
     // Prcie Of Upgrades
     [Header("Цены")]

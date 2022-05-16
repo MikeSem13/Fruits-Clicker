@@ -9,9 +9,6 @@ using UnityEngine.UIElements.Experimental;
 public class BuyRebirth : MonoBehaviour
 {
    // Nedded Classes
-   public FruitCoinsValuteController FruitCoins;
-   public MultiFruitCoinsValueController MultiFruitCoins;
-   public ValuteController Valutes;
    public ResetAllUpgradeOfFruit ResetUpgrades;
    public HidePanelButton HideButton;
 
@@ -35,13 +32,13 @@ public class BuyRebirth : MonoBehaviour
    // Method for Start Rebirth
    public void StartRebith()
    {
-      if (MultiFruitCoins.MultiFruitCoinsAfterRebirth > 0)
+     // if (MultiFruitCoins.MultiFruitCoinsAfterRebirth > 0)
       {
          HideButton.DoHidePanel();
          ResetUpgrades.ResetUpgrades();
-         Valutes.IMultiFruitCoins.AddValute();
+        // Valutes.IMultiFruitCoins.AddValute();
          CountOfRebirth++;
-         FruitCoins.ResetAllFruitCoinsAndMultiForRebirth();
+        // FruitCoins.ResetAllFruitCoinsAndMultiForRebirth();
       }
       StartRebirthAnimation();
    }

@@ -8,8 +8,7 @@ public class ChangeBasicFruitPnGoldOrDimond : MonoBehaviour
 {
    public FruitsController FruitsController;
    public GoldAndDimondBoostController GoldBoost;
-   public ValuteController Valutes;
-   
+
    public List<GameObject> Fruits;
    
    public List<Sprite> BasicSpritesOfFruits;
@@ -27,11 +26,11 @@ public class ChangeBasicFruitPnGoldOrDimond : MonoBehaviour
       if (GoldBoost.BoostActive == true)
       {
          Fruits[FruitsController.CurrentFruitInNumber].GetComponent<Image>().sprite = GoldSpritesOfFruits[FruitsController.CurrentFruitInNumber];
-         if (Valutes.FruitCoins.MultiOfGoldOrDimondsFruits == 100)
+        // if (Valutes.FruitCoins.MultiOfGoldOrDimondsFruits == 100)
          {
             Fruits[FruitsController.CurrentFruitInNumber].GetComponent<Image>().sprite = DimondSpritesOfFruits[FruitsController.CurrentFruitInNumber];
          }
-         else
+        //else
          {
             Fruits[FruitsController.CurrentFruitInNumber].GetComponent<Image>().sprite = GoldSpritesOfFruits[FruitsController.CurrentFruitInNumber];
          }  

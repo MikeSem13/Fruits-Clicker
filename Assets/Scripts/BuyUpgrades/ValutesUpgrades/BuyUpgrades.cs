@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BuyUpgrades : MonoBehaviour
 {
-    public ValuteController Valutes;
     public UpgradesForCoinsController CoinsUpgrade;
     public UpgradesForDimondsController DimondUpgrades;
     public UpgradesForMultiFruitCoinsController MultiFruitCoinsUpgrade;
@@ -34,7 +33,7 @@ public class BuyUpgrades : MonoBehaviour
     {
         foreach (BuyButtons Button in Buttons)
         {
-            SetValuteForBuy(Button,Valutes);
+            //SetValuteForBuy(Button,Valutes);
 
             int ValueOfMinusLevel = 0;
             if (Button.CurrentLevel < Button.MaxLevel - 1) ValueOfMinusLevel = 0;
@@ -47,17 +46,17 @@ public class BuyUpgrades : MonoBehaviour
         }
     }
 
-    public void SetValuteForBuy(BuyButtons Button, ValuteController ValuteController )
-    {
-        if (Button.TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade) SetValueForBuy(Button,ValuteController.IFruitCoins);
-        if (Button.TypeOfUpgrade == TypesOfUpgrades.DimondsUpgrade) SetValueForBuy(Button,ValuteController.IFruitDimonds);
-        if (Button.TypeOfUpgrade == TypesOfUpgrades.MultiFruitCoinsUpgrade) SetValueForBuy(Button,ValuteController.IMultiFruitCoins);
-    }
+   // public void SetValuteForBuy(BuyButtons Button, ValuteController ValuteController )
+   // {
+        //if (Button.TypeOfUpgrade == TypesOfUpgrades.CoinsUpgrade) SetValueForBuy(Button,ValuteController.IFruitCoins);
+        //if (Button.TypeOfUpgrade == TypesOfUpgrades.DimondsUpgrade) SetValueForBuy(Button,ValuteController.IFruitDimonds);
+        //if (Button.TypeOfUpgrade == TypesOfUpgrades.MultiFruitCoinsUpgrade) SetValueForBuy(Button,ValuteController.IMultiFruitCoins);
+   //}
     
-    public void SetValueForBuy(BuyButtons Button,IValuteController ValuteController)
-    {
-        if (Button.Values == Values.Basic) ValueForBuy = ValuteController.BasicValue;
-        if (Button.Values == Values.Billons) ValueForBuy = ValuteController.BillionValue;
-        if (Button.Values == Values.Quintillions) ValueForBuy = ValuteController.QuintillionValue;
-    }
+   //public void SetValueForBuy(BuyButtons Button,IValuteController ValuteController)
+   // {
+        //if (Button.Values == Values.Basic) ValueForBuy = ValuteController.BasicValue;
+        //if (Button.Values == Values.Billons) ValueForBuy = ValuteController.BillionValue;
+        //if (Button.Values == Values.Quintillions) ValueForBuy = ValuteController.QuintillionValue;
+   // }
 }

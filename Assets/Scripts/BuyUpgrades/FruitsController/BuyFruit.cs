@@ -7,8 +7,6 @@ using UnityEngine.Serialization;
 public class BuyFruit : MonoBehaviour
 {
    // Needed Classes
-   public FruitCoinsValuteController FruitCoins;
-   public TakeValuteController TakeValute;
    public ControllCurrentFruitInList ControllCurrentFruitInList;
    public FruitsController ControllFruits;
    public HidePanelButton HideButton;
@@ -27,9 +25,9 @@ public class BuyFruit : MonoBehaviour
    // Method Of Buy Fruits
    public void BuyFruits()
    {
-      if (TakeValute.Valute.IMultiFruitCoins.BasicValue >= Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price & Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying == false)
+      //if (TakeValute.Valute.IMultiFruitCoins.BasicValue >= Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price & Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying == false)
       {
-         TakeValute.TakeAnyValueOfValute(global::Valutes.MultiFruitCoins, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].ValueOfPriceFruit, Values.Basic,Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price);
+        // TakeValute.TakeAnyValueOfValute(global::Valutes.MultiFruitCoins, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].ValueOfPriceFruit, Values.Basic,Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price);
          SetMultiOfFruits();
          Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying = true;
          HideButton.DoHidePanel();
@@ -38,8 +36,8 @@ public class BuyFruit : MonoBehaviour
 
    public void SetMultiOfFruits()
    {
-      FruitCoins.MultiOfFruits = Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].multi;
-      PlayerPrefs.SetInt("FruitCoinsFruitMulti", FruitCoins.MultiOfFruits);
+     // FruitCoins.MultiOfFruits = Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].multi;
+     // PlayerPrefs.SetInt("FruitCoinsFruitMulti", FruitCoins.MultiOfFruits);
    }
    
    private void Start()

@@ -59,20 +59,20 @@ public class TextsAndSpritesOfUpgradesControll : MonoBehaviour
     
     public void ConvertValueOfPriceToText(BuyButtons BuyButton,int i)
     {
-        switch (BuyButton.Values)
-        {
-            case Values.Basic:
+        //switch (BuyButton.Values)
+       // {
+          //  case Values.Basic:
             {
                ConvertPriceOfBasicValueText(i);
             }
-                break;
-            case Values.Billons:
+               // break;
+          //  case Values.Billons:
                 ConvertPriceOfBiggerValuesText(i,"B","T","q");
-                break;
-            case Values.Quintillions:
+                //break;
+           // case Values.Quintillions:
                 ConvertPriceOfBiggerValuesText(i,"Q","S", "s");
-                break;
-        }
+                //break;
+        //}
     }
 
     public void ConvertPriceOfBasicValueText(int i)

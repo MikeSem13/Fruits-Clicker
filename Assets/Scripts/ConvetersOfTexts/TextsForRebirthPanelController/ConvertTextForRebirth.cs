@@ -10,9 +10,6 @@ public class ConvertTextForRebirth : MonoBehaviour
    // Needed Classes
    public BuyRebirth Rebirth;
    public FruitsController Fruits;
-   public MultiFruitCoinsValueController MultiFruitCoins;
-   public FruitCoinsValuteController FruitsCoins;
-
    // All Texts Of Rebirth Panel
    public Text TextForMultiOfFruits;
    public Text TextForCurrentFruit;
@@ -24,16 +21,16 @@ public class ConvertTextForRebirth : MonoBehaviour
    //Convert All values to Texts of Rebirth
    public void SetAllStatisticValues()
    {
-      ConvertAnyValueOfRebirthPanel(TextForMultiOfFruits, "Множитель Фруктов: ", FruitsCoins.MultiOfFruits);
+      //ConvertAnyValueOfRebirthPanel(TextForMultiOfFruits, "Множитель Фруктов: ", FruitsCoins.MultiOfFruits);
       ConvertAnyValueOfRebirthPanel(TextOfCountOfRebirth, "Количевство перерождений: ", Rebirth.CountOfRebirth);
-      ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoins, "Множитель фрукткоинов: ", FruitsCoins.MultiFromClick);
+     //ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoins, "Множитель фрукткоинов: ", FruitsCoins.MultiFromClick);
       ConvertAnyStringValueOfStatisticPanel(TextForCurrentFruit, "Текущий фрукт: ",Fruits.CurrentFruitInString);
    }
 
    public void SetAllMainRebirthPanelValues()
    {
-      ConvertValuesWithTouch(TextOfMultiOfRebirth, "Множитель перерождений: ", FruitsCoins.MultiOfRebirth);
-      ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoinsAfterPrestige, "", MultiFruitCoins.MultiFruitCoinsAfterRebirth);
+     // ConvertValuesWithTouch(TextOfMultiOfRebirth, "Множитель перерождений: ", FruitsCoins.MultiOfRebirth);
+      //ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoinsAfterPrestige, "", MultiFruitCoins.MultiFruitCoinsAfterRebirth);
    }
    
    public void ConvertValuesWithTouch(Text TextMulti, String NameOfString, float multi)

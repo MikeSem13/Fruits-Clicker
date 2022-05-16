@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 public class ResetAllUpgradeOfFruit : MonoBehaviour
 {
    // Needed Classes
-   public FruitCoinsValuteController FruitCoins;
    public BuyUpgrades Upgrades;
    
    // Method to Reset All Upgrades After Rebirth

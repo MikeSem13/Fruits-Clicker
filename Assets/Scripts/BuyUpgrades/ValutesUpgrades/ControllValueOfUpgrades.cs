@@ -23,13 +23,13 @@ public class ControllValueOfUpgrades : MonoBehaviour
 
    public void ControllValueOfUpgrade()
    {
-      SetValueOfUpgrade(BoardOfStartBillionValues,Values.Billons);
-      SetValueOfUpgrade(BoardOfStartQuintillionValues,Values.Quintillions);
+      //SetValueOfUpgrade(BoardOfStartBillionValues,Values.Billons);
+      //SetValueOfUpgrade(BoardOfStartQuintillionValues,Values.Quintillions);
    }
 
-   public void SetValueOfUpgrade(int Board,  Values Value)
-   {
-      if (BuyButton.CurrentLevel >= Board && Board != 0) BuyButton.Values = Value;
-      else if (BuyButton.CurrentLevel < BoardOfStartBillionValues) BuyButton.Values = Values.Basic;
-   }
+   //public void SetValueOfUpgrade(int Board,  Values Valute)
+   //{
+     // if (BuyButton.CurrentLevel >= Board && Board != 0) BuyButton.Values = Valute;
+     // else if (BuyButton.CurrentLevel < BoardOfStartBillionValues) BuyButton.Values = Values.Basic;
+   //}
 }

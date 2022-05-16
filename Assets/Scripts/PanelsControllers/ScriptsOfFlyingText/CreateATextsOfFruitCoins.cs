@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CreateATextsOfFruitCoins : MonoBehaviour
 {
-   public FruitCoinsValuteController FruitCoins;
+  // public FruitCoinsValuteController FruitCoins;
 
    public GameObject Spawner;
    public GameObject PrefabOfText;
@@ -17,7 +17,7 @@ public class CreateATextsOfFruitCoins : MonoBehaviour
    {
       ControllOfMotionOfTexts TextClone = Instantiate(Text.gameObject).GetComponent<ControllOfMotionOfTexts>();
       TextClone.transform.SetParent(Spawner.transform);
-      TextClone.StartMotion(FruitCoins.MainMulti);
+     // TextClone.StartMotion(FruitCoins.MainMulti);
       Destroy(TextClone.gameObject, 3.5f);
    }
 

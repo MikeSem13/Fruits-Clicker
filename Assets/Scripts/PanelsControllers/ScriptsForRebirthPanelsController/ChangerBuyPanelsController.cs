@@ -13,16 +13,15 @@ public class ChangerBuyPanelsController : MonoBehaviour
    public Sprite NonActiveBuyRebirthButton;
    
    // Needed Class for change color
-   public FruitCoinsValuteController FruitCoins;
 
    // Chnage Color Of Button follow count of Coins
    private void Update()
    {
-      if (FruitCoins.BillionValue > 0)
+      //if (FruitCoins.BillionValue > 0)
       {
          buyRebirthButton.image.sprite = ActiveBuyRebirthButton;
       }
-      else
+      //else
       {
          buyRebirthButton.image.sprite = NonActiveBuyRebirthButton;
       }

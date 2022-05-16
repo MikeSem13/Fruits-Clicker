@@ -11,7 +11,6 @@ public class ControllOnhectsInInformPanelAfterBuy : MonoBehaviour
    public BuyFruit Fruits;
    public FruitsController FruitsController;
    public ControllCurrentFruitInList ControllCurrentFruitInList;
-   [FormerlySerializedAs("MultiFruitCoins")] public MultiFruitCoinsValueController multiFruitCoinsValueController;
 
    // Button to buy fruits
    public Button ButtonOfBuyFruits;
@@ -58,11 +57,11 @@ public class ControllOnhectsInInformPanelAfterBuy : MonoBehaviour
          ImageOfBuyButton.gameObject.SetActive(true);
          TextOfBuyButton.text = Fruits.AllFruitsDesctiber[Fruits.ControllCurrentFruitInList.CurrentFruitsInNumberInList].price.ToString();
          
-         if (multiFruitCoinsValueController.BasicValue >= Fruits.AllFruitsDesctiber[Fruits.ControllCurrentFruitInList.CurrentFruitsInNumberInList].price)
+        // if (multiFruitCoinsValueController.BasicValue >= Fruits.AllFruitsDesctiber[Fruits.ControllCurrentFruitInList.CurrentFruitsInNumberInList].price)
          {
             ButtonOfBuyFruits.image.sprite = SpriteOfActiveBuyButton;
          }
-         else
+         //else
          {
             ButtonOfBuyFruits.image.sprite = SpriteOfNonActiveBuyButton;
          }

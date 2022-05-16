@@ -8,14 +8,13 @@ using UnityEngine.UI;
 
 public class UpgradesForCoinsController : MonoBehaviour
 {
-   public UpgradesController Upgrades;
-   
-   // Method to Buy Upgrade For Coins
+
+    // Method to Buy Upgrade For Coins
    public void BuyFruitCoinsUpgrade(BuyButtons BuyButton)
    {
       if (BuyButton.CurrentLevel < BuyButton.MaxLevel)
       {
-          Upgrades.BuyUpgradeWithMultiForAnyValue(BuyButton,global::Valutes.FruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel],BuyButton.multi[BuyButton.CurrentLevel]);
+         //Upgrades.BuyUpgradeWithMultiForAnyValue(BuyButton,global::Valutes.FruitCoins,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel],BuyButton.multi[BuyButton.CurrentLevel]);
       }
    }
 }
