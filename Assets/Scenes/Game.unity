@@ -3775,6 +3775,18 @@ MonoBehaviour:
           m_StringArgument: Fruit Coins
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 395444787}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &395444787
 Animator:
   serializedVersion: 3
@@ -4916,27 +4928,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Valutes:
   - NameOfValute: Fruit Coins
-    TextsOfValute:
-    - {fileID: 1223948682}
     Values:
     - ValueName: 'Basic '
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Thousen
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Million
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Billion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Trillion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Quadrillion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
+    TextsOfValute:
+    - {fileID: 1223948682}
     SybwolsOfValue:
     - 
     - k
@@ -4947,24 +4959,24 @@ MonoBehaviour:
     NumberOfValue: 0
     NumberOfMulti: 0
   - NameOfValute: Fruit Dimonds
-    TextsOfValute:
-    - {fileID: 298673140}
     Values:
     - ValueName: 'Basic '
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Thousen
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Million
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Billion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Trillion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
+    TextsOfValute:
+    - {fileID: 298673140}
     SybwolsOfValue:
     - 
     - k
@@ -4974,24 +4986,24 @@ MonoBehaviour:
     NumberOfValue: 0
     NumberOfMulti: 0
   - NameOfValute: MultiFruit Coins
-    TextsOfValute:
-    - {fileID: 2024669233}
     Values:
     - ValueName: 'Basic '
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Thousen
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Million
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Billion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
     - ValueName: Trillion
       Valute: 0
-      MultiOfValue: 0
+      MultiOfValute: 0
+    TextsOfValute:
+    - {fileID: 2024669233}
     SybwolsOfValue:
     - 
     - k
@@ -9699,6 +9711,18 @@ MonoBehaviour:
           m_StringArgument: Fruit Coins
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 395444787}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1111058287
 Animator:
   serializedVersion: 3
@@ -14300,29 +14324,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373f262629921654e93c769ad7e44c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AccountValutes: {fileID: 591847391}
+  accountValutesValriables: {fileID: 591847391}
   Upgrades:
   - NameOfUpgrade: Ripeness
     NameOfValute: Fruit Coins
     Prices:
     - Price: 500
-      Value: 0
+      PriceValue: 0
       NumberOfValuePrice: 0
     - Price: 500
-      Value: 1
+      PriceValue: 1
       NumberOfValuePrice: 0
     - Price: 500
-      Value: 2
+      PriceValue: 2
       NumberOfValuePrice: 0
     - Price: 500
-      Value: 3
+      PriceValue: 3
       NumberOfValuePrice: 0
     - Price: 500
-      Value: 4
+      PriceValue: 4
       NumberOfValuePrice: 0
     - Price: 500
-      Value: 5
+      PriceValue: 5
       NumberOfValuePrice: 0
+    Multis:
+    - Multi: 1
+      RewardMultiValue: 0
+      NumberOfValueMulti: 0
+    - Multi: 3
+      RewardMultiValue: 1
+      NumberOfValueMulti: 0
+    - Multi: 6
+      RewardMultiValue: 2
+      NumberOfValueMulti: 0
+    - Multi: 12
+      RewardMultiValue: 4
+      NumberOfValueMulti: 0
+    - Multi: 65
+      RewardMultiValue: 5
+      NumberOfValueMulti: 0
+    - Multi: 123
+      RewardMultiValue: 2
+      NumberOfValueMulti: 0
     ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
     CurrentPrice: 0
 --- !u!4 &1488049961
@@ -15006,6 +15049,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Fruit Coins
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 395444787}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1558081278

@@ -17,9 +17,9 @@ public class UpgradesForDimondsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel)
             {
-                //if (Upgrades.TakeValute.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
+                //if (Upgrades.TakeValuteForReward.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
                 {
-                   // Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValute.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                   // Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValuteForReward.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
                    // BonusMulti.AddProcent();   
                 }
             }
@@ -29,10 +29,10 @@ public class UpgradesForDimondsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel) 
             { 
-               // if (Upgrades.TakeValute.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
+               // if (Upgrades.TakeValuteForReward.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
                 {
-                    //Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValute.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
-                    //Upgrades.TakeValute.Valute.FruitDimonds.AddPercentForUpgrade();   
+                    //Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValuteForReward.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                    //Upgrades.TakeValuteForReward.Valute.FruitDimonds.AddPercentForUpgrade();   
                 }
             }   
         }
@@ -41,9 +41,9 @@ public class UpgradesForDimondsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel)
             {
-                //if (Upgrades.TakeValute.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
+                //if (Upgrades.TakeValuteForReward.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
                 {
-                   // Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValute.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                   // Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValuteForReward.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
                     TimerController.AddBoostSeconds();
                 }
             }   
@@ -53,9 +53,9 @@ public class UpgradesForDimondsController : MonoBehaviour
         {
             if (BuyButton.CurrentLevel < BuyButton.MaxLevel)
             {
-                //if (Upgrades.TakeValute.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
+                //if (Upgrades.TakeValuteForReward.Valute.IFruitDimonds.BasicValue >= (int)BuyButton.price[BuyButton.CurrentLevel])
                 {
-                    //Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValute.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
+                    //Upgrades.BuyUpgradeWithoutMultiForAnyValue(BuyButton,Upgrades.TakeValuteForReward.Valute.FruitDimonds.Valute,BuyButton.Values,(int)BuyButton.price[BuyButton.CurrentLevel]);
                     GoldBoost.AddProcent();
                 }
             }   

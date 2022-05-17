@@ -25,9 +25,9 @@ public class BuyFruit : MonoBehaviour
    // Method Of Buy Fruits
    public void BuyFruits()
    {
-      //if (TakeValute.Valute.IMultiFruitCoins.BasicValue >= Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price & Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying == false)
+      //if (TakeValuteForReward.Valute.IMultiFruitCoins.BasicValue >= Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price & Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying == false)
       {
-        // TakeValute.TakeAnyValueOfValute(global::Valutes.MultiFruitCoins, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].ValueOfPriceFruit, Values.Basic,Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price);
+        // TakeValuteForReward.TakeAnyValueOfValute(global::Valutes.MultiFruitCoins, Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].ValueOfPriceFruit, Values.Basic,Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].price);
          SetMultiOfFruits();
          Desctiber[ControllCurrentFruitInList.CurrentFruitsInNumberInList].IsBuying = true;
          HideButton.DoHidePanel();

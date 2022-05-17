@@ -6,7 +6,15 @@ using UnityEngine.Serialization;
 
 [Serializable] public class ValuesModel
 {
+  [Header("Название размерности")]
   public string ValueName;
+  
+  [Space]
+  [Header("Валюта")]
   public float Valute;
-  public float MultiOfValue;
+  
+  [FormerlySerializedAs("MultiOfValue")]
+  [Space]
+  [Header("Множители валют")]
+  public float MultiOfValute;
 }

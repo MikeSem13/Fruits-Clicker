@@ -4,33 +4,44 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AccountValutes : MonoBehaviour
+public class AccountValutesValriables : MonoBehaviour
 {
-  private ValuteManager ValuteManager;
+  private ValuteManager _valuteManager;
 
   private void Start()
   {
-    ValuteManager = GetComponent<ValuteManager>();
+    _valuteManager = GetComponent<ValuteManager>();
   }
 
   public void AddValute(string ValuteName)
   {
-    ValutesModel valuteModel = ValuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
+    ValutesModel valuteModel = _valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
 
-    for (int i = 0; i >= valuteModel.NumberOfMulti; i--)
+    for (int i = 0; i <= valuteModel.NumberOfMulti; i++)
     {
-      valuteModel.Values[i].Valute += valuteModel.Values[i].MultiOfValue;
+      valuteModel.Values[i].Valute += valuteModel.Values[i].MultiOfValute;
+      PlayerPrefs.SetFloat(i + "Valute", valuteModel.Values[i].Valute);
     }
   }
 
-  public void TakeValute(string ValuteName, float price, UpgradeModel Upgrade)
+  public void AddMulti(string ValuteName, UpgradeModel Upgrade)
   {
-      ValutesModel valuteModel = ValuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
+      ValutesModel valuteModel = _valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
+
+      valuteModel.Values[Upgrade.Multis[Upgrade.CurrentPrice].NumberOfValueMulti].MultiOfValute += Upgrade.Multis[Upgrade.CurrentPrice].Multi;
+      PlayerPrefs.SetFloat("Multi", valuteModel.Values[Upgrade.Multis[Upgrade.CurrentPrice].NumberOfValueMulti].MultiOfValute);
+  }
+  
+  public void TakeValuteForReward(string ValuteName, float price, UpgradeModel Upgrade)
+  {
+      ValutesModel valuteModel = _valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
       
       if (valuteModel.Values[Upgrade.Prices[Upgrade.CurrentPrice].NumberOfValuePrice].Valute >= price)
       {
           valuteModel.Values[Upgrade.Prices[Upgrade.CurrentPrice].NumberOfValuePrice].Valute -= price;
+          AddMulti(ValuteName, Upgrade);
           Upgrade.CurrentPrice++;
+          PlayerPrefs.SetInt("PriceOfUpgrade", Upgrade.CurrentPrice);
       }
       else
       {
@@ -52,7 +63,9 @@ public class AccountValutes : MonoBehaviour
                           if (j == Upgrade.Prices[Upgrade.CurrentPrice].NumberOfValuePrice) valuteModel.Values[j].Valute += price;
                       }
                   }
+                  AddMulti(ValuteName, Upgrade);
                   Upgrade.CurrentPrice++;
+                  PlayerPrefs.SetInt("PriceOfUpgrade", Upgrade.CurrentPrice);
               }
           }
       }

@@ -20,6 +20,7 @@ public class ValuteManager : MonoBehaviour
       ValutesModel valutesModel = Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
       
       ValueControll(valutesModel);
+      MultiControll(valutesModel);
       ConvertValuteToText(valutesModel);
    }
 
@@ -30,18 +31,35 @@ public class ValuteManager : MonoBehaviour
          if (valutesModel.Values[i].Valute >= 1000)
          {
             valutesModel.Values[i].Valute -= 1000;
-            valutesModel.Values[i + 1].Valute++;
-            if (i == valutesModel.NumberOfValue) valutesModel.NumberOfValue++;
+            valutesModel.Values[i + 1].Valute += 1;
+            valutesModel.NumberOfValue++;
          }
       }
 
       if (valutesModel.Values[valutesModel.NumberOfValue].Valute <= 0 && valutesModel.NumberOfValue > 0)
       {
-         valutesModel.NumberOfValue--;
+         valutesModel.NumberOfValue -= 1;
       }
    }
 
+   public void MultiControll(ValutesModel valutesModel)
+   {
+      for (int i = 0; i < valutesModel.Values.Count - 1; i++)
+      {
+         if (valutesModel.Values[i].MultiOfValute >= 1000)
+         {
+            valutesModel.Values[i].MultiOfValute -= 1000;
+            valutesModel.Values[i + 1].MultiOfValute += 1;
+            valutesModel.NumberOfMulti++;
+         }
+      }
 
+      if (valutesModel.Values[valutesModel.NumberOfValue].MultiOfValute <= 0 && valutesModel.NumberOfMulti > 0)
+      {
+         valutesModel.NumberOfMulti -= 1;
+      }
+   }
+   
    public void ConvertValuteToText(ValutesModel valutesModel)
    {
       for (int i = 0; i < valutesModel.TextsOfValute.Count; i++)
