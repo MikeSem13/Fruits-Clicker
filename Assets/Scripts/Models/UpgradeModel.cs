@@ -20,16 +20,18 @@ using UnityEngine.UI;
   [Space] 
   [Header("Множитель")] 
   public List<RewardMultiOfUpgradeModel> Multis;
+
+  [Space] 
+  [Header("Кнопка")] 
+  public UpgradeButtonModel Button;
   
   [Space]
   [Header("Дополнительные параметры")]
   public ValuesEnum[] ValuesOfUpgrade;
-  public List<string> SybwolsOfValue;
   public int CurrentPrice;
-  
+
   [Space]
   [Header("Текста")]
-  public Text TextOfPrice;
   public Text TextOfMulti;
   public void SetNumberOfPrice()
   {

@@ -16,42 +16,51 @@ public class UpgradeTextConvert : MonoBehaviour
       ConvertTextsOfUpgrades(UpgradeManager.Upgrades[i].NameOfUpgrade); 
     }
   }
-
   public void ConvertTextsOfUpgrades(string NameOfUpgrade)
   {
     UpgradeModel upgradeModel = UpgradeManager.Upgrades.FirstOrDefault(model => model.NameOfUpgrade == NameOfUpgrade);
 
-    for (int i = 0; i < upgradeModel.Prices.Count; i++)
+    if (upgradeModel.CurrentPrice < upgradeModel.Prices.Count)
     {
-      ConvertValuesOfTexts(upgradeModel.Prices[i].Price, upgradeModel.Prices[i - 1].Price, upgradeModel.TextOfPrice, upgradeModel.Prices[i].NumberOfValuePrice, upgradeModel.SybwolsOfValue[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice]);
+      ConvertValuesOfPriceTexts(upgradeModel.Prices[upgradeModel.CurrentPrice].Price, upgradeModel.Button.TextOfPrice, UpgradeManager.SybwolsOfValue[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice]);
+      ConvertValuesOfMultiTexts(upgradeModel.Multis[upgradeModel.CurrentPrice].Multi, upgradeModel.TextOfMulti, UpgradeManager.SybwolsOfValue[upgradeModel.Multis[upgradeModel.CurrentPrice].NumberOfValueMulti]); 
+      ControllFontSizeAndPositionOfPriceText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price, UpgradeManager.SybwolsOfValue[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice]);
     }
-    
-    for (int i = 0; i < upgradeModel.Multis.Count; i++)
+    else
     {
-      ConvertValuesOfTexts(upgradeModel.Multis[i].Multi, upgradeModel.Multis[i - 1].Multi, upgradeModel.TextOfMulti, upgradeModel.Multis[i].NumberOfValueMulti, upgradeModel.SybwolsOfValue[upgradeModel.Multis[upgradeModel.CurrentPrice].NumberOfValueMulti]);
+      SetTextsToMaxStage(upgradeModel.Button.TextOfPrice);
     }
   }
 
-  public void ConvertValuesOfTexts(float price,float OldPrice,Text text, int numberOfValue, string SybwolOfText)
+  public void ConvertValuesOfPriceTexts(float price, Text text, string SybwolOfText)
   {
-    if (price == 0)
+    text.text = price + SybwolOfText;
+  }
+  
+  public void ConvertValuesOfMultiTexts(float price,Text text, string SybwolOfText)
+  {
+    text.text = "+" + price + SybwolOfText;
+  }
+
+  public void SetTextsToMaxStage(Text textPrice)
+  {
+    textPrice.text = "Max";
+    textPrice.gameObject.transform.localPosition = new Vector2(0,0);
+    textPrice.fontSize = 110;
+  }
+
+  public void ControllFontSizeAndPositionOfPriceText(Text textOfPrice, float price, string SybwolOfText)
+  {
+    if(SybwolOfText.Length == 0)
     {
-      text.text = price + SybwolOfText;  
+      if (price > 0) textOfPrice.fontSize = 105;
+      if (price > 100) textOfPrice.fontSize = 100; 
     }
-               
-    if (price >= 0 && numberOfValue > 0 && OldPrice / 100 >= 1)
+    else if (SybwolOfText.Length > 0)
     {
-      text.text = price + "." + Mathf.Floor(OldPrice / 100) + SybwolOfText;
+      textOfPrice.fontSize = 90; 
     }
-               
-    if (price >= 0 && numberOfValue > 0 && OldPrice / 100 < 1)
-    {
-      text.text = price + SybwolOfText;
-    }
-               
-    if (price >= 10)
-    {
-      text.text = price + SybwolOfText;
-    }
+
+    textOfPrice.gameObject.transform.localPosition = new Vector2(78.43f,0);
   }
 }

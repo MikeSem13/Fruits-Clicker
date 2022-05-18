@@ -7,7 +7,9 @@ using UnityEngine;
 public class AccountValutesValriables : MonoBehaviour
 {
   private ValuteManager _valuteManager;
-
+  [SerializeField] private LoadAndSaveValuteManager SaveValuteManager;
+  [SerializeField] private LoadAndSaveUpgradeManager SaveUpgradeManager;
+  
   private void Start()
   {
     _valuteManager = GetComponent<ValuteManager>();
@@ -17,19 +19,21 @@ public class AccountValutesValriables : MonoBehaviour
   {
     ValutesModel valuteModel = _valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
 
-    for (int i = 0; i <= valuteModel.NumberOfMulti; i++)
+    for (int i = 0; i < valuteModel.Values.Count; i++)
     {
       valuteModel.Values[i].Valute += valuteModel.Values[i].MultiOfValute;
-      PlayerPrefs.SetFloat(i + "Valute", valuteModel.Values[i].Valute);
     }
+    
+    SaveValuteManager.SaveValutes();
   }
+  
 
   public void AddMulti(string ValuteName, UpgradeModel Upgrade)
   {
       ValutesModel valuteModel = _valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
 
       valuteModel.Values[Upgrade.Multis[Upgrade.CurrentPrice].NumberOfValueMulti].MultiOfValute += Upgrade.Multis[Upgrade.CurrentPrice].Multi;
-      PlayerPrefs.SetFloat("Multi", valuteModel.Values[Upgrade.Multis[Upgrade.CurrentPrice].NumberOfValueMulti].MultiOfValute);
+      SaveValuteManager.SaveMultis();
   }
   
   public void TakeValuteForReward(string ValuteName, float price, UpgradeModel Upgrade)
@@ -41,7 +45,6 @@ public class AccountValutesValriables : MonoBehaviour
           valuteModel.Values[Upgrade.Prices[Upgrade.CurrentPrice].NumberOfValuePrice].Valute -= price;
           AddMulti(ValuteName, Upgrade);
           Upgrade.CurrentPrice++;
-          PlayerPrefs.SetInt("PriceOfUpgrade", Upgrade.CurrentPrice);
       }
       else
       {
@@ -65,9 +68,10 @@ public class AccountValutesValriables : MonoBehaviour
                   }
                   AddMulti(ValuteName, Upgrade);
                   Upgrade.CurrentPrice++;
-                  PlayerPrefs.SetInt("PriceOfUpgrade", Upgrade.CurrentPrice);
               }
           }
       }
+      
+      SaveUpgradeManager.SaveCurrentLevel();
   }
 }

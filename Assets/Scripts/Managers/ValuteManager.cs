@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ValuteManager : MonoBehaviour
 {
+   public LoadAndSaveValuteManager SaveValuteManager;
+   
    public List<ValutesModel> Valutes;
 
    private void Update()
@@ -38,8 +40,10 @@ public class ValuteManager : MonoBehaviour
 
       if (valutesModel.Values[valutesModel.NumberOfValue].Valute <= 0 && valutesModel.NumberOfValue > 0)
       {
-         valutesModel.NumberOfValue -= 1;
+         valutesModel.NumberOfValue--;
       }
+      
+      SaveValuteManager.SaveNumberOfValue();
    }
 
    public void MultiControll(ValutesModel valutesModel)
@@ -58,6 +62,8 @@ public class ValuteManager : MonoBehaviour
       {
          valutesModel.NumberOfMulti -= 1;
       }
+      
+      SaveValuteManager.SaveNumberOfMulti();
    }
    
    public void ConvertValuteToText(ValutesModel valutesModel)
