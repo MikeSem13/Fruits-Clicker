@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ValuteManager : MonoBehaviour
+[Serializable] public class ValuteManager : MonoBehaviour
 {
-   public LoadAndSaveValuteManager SaveValuteManager;
-   
+
    public List<ValutesModel> Valutes;
 
    private void Update()
@@ -42,8 +41,6 @@ public class ValuteManager : MonoBehaviour
       {
          valutesModel.NumberOfValue--;
       }
-      
-      SaveValuteManager.SaveNumberOfValue();
    }
 
    public void MultiControll(ValutesModel valutesModel)
@@ -62,8 +59,6 @@ public class ValuteManager : MonoBehaviour
       {
          valutesModel.NumberOfMulti -= 1;
       }
-      
-      SaveValuteManager.SaveNumberOfMulti();
    }
    
    public void ConvertValuteToText(ValutesModel valutesModel)

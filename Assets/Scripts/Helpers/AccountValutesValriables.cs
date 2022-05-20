@@ -7,9 +7,7 @@ using UnityEngine;
 public class AccountValutesValriables : MonoBehaviour
 {
   private ValuteManager _valuteManager;
-  [SerializeField] private LoadAndSaveValuteManager SaveValuteManager;
-  [SerializeField] private LoadAndSaveUpgradeManager SaveUpgradeManager;
-  
+
   private void Start()
   {
     _valuteManager = GetComponent<ValuteManager>();
@@ -23,8 +21,6 @@ public class AccountValutesValriables : MonoBehaviour
     {
       valuteModel.Values[i].Valute += valuteModel.Values[i].MultiOfValute;
     }
-    
-    SaveValuteManager.SaveValutes();
   }
   
 
@@ -33,7 +29,6 @@ public class AccountValutesValriables : MonoBehaviour
       ValutesModel valuteModel = _valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
 
       valuteModel.Values[Upgrade.Multis[Upgrade.CurrentPrice].NumberOfValueMulti].MultiOfValute += Upgrade.Multis[Upgrade.CurrentPrice].Multi;
-      SaveValuteManager.SaveMultis();
   }
   
   public void TakeValuteForReward(string ValuteName, float price, UpgradeModel Upgrade)
@@ -71,7 +66,5 @@ public class AccountValutesValriables : MonoBehaviour
               }
           }
       }
-      
-      SaveUpgradeManager.SaveCurrentLevel();
   }
 }
