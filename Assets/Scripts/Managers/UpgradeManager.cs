@@ -32,6 +32,8 @@ public class UpgradeManager : MonoBehaviour
    {
       UpgradeModel upgradeModel = Upgrades.FirstOrDefault(model => model.NameOfUpgrade == UpgradeName);
 
+      upgradeModel.Button.AnimatorOfButton.SetTrigger("Click");
+      
       if (upgradeModel.CurrentPrice < upgradeModel.Prices.Count)
       {
          accountValutesValriables.TakeValuteForReward(upgradeModel.NameOfValute, upgradeModel.Prices[upgradeModel.CurrentPrice].Price, upgradeModel);

@@ -14,6 +14,10 @@ using UnityEngine.UI;
   public List<ValuesModel> Values;
 
   [Space]
+  [Header("Дополнительный множитель")]
+  
+  
+  [Space]
   [Header("Дополнительные параметры")]
   public List<Text> TextsOfValute;
   public List<string> SybwolsOfValue;

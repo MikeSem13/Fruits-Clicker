@@ -16,6 +16,12 @@ using UnityEngine;
       ControllValuesOfValute("MultiFruit Coins");
    }
 
+   public ValutesModel GetValute(string ValuteName)
+   {
+      ValutesModel valutesModel = Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
+      return valutesModel;
+   }
+   
    public void ControllValuesOfValute(string ValuteName)
    {
       ValutesModel valutesModel = Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
@@ -37,7 +43,7 @@ using UnityEngine;
          }
       }
 
-      if (valutesModel.Values[valutesModel.NumberOfValue].Valute <= 0 && valutesModel.NumberOfValue > 0)
+      if (valutesModel.Values[valutesModel.NumberOfValue].Valute <= 1 && valutesModel.NumberOfValue > 0)
       {
          valutesModel.NumberOfValue--;
       }

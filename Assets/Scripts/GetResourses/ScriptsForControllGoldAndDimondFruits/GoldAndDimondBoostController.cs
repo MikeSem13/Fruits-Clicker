@@ -7,8 +7,11 @@ using Random = UnityEngine.Random;
 
 public class GoldAndDimondBoostController : MonoBehaviour
 {
-    public float Chance;
-    public float ProcentOfDimondBoost = 0.1f;
+    [SerializeField] private ValuteManager ValuteManager;
+    [SerializeField] private int BoostMulti = 1;
+    
+    [SerializeField] private float Chance;
+    [SerializeField] private float ProcentOfDimondBoost = 0.1f;
     
     public bool BoostActive;
 
@@ -34,14 +37,24 @@ public class GoldAndDimondBoostController : MonoBehaviour
     {
         if (BoostActive == false)
         {
-            //Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 1;
+            if (Chance < ProcentOfDimondBoost) BoostMulti = 100;
+            else BoostMulti = 10;
+            
+            for (int i = 0; i < ValuteManager.GetValute("Fruit Coins").Values.Count; i++)
+            {
+                ValuteManager.GetValute("Fruit Coins").Values[i].MultiOfValute /= BoostMulti;   
+            }
         }
         if (BoostActive)
         {
             Chance = Random.Range(0f, 100f);
-            //if (Chance < ProcentOfDimondBoost) Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 100;
-            //else Valutes.FruitCoins.MultiOfGoldOrDimondsFruits = 10;
+            if (Chance < ProcentOfDimondBoost) BoostMulti = 100;
+            else BoostMulti = 10;
+            
+            for (int i = 0; i <= ValuteManager.GetValute("Fruit Coins").NumberOfValue; i++)
+            {
+                ValuteManager.GetValute("Fruit Coins").Values[i].MultiOfValute *= BoostMulti;   
+            }
         }
-        //PlayerPrefs.SetInt("FruitCoinsGoldAndDimondsMulti", Valutes.FruitCoins.MultiOfGoldOrDimondsFruits);
     }
 }

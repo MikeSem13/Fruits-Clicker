@@ -1743,6 +1743,7 @@ GameObject:
   - component: {fileID: 221670144}
   - component: {fileID: 221670143}
   - component: {fileID: 221670146}
+  - component: {fileID: 221670147}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -1892,6 +1893,25 @@ MonoBehaviour:
   MaxLevel: 6
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
+--- !u!95 &221670147
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221670141}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &226733658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff25ad0db6b81447a7fdddd20dd0180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ValuteManager: {fileID: 591847389}
+  BoostMulti: 10
   Chance: 0
   ProcentOfDimondBoost: 0
   BoostActive: 0
@@ -4063,6 +4085,7 @@ GameObject:
   - component: {fileID: 450269327}
   - component: {fileID: 450269326}
   - component: {fileID: 450269325}
+  - component: {fileID: 450269324}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -4091,6 +4114,25 @@ RectTransform:
   m_AnchoredPosition: {x: 393.6, y: -19.501114}
   m_SizeDelta: {x: 386.9233, y: 253.51}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &450269324
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450269322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &450269325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4621,6 +4663,7 @@ GameObject:
   - component: {fileID: 548543424}
   - component: {fileID: 548543423}
   - component: {fileID: 548543427}
+  - component: {fileID: 548543428}
   m_Layer: 5
   m_Name: 'BuyButton '
   m_TagString: Untagged
@@ -4783,6 +4826,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoardOfStartBillionValues: 0
   BoardOfStartQuintillionValues: 0
+--- !u!95 &548543428
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548543421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &550578259
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,7 +5017,7 @@ MonoBehaviour:
     Values:
     - ValueName: 'Basic '
       Valute: 0
-      MultiOfValute: 0
+      MultiOfValute: 1
     - ValueName: Thousen
       Valute: 0
       MultiOfValute: 0
@@ -6030,53 +6092,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &761405097
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 761405099}
-  - component: {fileID: 761405098}
-  m_Layer: 0
-  m_Name: Save System
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &761405098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761405097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6f124b32d30daf48a6a106188f1979b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ValuteManager: {fileID: 591847389}
-  json: 
-  SavePath: 
-  SaveFileName: JSON.json
---- !u!4 &761405099
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761405097}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.70157, y: -7.1189656, z: -163.10068}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780270533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6153,6 +6168,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780270533}
   m_CullTransparentMesh: 1
+--- !u!1 &799334635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799334637}
+  - component: {fileID: 799334636}
+  m_Layer: 0
+  m_Name: Save System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &799334636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799334635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f124b32d30daf48a6a106188f1979b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Saves:
+  - SaveObject: {fileID: 0}
+  valuteManager: {fileID: 591847389}
+  SavePath: 
+  SaveFileName: JSON.json
+--- !u!4 &799334637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799334635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.144707, y: -20.640167, z: -200.84961}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806297041
 GameObject:
   m_ObjectHideFlags: 0
@@ -9349,6 +9412,7 @@ GameObject:
   - component: {fileID: 1086617095}
   - component: {fileID: 1086617094}
   - component: {fileID: 1086617098}
+  - component: {fileID: 1086617099}
   m_Layer: 5
   m_Name: 'BuyButton '
   m_TagString: Untagged
@@ -9511,6 +9575,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoardOfStartBillionValues: 1
   BoardOfStartQuintillionValues: 0
+--- !u!95 &1086617099
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086617092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1087770106
 GameObject:
   m_ObjectHideFlags: 0
@@ -9794,7 +9877,7 @@ MonoBehaviour:
           m_StringArgument: Fruit Coins
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 395444787}
+      - m_Target: {fileID: 1111058287}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -12378,6 +12461,7 @@ GameObject:
   - component: {fileID: 1304747416}
   - component: {fileID: 1304747415}
   - component: {fileID: 1304747418}
+  - component: {fileID: 1304747419}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -12527,6 +12611,25 @@ MonoBehaviour:
   MaxLevel: 6
   CurrentLevel: 0
   BackgroundOfButton: {fileID: 0}
+--- !u!95 &1304747419
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304747413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1313734488
 GameObject:
   m_ObjectHideFlags: 0
@@ -14401,7 +14504,7 @@ MonoBehaviour:
     - Price: 350
       PriceValue: 0
       NumberOfValuePrice: 0
-    - Price: 3.6
+    - Price: 3
       PriceValue: 1
       NumberOfValuePrice: 0
     - Price: 21
@@ -14436,16 +14539,17 @@ MonoBehaviour:
       BuyButton: {fileID: 450269325}
       TextOfPrice: {fileID: 1409457053}
       ValuteImage: {fileID: 135225072}
+      AnimatorOfButton: {fileID: 450269324}
     ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
     CurrentPrice: 0
     TextOfMulti: {fileID: 250339402}
   - NameOfUpgrade: Vitamins
     NameOfValute: Fruit Coins
     Prices:
-    - Price: 1.2
+    - Price: 1
       PriceValue: 1
       NumberOfValuePrice: 0
-    - Price: 8.1
+    - Price: 8
       PriceValue: 1
       NumberOfValuePrice: 0
     - Price: 54
@@ -14483,6 +14587,7 @@ MonoBehaviour:
       BuyButton: {fileID: 221670143}
       TextOfPrice: {fileID: 1589999018}
       ValuteImage: {fileID: 948549628}
+      AnimatorOfButton: {fileID: 221670147}
     ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
     CurrentPrice: 0
     TextOfMulti: {fileID: 685158595}
@@ -14530,6 +14635,7 @@ MonoBehaviour:
       BuyButton: {fileID: 1304747415}
       TextOfPrice: {fileID: 953548280}
       ValuteImage: {fileID: 1743468513}
+      AnimatorOfButton: {fileID: 1304747419}
     ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
     CurrentPrice: 0
     TextOfMulti: {fileID: 1281142866}
@@ -14577,6 +14683,7 @@ MonoBehaviour:
       BuyButton: {fileID: 1086617095}
       TextOfPrice: {fileID: 1417873433}
       ValuteImage: {fileID: 344462449}
+      AnimatorOfButton: {fileID: 1086617099}
     ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
     CurrentPrice: 0
     TextOfMulti: {fileID: 1572073748}
@@ -14624,6 +14731,7 @@ MonoBehaviour:
       BuyButton: {fileID: 548543424}
       TextOfPrice: {fileID: 1065467867}
       ValuteImage: {fileID: 963798433}
+      AnimatorOfButton: {fileID: 548543428}
     ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
     CurrentPrice: 0
     TextOfMulti: {fileID: 1357418674}
@@ -15333,7 +15441,7 @@ MonoBehaviour:
           m_StringArgument: Fruit Coins
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 395444787}
+      - m_Target: {fileID: 1558081280}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -15343,6 +15451,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2133473330}
+        m_TargetAssemblyTypeName: CreateATextsOfFruitCoins, Assembly-CSharp
+        m_MethodName: MotionOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1558081278
@@ -22286,8 +22406,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2133473329}
   - component: {fileID: 2133473330}
-  - component: {fileID: 2133473332}
   - component: {fileID: 2133473331}
+  - component: {fileID: 2133473332}
   m_Layer: 5
   m_Name: SpawnerOfTexts
   m_TagString: Untagged
@@ -22326,6 +22446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589a7e502317b82439dfc6cf71e4dd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ValuteManager: {fileID: 591847389}
   Spawner: {fileID: 2133473328}
   PrefabOfText: {fileID: 850226565061582926, guid: f91b366b7c674544c8ad059f3928353c, type: 3}
   Text: {fileID: 0}

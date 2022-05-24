@@ -1,55 +1,61 @@
 
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Serialization;
 
 public class SaveSystem : MonoBehaviour
 {
-   [SerializeField] public ValuteManager ValuteManager;
+   public List<SaveValuteData> Saves = new List<SaveValuteData>();
+
+   [SerializeField] public ValuteManager valuteManager;
+
+   [SerializeField] public string Path;
+   [SerializeField] public string SaveFileName;
    
-   [Space]
-   [Multiline] [SerializeField] private string json;
-   [Space]
-
-   [SerializeField] private string SavePath;
-   [SerializeField] private string SaveFileName = "JSON.json";
-
    private void Awake()
    {
-      #if UNITY_ANDROID && !UNITY_EDITOR
-      SavePath = Path.Combine(Application.persistentDataPath, SaveFileName);
-      #else
-      SavePath = Path.Combine(Application.dataPath, SaveFileName);
-      #endif
-      Load();
+      for (int i = 0; i < Saves.Count; i++)
+      {
+         #if UNITY_ANDROID && !UNITY_EDITOR
+         Path = Path.Combine(Application.persistentDataPath, SaveFileName);
+         #else
+         Path = System.IO.Path.Combine(Application.persistentDataPath, SaveFileName);
+         #endif  
+      }
+
+      if (File.ReadAllText(Path) != null) Load();
    }
 
-   private void OnApplicationQuit()
+   public void OnApplicationQuit()
    {
-      Save();
+      SaveFileJson();
    }
 
-   private void OnApplicationPause(bool pauseStatus)
+   public void OnApplicationPause(bool pauseStatus)
    {
       if (Application.platform == RuntimePlatform.Android)
       {
-         Save();
+         SaveFileJson();
       }
    }
 
    public void Load()
    {
-      json = File.ReadAllText(SavePath);
-      ValuteManager valuteManagerFromJson = JsonUtility.FromJson<ValuteManager>(json);
-      this.ValuteManager = valuteManagerFromJson;
+      string json = File.ReadAllText(Path);
+      Saves[0] = JsonUtility.FromJson<SaveValuteData>(json);
+      Debug.Log(Saves[0].Valutes);
    }
 
-   public void Save()
+   public void SaveFileJson()
    {
-      ValuteManager valuteManager = new ValuteManager();
-      ValuteManager = valuteManager;
-      
-      json =  JsonUtility.ToJson(valuteManager, true);
-      File.WriteAllText(SavePath, json);
+      if (File.Exists(Path))
+      {
+         Saves[0].Valutes = valuteManager.Valutes;
+         string json = JsonUtility.ToJson(Saves[0].Valutes, true);
+         File.WriteAllText(Path, json);
+         Debug.Log(json);
+      }
    }
 }

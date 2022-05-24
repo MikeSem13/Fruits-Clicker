@@ -20,10 +20,10 @@ public class ControllOfMotionOfTexts : MonoBehaviour
         transform.Translate(Vector * Time.deltaTime);
     }
 
-    public void StartMotion(float fruitCoins)
+    public void StartMotion(float Multi)
     {
         transform.localScale = Vector3.one;
-        TextConverter(fruitCoins);
+        TextConverter(Multi);
         transform.localPosition = Vector2.zero;
         Vector = new Vector2(Random.Range(-50, 50), Random.Range(-50, 50));
         Vector = Vector.normalized;
