@@ -116,14 +116,14 @@ public class LeanAudio : object {
 			}else{
 				int distPoint = listLength / 2;
 				
-				//generatedWaveDistances.Add( f );
+				//generatedWaveDistances.AddValues( f );
 				passed += f;
 
 				generatedWaveDistances[ distPoint ] = passed;
 				//Debug.Log("distPoint:"+distPoint+" passed:"+passed);
 
-				//list.Add( passed );
-				//list.Add( i%2==0 ? -height : height );
+				//list.AddValues( passed );
+				//list.AddValues( i%2==0 ? -height : height );
 
 				longList[ listLength ] = passed;
 				longList[ listLength + 1 ] = i%2==0 ? -height : height;

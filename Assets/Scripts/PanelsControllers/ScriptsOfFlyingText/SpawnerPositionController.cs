@@ -15,8 +15,7 @@ public class SpawnerPositionController : MonoBehaviour
 
    public void SetPosSpawner(DescriberForFruitsInList Describer)
    {
-      if(Describer.fruits == Fruits.Apple && Describer.IsSelected == true) Spawner.transform.localPosition = new Vector2();
-      if(Describer.fruits == Fruits.Banana && Describer.IsSelected == true) Spawner.transform.localPosition = new Vector2(-151.8f,0f);
-      if(Describer.fruits == Fruits.Orange && Describer.IsSelected == true) Spawner.transform.localPosition = new Vector2();
+      if (Describer.fruits == Fruits.Banana && Describer.IsSelected == true) Spawner.transform.localPosition = new Vector2(-151.8f, 0f);
+      else Spawner.transform.localPosition = new Vector2();
    }
 }

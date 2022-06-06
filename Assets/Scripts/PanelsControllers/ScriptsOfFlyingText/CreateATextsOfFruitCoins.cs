@@ -13,11 +13,11 @@ public class CreateATextsOfFruitCoins : MonoBehaviour
 
    public ControllOfMotionOfTexts Text;
 
-   public void MotionOnClick()
+   public void SpawnOnClick()
    {
       ControllOfMotionOfTexts TextClone = Instantiate(Text.gameObject).GetComponent<ControllOfMotionOfTexts>();
       TextClone.transform.SetParent(Spawner.transform);
-      TextClone.StartMotion(ValuteManager.GetValute("Fruit Coins").Values[ValuteManager.GetValute("Fruit Coins").NumberOfMulti].MultiOfValute);
+      TextClone.StartMotion(ValuteManager.GetValute("Fruit Coins") , ValuteManager.DemisionsOfValutes.SybwolsOfValutes[ValuteManager.GetValute("Fruit Coins").NumberOfMulti]);
       Destroy(TextClone.gameObject, 3.5f);
    }
 

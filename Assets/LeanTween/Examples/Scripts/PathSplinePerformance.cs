@@ -37,7 +37,7 @@ public class PathSplinePerformance : MonoBehaviour {
 			degree += 360f/(float)trackNodes;
 		}
 		randList[0] = randList[ randList.Count-1 ]; // set the zero-ith one as the last position so it will flow smoothly into the first curve
-		randList.Add( randList[1] ); // Add the first and second one in, so the circle connects to itself
+		randList.Add( randList[1] ); // AddValues the first and second one in, so the circle connects to itself
 		randList.Add( randList[2] ); 
 
 		track = new LTSpline( randList.ToArray() );

@@ -6,14 +6,12 @@ using UnityEngine.UI;
 
 public class ShowMultiFruitCoinsUpgrades : MonoBehaviour
 {
-    public BuyRebirth Rebirth;
-
     public GameObject FruitCoinsPanelButton;
     public GameObject DimondsPanelButton;
     public GameObject MultiFruitCoinsButton;
     private void Update()
     {
-        if (Rebirth.CountOfRebirth > 0)
+        /*if (Rebirth.CountOfRebirth > 0)
         {
             MultiFruitCoinsButton.SetActive(true);
             SetSizeAndPositionForThreeButtons();
@@ -22,7 +20,7 @@ public class ShowMultiFruitCoinsUpgrades : MonoBehaviour
         {
             MultiFruitCoinsButton.SetActive(false);
             SetSizeAndPositionForTwoButtons();
-        }
+        }*/
     }
 
     public void SetSizeAndPositionForTwoButtons()

@@ -98,7 +98,7 @@ public class PathSplineEndless : MonoBehaviour {
 		// Animate in new tree (just for fun)
 		LeanTween.rotateAround( tree, Vector3.forward, 0f, 1f).setFrom( zIter%2==0 ? 180f : -180f).setEase(LeanTweenType.easeOutBack);
 
-		trackPts.Add( randomInFrontPosition ); // Add a future spline node
+		trackPts.Add( randomInFrontPosition ); // AddValues a future spline node
 		if(trackPts.Count > trackMaxItems)
 			trackPts.RemoveAt(0); // Remove the trailing spline node
 

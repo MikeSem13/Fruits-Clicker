@@ -20,24 +20,29 @@ public class ControllOfMotionOfTexts : MonoBehaviour
         transform.Translate(Vector * Time.deltaTime);
     }
 
-    public void StartMotion(float Multi)
+    public void StartMotion(ValutesModel valuteModel, SybwolModel sybwol)
     {
-        transform.localScale = Vector3.one;
-        TextConverter(Multi);
-        transform.localPosition = Vector2.zero;
-        Vector = new Vector2(Random.Range(-50, 50), Random.Range(-50, 50));
-        Vector = Vector.normalized;
-        Vector *= 20;
+        int interval = 0;
+        if (valuteModel.NumberOfMulti != 0) interval = 1;
+        
+        TextConverter(valuteModel.Values[valuteModel.NumberOfMulti].MultiOfValute, valuteModel.Values[valuteModel.NumberOfMulti - interval].MultiOfValute, sybwol);
+        ControllPositionOfText();
         Move = true;
         GetComponent<Animation>().Play();
     }
 
-    public void TextConverter(float FruitCoins)
+    public void ControllPositionOfText()
     {
-        if (FruitCoins <= 999) GetComponent<Text>().text = "+" + FruitCoins.ToString("0");
-        if (FruitCoins > 999 && FruitCoins <= 9999)  GetComponent<Text>().text = "+" + Math.Round((FruitCoins / 1000),1) + "k";
-        if (FruitCoins > 9999 && FruitCoins <= 999999)  GetComponent<Text>().text = "+" + (FruitCoins / 1000).ToString("0") + "k";
-        if (FruitCoins > 999999 && FruitCoins <= 9999999)  GetComponent<Text>().text = "+" + Math.Round((FruitCoins / (1000 * 1000)),1) + "M";
-        if (FruitCoins > 9999999 && FruitCoins <= 999999999)  GetComponent<Text>().text = "+" + (FruitCoins / (1000 * 1000)).ToString("0") + "M";
+        transform.localScale = Vector3.one;
+        transform.localPosition = Vector2.zero;
+        Vector = new Vector2(Random.Range(-50, 50), Random.Range(-50, 50));
+        Vector = Vector.normalized;
+        Vector *= 20;
+    }
+    
+    public void TextConverter(float multi, float lastMulti, SybwolModel sybwol)
+    {
+        if (multi < 10 && lastMulti > 100) GetComponent<Text>().text = "+" + multi.ToString("0") + "." + Math.Floor(lastMulti / 100) + sybwol.Sybwol;
+        else if (multi < 1000) GetComponent<Text>().text = "+" + multi.ToString("0") + sybwol.Sybwol;
     }
 }

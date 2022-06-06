@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 11059580}
-  - component: {fileID: 11059581}
   m_Layer: 5
   m_Name: FruitCoinsUpgrades
   m_TagString: Untagged
@@ -160,18 +159,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00003361702, y: 0.00030136108}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &11059581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11059579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce52f264846eb7b45aa731076e72c40f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &18198816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,8 +1729,6 @@ GameObject:
   - component: {fileID: 221670145}
   - component: {fileID: 221670144}
   - component: {fileID: 221670143}
-  - component: {fileID: 221670146}
-  - component: {fileID: 221670147}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -1866,52 +1851,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221670141}
   m_CullTransparentMesh: 1
---- !u!114 &221670146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221670141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 0
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 3600
-  - 31000
-  - 225000
-  - 3100000
-  - 14000000
-  - 59000000
-  multi: 050000001000000047000000d701000060050000a6100000
-  MaxLevel: 6
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
---- !u!95 &221670147
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221670141}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &226733658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,7 +1886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -353}
+  m_AnchoredPosition: {x: 0, y: -325.5}
   m_SizeDelta: {x: 584.369, y: 239.13367}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &226733660
@@ -2128,7 +2067,6 @@ GameObject:
   - component: {fileID: 240472988}
   - component: {fileID: 240472987}
   - component: {fileID: 240472986}
-  - component: {fileID: 240472989}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -2200,7 +2138,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 240472987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: More Dimonds
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &240472987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,50 +2189,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240472984}
   m_CullTransparentMesh: 1
---- !u!114 &240472989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240472984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 1
-  TypesOfDinondsUpgrades: 1
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 40
-  - 80
-  - 120
-  - 180
-  - 240
-  - 300
-  - 400
-  - 500
-  - 600
-  - 700
-  - 800
-  - 900
-  - 1000
-  - 1150
-  - 1300
-  - 1500
-  - 1750
-  - 2000
-  - 3500
-  - 5000
-  - 7500
-  - 10000
-  - 15000
-  multi: 
-  MaxLevel: 23
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &250339400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &266568130
 MonoBehaviour:
@@ -2822,7 +2728,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValuteManager: {fileID: 591847389}
-  BoostMulti: 10
   Chance: 0
   ProcentOfDimondBoost: 0
   BoostActive: 0
@@ -2838,7 +2743,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &278162678
 MonoBehaviour:
@@ -2891,8 +2796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 489.1903, y: -61}
-  m_SizeDelta: {x: 390.0926, y: 216.079}
+  m_AnchoredPosition: {x: 513.4, y: -51.5}
+  m_SizeDelta: {x: 390.0926, y: 180.281}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298673140
 MonoBehaviour:
@@ -2916,7 +2821,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 145
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2936,50 +2841,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298673138}
   m_CullTransparentMesh: 1
---- !u!1 &316666029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 316666030}
-  - component: {fileID: 316666031}
-  m_Layer: 0
-  m_Name: TextForLockPanelController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &316666030
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316666029}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1054562786}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &316666031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316666029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ee9826c90ad68d4080a2cf0a21a8e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextOfRequpments: {fileID: 930165871}
 --- !u!1 &322978399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,7 +3277,6 @@ GameObject:
   - component: {fileID: 358788445}
   - component: {fileID: 358788444}
   - component: {fileID: 358788443}
-  - component: {fileID: 358788446}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -3488,7 +3348,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 358788444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: More Dimond Fruits Chance
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &358788444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,76 +3399,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358788441}
   m_CullTransparentMesh: 1
---- !u!114 &358788446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358788441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 1
-  TypesOfDinondsUpgrades: 3
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 75
-  - 150
-  - 225
-  - 300
-  - 450
-  - 600
-  - 850
-  - 1100
-  - 1400
-  - 1800
-  - 2200
-  - 2600
-  - 3000
-  - 4000
-  - 5000
-  - 6000
-  - 7000
-  - 8000
-  - 9000
-  - 10000
-  - 11000
-  - 12000
-  - 13000
-  - 14000
-  - 15000
-  - 16000
-  - 17000
-  - 18000
-  - 19000
-  - 20000
-  - 22500
-  - 25000
-  - 27500
-  - 30000
-  - 32500
-  - 35000
-  - 37500
-  - 40000
-  - 42500
-  - 45000
-  - 47500
-  - 50000
-  - 55000
-  - 60000
-  - 65000
-  - 70000
-  - 75000
-  - 87500
-  - 100000
-  multi: 
-  MaxLevel: 49
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &383506181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,7 +3599,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 591847391}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AccountValutes, Assembly-CSharp
         m_MethodName: AddValute
         m_Mode: 5
@@ -4085,7 +3887,6 @@ GameObject:
   - component: {fileID: 450269327}
   - component: {fileID: 450269326}
   - component: {fileID: 450269325}
-  - component: {fileID: 450269324}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -4114,25 +3915,6 @@ RectTransform:
   m_AnchoredPosition: {x: 393.6, y: -19.501114}
   m_SizeDelta: {x: 386.9233, y: 253.51}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &450269324
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450269322}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &450269325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4637,7 +4419,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2142535968}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShowCountOfFruitsText, Assembly-CSharp
         m_MethodName: GetUnlockFruits
         m_Mode: 1
@@ -4661,9 +4443,6 @@ GameObject:
   - component: {fileID: 548543426}
   - component: {fileID: 548543425}
   - component: {fileID: 548543424}
-  - component: {fileID: 548543423}
-  - component: {fileID: 548543427}
-  - component: {fileID: 548543428}
   m_Layer: 5
   m_Name: 'BuyButton '
   m_TagString: Untagged
@@ -4692,32 +4471,6 @@ RectTransform:
   m_AnchoredPosition: {x: 383.4746, y: -733.41}
   m_SizeDelta: {x: 386.9233, y: 253.51}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &548543423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548543421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 0
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 25
-  - 57
-  - 129
-  - 286
-  - 729
-  multi: d3fd000047810100273b0200097b040084f50700
-  MaxLevel: 5
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!114 &548543424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4812,39 +4565,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548543421}
   m_CullTransparentMesh: 1
---- !u!114 &548543427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548543421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1f52d03987e4a4abf43ea7255d3a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoardOfStartBillionValues: 0
-  BoardOfStartQuintillionValues: 0
---- !u!95 &548543428
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548543421}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &550578259
 GameObject:
   m_ObjectHideFlags: 0
@@ -4911,7 +4631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7042ccbeb63803147980364677289b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConverterInformTexts: {fileID: 1054562787}
+  ConverterInformTexts: {fileID: 0}
   ControllCurrentFruitInList: {fileID: 1272295351}
   SetPositionOfInformPanel: {fileID: 550578263}
   ImagesForList:
@@ -4935,6 +4655,52 @@ MonoBehaviour:
   TextOfMainMultiMultiFruit: {fileID: 1286895976}
   TextOfMultiAwaking: {fileID: 2034785113}
   ImageOfValueOfMultiFruit: {fileID: 1258418942}
+--- !u!1 &559216846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559216848}
+  - component: {fileID: 559216847}
+  m_Layer: 0
+  m_Name: Click Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &559216847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559216846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa40839d1ac8304ba39baee2fe659d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valutesMathOperations: {fileID: 591847391}
+  boostsOfUpgrades: {fileID: 1488049963}
+  SpawnerOfTexts: {fileID: 2133473330}
+--- !u!4 &559216848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559216846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3553319, y: -5.848429, z: -303.25888}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574079558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,7 +4744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c265eaa5c3aa2a240bc92ad89b4cb5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rebirth: {fileID: 1288674499}
   FruitCoinsPanelButton: {fileID: 2123020375}
   DimondsPanelButton: {fileID: 1194828465}
   MultiFruitCoinsButton: {fileID: 156559493}
@@ -5012,6 +4777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88612d8dd451a02498930926f12cde0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DemisionsOfValutes: {fileID: 1881936316}
   Valutes:
   - NameOfValute: Fruit Coins
     Values:
@@ -5033,15 +4799,7 @@ MonoBehaviour:
     - ValueName: Quadrillion
       Valute: 0
       MultiOfValute: 0
-    TextsOfValute:
-    - {fileID: 1223948682}
-    SybwolsOfValue:
-    - 
-    - k
-    - M
-    - B
-    - T
-    - q
+    TextOfValute: {fileID: 1223948682}
     NumberOfValue: 0
     NumberOfMulti: 0
   - NameOfValute: Fruit Dimonds
@@ -5061,14 +4819,7 @@ MonoBehaviour:
     - ValueName: Trillion
       Valute: 0
       MultiOfValute: 0
-    TextsOfValute:
-    - {fileID: 298673140}
-    SybwolsOfValue:
-    - 
-    - k
-    - M
-    - B
-    - T
+    TextOfValute: {fileID: 298673140}
     NumberOfValue: 0
     NumberOfMulti: 0
   - NameOfValute: MultiFruit Coins
@@ -5088,14 +4839,7 @@ MonoBehaviour:
     - ValueName: Trillion
       Valute: 0
       MultiOfValute: 0
-    TextsOfValute:
-    - {fileID: 2024669233}
-    SybwolsOfValue:
-    - 
-    - k
-    - M
-    - B
-    - T
+    TextOfValute: {fileID: 2024669233}
     NumberOfValue: 0
     NumberOfMulti: 0
 --- !u!4 &591847390
@@ -5108,9 +4852,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 388.3186, y: 565.1475, z: -1500.4576}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1881936315}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &591847391
 MonoBehaviour:
@@ -5121,9 +4866,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 591847388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ee2dfae96a5c14b9dcb1d088cf9e09, type: 3}
+  m_Script: {fileID: 11500000, guid: 27cf3ecc61fc5f94e8981284860795b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeManager: {fileID: 1488049960}
+  mathOperations: {fileID: 1070318808}
 --- !u!1 &601282903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,8 +5021,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012875, y: 0.0000038147}
-  m_SizeDelta: {x: 183.0943, y: 242.0619}
+  m_AnchoredPosition: {x: 0.000012875, y: -2.11}
+  m_SizeDelta: {x: 183.094, y: 237.841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633663476
 MonoBehaviour:
@@ -5745,6 +5492,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &737590330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737590331}
+  - component: {fileID: 737590332}
+  m_Layer: 0
+  m_Name: Text Of Upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737590331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737590330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1488049961}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737590332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737590330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6988c050a6edb45af68741082ee86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeManager: {fileID: 1488049960}
+  DemisionsOfValutes: {fileID: 1881936316}
 --- !u!1 &738670826
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,11 +5989,198 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f124b32d30daf48a6a106188f1979b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Saves:
-  - SaveObject: {fileID: 0}
-  valuteManager: {fileID: 591847389}
-  SavePath: 
-  SaveFileName: JSON.json
+  ValuteManager: {fileID: 591847389}
+  UpgradeManager: {fileID: 1488049960}
+  BoostsOfUpgrades: {fileID: 1488049963}
+  ValuteManagerData:
+    Valutes:
+    - NameOfValute: 
+      Values: []
+      TextOfValute: {fileID: 0}
+      NumberOfValue: 0
+      NumberOfMulti: 0
+    - NameOfValute: 
+      Values: []
+      TextOfValute: {fileID: 0}
+      NumberOfValue: 0
+      NumberOfMulti: 0
+    - NameOfValute: 
+      Values: []
+      TextOfValute: {fileID: 0}
+      NumberOfValue: 0
+      NumberOfMulti: 0
+  UpgradeManagerData:
+    Upgrades:
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+    - NameOfUpgrade: 
+      NameOfValute: 
+      Prices: []
+      RewardMultis: []
+      SpecialRewards: []
+      Button:
+        BuyButton: {fileID: 0}
+        TextOfPrice: {fileID: 0}
+        ValuteImage: {fileID: 0}
+      SpecialReward: 0
+      TypeOfSpecialUpgrade: 0
+      CurrentPrice: 0
+      TextOfMulti: {fileID: 0}
+  BoostsOfUpgradesData:
+    ChanceOfDoubleCoins: 0
+    ChanceOfMoreDimonds: 0
+    GoldBoostTime: 0
+    ChanceOfDimondFruits: 0
+    PerzentOfLevelFruit: 0
+    PerzentOfMultiFruitCoins: 0
+    ChanceOfDoubleDimonds: 0
+  ValutePath: 
+  UpgradePath: 
+  BoostsPath: 
+  ValuteSaveFileName: Valute.json
+  UpgradesSaveFileName: Upgrades.json
+  BoostsSaveFileName: UpgradesBoosts.json
 --- !u!4 &799334637
 Transform:
   m_ObjectHideFlags: 0
@@ -6214,7 +6193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806297041
 GameObject:
@@ -6581,7 +6560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839628839
 GameObject:
@@ -6883,7 +6862,7 @@ Transform:
   m_Children:
   - {fileID: 1445049697}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892114252
 GameObject:
@@ -7344,8 +7323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -137.87903}
-  m_SizeDelta: {x: 1280, y: 275.368}
+  m_AnchoredPosition: {x: 0, y: -126.36902}
+  m_SizeDelta: {x: 1280, y: 252.346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &942559488
 MonoBehaviour:
@@ -7548,7 +7527,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960909993}
-  - component: {fileID: 960909994}
   m_Layer: 5
   m_Name: MultiFruitUpgrades
   m_TagString: Untagged
@@ -7578,19 +7556,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.1807593, y: -117.68002}
   m_SizeDelta: {x: 674, y: 596.82}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &960909994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960909992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c40d6e8b162213b4cb97bb8a403ab09f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelOfFruit: {fileID: 2129077091}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,7 +7973,6 @@ GameObject:
   - component: {fileID: 1007816094}
   - component: {fileID: 1007816093}
   - component: {fileID: 1007816092}
-  - component: {fileID: 1007816095}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -8080,7 +8044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1007816093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Double Coins
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1007816093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8119,57 +8095,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007816090}
   m_CullTransparentMesh: 1
---- !u!114 &1007816095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007816090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 1
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 15
-  - 30
-  - 50
-  - 70
-  - 90
-  - 110
-  - 130
-  - 160
-  - 190
-  - 220
-  - 250
-  - 300
-  - 350
-  - 400
-  - 450
-  - 500
-  - 550
-  - 600
-  - 650
-  - 700
-  - 750
-  - 850
-  - 950
-  - 1100
-  - 1400
-  - 1700
-  - 2000
-  - 3000
-  - 4000
-  - 5000
-  multi: 
-  MaxLevel: 30
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &1010290411
 GameObject:
   m_ObjectHideFlags: 0
@@ -8914,60 +8839,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051396194}
   m_CullTransparentMesh: 1
---- !u!1 &1054562785
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1054562786}
-  - component: {fileID: 1054562787}
-  m_Layer: 0
-  m_Name: TextOfInformPanelController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1054562786
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054562785}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2142535967}
-  - {fileID: 316666030}
-  - {fileID: 1583330075}
-  m_Father: {fileID: 2052715148}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1054562787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054562785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01efff042002695499e81582d0aa46bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BuyFruit: {fileID: 1272295349}
-  FruitCoinSprite: {fileID: -6937154614026109424, guid: 95374448691e6834caa5a0f2fb8724f5, type: 3}
-  FruitDimondsSprite: {fileID: 4534269000036290446, guid: 4986237c75910254899b8aa866cae29d, type: 3}
-  MultiFruitCoinSprite: {fileID: -5067163054748773898, guid: 729de3858ab174244adce3294bc7b835, type: 3}
-  TextOfNameFruit: {fileID: 250892669}
-  TextOfMultiFruit: {fileID: 2113842421}
-  TextOfMultiAwaking: {fileID: 327918992}
-  ImageOfValueOfAwaking: {fileID: 1168972804}
 --- !u!1 &1055600272
 GameObject:
   m_ObjectHideFlags: 0
@@ -9205,6 +9076,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068583041}
   m_CullTransparentMesh: 1
+--- !u!1 &1070318805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070318809}
+  - component: {fileID: 1070318808}
+  - component: {fileID: 1070318807}
+  - component: {fileID: 1070318806}
+  m_Layer: 0
+  m_Name: Math Operations Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1070318806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070318805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e6f68b284901a4ebb44a325b7510a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valuteManager: {fileID: 591847389}
+--- !u!114 &1070318807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070318805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ee2dfae96a5c14b9dcb1d088cf9e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valuteManager: {fileID: 591847389}
+--- !u!114 &1070318808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070318805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3126355089752fd4eab088f3f47817d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  add: {fileID: 1070318807}
+  take: {fileID: 1070318806}
+--- !u!4 &1070318809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070318805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.463104, y: -2.4401283, z: -301.716}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072303337
 GameObject:
   m_ObjectHideFlags: 0
@@ -9278,8 +9222,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 346.4988, y: -11}
-  m_SizeDelta: {x: 567.3522, y: 178.3}
+  m_AnchoredPosition: {x: 340.56, y: -1.5}
+  m_SizeDelta: {x: 553.347, y: 179.309}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084255832
 MonoBehaviour:
@@ -9410,9 +9354,6 @@ GameObject:
   - component: {fileID: 1086617097}
   - component: {fileID: 1086617096}
   - component: {fileID: 1086617095}
-  - component: {fileID: 1086617094}
-  - component: {fileID: 1086617098}
-  - component: {fileID: 1086617099}
   m_Layer: 5
   m_Name: 'BuyButton '
   m_TagString: Untagged
@@ -9441,32 +9382,6 @@ RectTransform:
   m_AnchoredPosition: {x: 383.4746, y: -588.72}
   m_SizeDelta: {x: 386.9233, y: 253.51}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1086617094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086617092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 0
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 800000000
-  - 1.9
-  - 3.4
-  - 7.1
-  - 16
-  multi: 29250000493a0000de570000a59700003cd90000
-  MaxLevel: 5
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!114 &1086617095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9561,39 +9476,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086617092}
   m_CullTransparentMesh: 1
---- !u!114 &1086617098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086617092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1f52d03987e4a4abf43ea7255d3a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoardOfStartBillionValues: 1
-  BoardOfStartQuintillionValues: 0
---- !u!95 &1086617099
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086617092}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1087770106
 GameObject:
   m_ObjectHideFlags: 0
@@ -9628,8 +9510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115.07, y: -6.7}
-  m_SizeDelta: {x: 230.148, y: 201.7516}
+  m_AnchoredPosition: {x: 142.17, y: 0}
+  m_SizeDelta: {x: 235.359, y: 199.811}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087770108
 MonoBehaviour:
@@ -9865,7 +9747,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 591847391}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AccountValutes, Assembly-CSharp
         m_MethodName: AddValute
         m_Mode: 5
@@ -9920,7 +9802,6 @@ GameObject:
   - component: {fileID: 1113082214}
   - component: {fileID: 1113082213}
   - component: {fileID: 1113082212}
-  - component: {fileID: 1113082215}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -9992,7 +9873,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113082213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: More Level Fruit
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1113082213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10031,36 +9924,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113082210}
   m_CullTransparentMesh: 1
---- !u!114 &1113082215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113082210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 2
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 1
-  - 2
-  - 5
-  - 13
-  - 29
-  - 61
-  - 134
-  - 471
-  - 972
-  multi: 
-  MaxLevel: 9
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &1121170749
 GameObject:
   m_ObjectHideFlags: 0
@@ -10494,7 +10357,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1288674503}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadAllValuesOfRebirthPanel, Assembly-CSharp
         m_MethodName: LoadStatisticValues
         m_Mode: 1
@@ -11170,50 +11033,6 @@ RectTransform:
   m_AnchoredPosition: {x: -16.281616, y: -197.70038}
   m_SizeDelta: {x: 630.9149, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1210331300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1210331302}
-  - component: {fileID: 1210331304}
-  m_Layer: 0
-  m_Name: TextOfValueController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1210331302
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210331300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.944885, y: 71.59393, z: 4391.367}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1601556834}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1210331304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210331300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3e80c48eb217d642aee542e92a5cc36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextOfMultiFruitCoinsAfterPrestige: {fileID: 0}
 --- !u!1 &1223948681
 GameObject:
   m_ObjectHideFlags: 0
@@ -11254,11 +11073,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 145
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 245
+    m_MaxSize: 300
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -11290,8 +11109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -135.5, y: -61}
-  m_SizeDelta: {x: 390.093, y: 216.079}
+  m_AnchoredPosition: {x: -124.2, y: -53.396}
+  m_SizeDelta: {x: 407.534, y: 183.1}
   m_Pivot: {x: 0.5, y: 0.49999872}
 --- !u!1 &1228640073
 GameObject:
@@ -12266,11 +12085,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288674500}
-  - component: {fileID: 1288674499}
   - component: {fileID: 1288674501}
   - component: {fileID: 1288674502}
-  - component: {fileID: 1288674504}
-  - component: {fileID: 1288674503}
   m_Layer: 0
   m_Name: RebirthController
   m_TagString: Untagged
@@ -12278,22 +12094,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!114 &1288674499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288674498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac65ed104798c74a8de2f9682e34ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ResetUpgrades: {fileID: 1563987389}
-  HideButton: {fileID: 1920152747}
-  ButtonOfRebirth: {fileID: 1920152742}
-  CountOfRebirth: 0
 --- !u!4 &1288674500
 Transform:
   m_ObjectHideFlags: 0
@@ -12304,10 +12104,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 542.8328, y: 612.79407, z: -12126.441}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1563987390}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1288674501
 MonoBehaviour:
@@ -12342,33 +12141,6 @@ MonoBehaviour:
   - "\u042F\u0431\u043B\u043E\u043A\u043E"
   - "\u0411\u0430\u043D\u0430\u043D"
   - "\u0410\u043F\u0435\u043B\u044C\u0441\u0438\u043D"
---- !u!114 &1288674503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288674498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78d301744ddc984dac6c47f538acfd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoostMulti: {fileID: 1288674504}
-  ConverterOfRebirthPanel: {fileID: 1944039171}
---- !u!114 &1288674504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288674498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2c6764ca77faf47ba4b58cf0599424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Valute: {fileID: 0}
 --- !u!1 &1299254630
 GameObject:
   m_ObjectHideFlags: 0
@@ -12460,8 +12232,6 @@ GameObject:
   - component: {fileID: 1304747417}
   - component: {fileID: 1304747416}
   - component: {fileID: 1304747415}
-  - component: {fileID: 1304747418}
-  - component: {fileID: 1304747419}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -12584,52 +12354,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304747413}
   m_CullTransparentMesh: 1
---- !u!114 &1304747418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304747413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 0
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 535000
-  - 6700000
-  - 37000000
-  - 124000000
-  - 346000000
-  - 666000000
-  multi: 87000000de020000290a0000230700003c0a00001c1b0000
-  MaxLevel: 6
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
---- !u!95 &1304747419
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304747413}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9da0a3de8f653c745883fdfdb3c4ef17, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1313734488
 GameObject:
   m_ObjectHideFlags: 0
@@ -13739,7 +13463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: 4.35}
+  m_AnchoredPosition: {x: -21.32, y: -2.04}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1426971321
@@ -14107,7 +13831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.35}
+  m_AnchoredPosition: {x: 0, y: -2.04}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1457493268
@@ -14474,6 +14198,7 @@ GameObject:
   - component: {fileID: 1488049961}
   - component: {fileID: 1488049960}
   - component: {fileID: 1488049962}
+  - component: {fileID: 1488049963}
   m_Layer: 0
   m_Name: Upgrade Manager
   m_TagString: Untagged
@@ -14493,255 +14218,660 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373f262629921654e93c769ad7e44c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accountValutesValriables: {fileID: 591847391}
+  valuteManager: {fileID: 591847389}
+  valutesMathOperations: {fileID: 591847391}
+  mathOperationsManager: {fileID: 1070318808}
   Upgrades:
   - NameOfUpgrade: Ripeness
     NameOfValute: Fruit Coins
     Prices:
     - Price: 75
-      PriceValue: 0
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 350
-      PriceValue: 0
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 3
-      PriceValue: 1
+      LastPrice: 200
+      Value: 1
       NumberOfValuePrice: 0
     - Price: 21
-      PriceValue: 1
+      LastPrice: 0
+      Value: 1
       NumberOfValuePrice: 0
     - Price: 340
-      PriceValue: 1
+      LastPrice: 0
+      Value: 1
       NumberOfValuePrice: 0
-    - Price: 5.7
-      PriceValue: 2
+    - Price: 5
+      LastPrice: 700
+      Value: 2
       NumberOfValuePrice: 0
-    Multis:
-    - Multi: 1
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 2
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 5
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 15
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 104
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 720
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
+    RewardMultis:
+    - RewardMulti: 124
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    SpecialRewards: []
     Button:
       BuyButton: {fileID: 450269325}
       TextOfPrice: {fileID: 1409457053}
       ValuteImage: {fileID: 135225072}
-      AnimatorOfButton: {fileID: 450269324}
-    ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
+    SpecialReward: 0
+    TypeOfSpecialUpgrade: 0
     CurrentPrice: 0
     TextOfMulti: {fileID: 250339402}
   - NameOfUpgrade: Vitamins
     NameOfValute: Fruit Coins
     Prices:
     - Price: 1
-      PriceValue: 1
+      LastPrice: 300
+      Value: 1
       NumberOfValuePrice: 0
     - Price: 8
-      PriceValue: 1
+      LastPrice: 600
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 54
-      PriceValue: 1
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 860
-      PriceValue: 1
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 12
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 84
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
-    Multis:
-    - Multi: 3
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 9
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 27
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 173
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 1.6
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 5.2
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
+    RewardMultis:
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    SpecialRewards: []
     Button:
       BuyButton: {fileID: 221670143}
       TextOfPrice: {fileID: 1589999018}
       ValuteImage: {fileID: 948549628}
-      AnimatorOfButton: {fileID: 221670147}
-    ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
+    SpecialReward: 0
+    TypeOfSpecialUpgrade: 0
     CurrentPrice: 0
     TextOfMulti: {fileID: 685158595}
   - NameOfUpgrade: Juice
     NameOfValute: Fruit Coins
     Prices:
     - Price: 190
-      PriceValue: 1
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
-    - Price: 2.1
-      PriceValue: 2
+    - Price: 2
+      LastPrice: 100
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 26
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 200
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 666
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
-    - Price: 2.4
-      PriceValue: 3
+    - Price: 2
+      LastPrice: 400
+      Value: 0
       NumberOfValuePrice: 0
-    Multis:
-    - Multi: 62
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 370
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 2.9
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 9.7
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 19
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 41
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
+    RewardMultis:
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    SpecialRewards: []
     Button:
       BuyButton: {fileID: 1304747415}
       TextOfPrice: {fileID: 953548280}
       ValuteImage: {fileID: 1743468513}
-      AnimatorOfButton: {fileID: 1304747419}
-    ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
+    SpecialReward: 0
+    TypeOfSpecialUpgrade: 0
     CurrentPrice: 0
     TextOfMulti: {fileID: 1281142866}
   - NameOfUpgrade: Potassium
     NameOfValute: Fruit Coins
     Prices:
     - Price: 500
-      PriceValue: 0
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 1
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 3
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 4
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 5
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
-    Multis:
-    - Multi: 1
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 3
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 6
-      RewardMultiValue: 2
-      NumberOfValueMulti: 0
-    - Multi: 12
-      RewardMultiValue: 4
-      NumberOfValueMulti: 0
-    - Multi: 65
-      RewardMultiValue: 5
-      NumberOfValueMulti: 0
-    - Multi: 123
-      RewardMultiValue: 2
-      NumberOfValueMulti: 0
+    RewardMultis:
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    SpecialRewards: []
     Button:
       BuyButton: {fileID: 1086617095}
       TextOfPrice: {fileID: 1417873433}
       ValuteImage: {fileID: 344462449}
-      AnimatorOfButton: {fileID: 1086617099}
-    ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
+    SpecialReward: 0
+    TypeOfSpecialUpgrade: 0
     CurrentPrice: 0
     TextOfMulti: {fileID: 1572073748}
   - NameOfUpgrade: Purity
     NameOfValute: Fruit Coins
     Prices:
     - Price: 500
-      PriceValue: 0
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 1
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 2
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 3
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 4
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
     - Price: 500
-      PriceValue: 5
+      LastPrice: 0
+      Value: 0
       NumberOfValuePrice: 0
-    Multis:
-    - Multi: 1
-      RewardMultiValue: 0
-      NumberOfValueMulti: 0
-    - Multi: 3
-      RewardMultiValue: 1
-      NumberOfValueMulti: 0
-    - Multi: 6
-      RewardMultiValue: 2
-      NumberOfValueMulti: 0
-    - Multi: 12
-      RewardMultiValue: 4
-      NumberOfValueMulti: 0
-    - Multi: 65
-      RewardMultiValue: 5
-      NumberOfValueMulti: 0
-    - Multi: 123
-      RewardMultiValue: 2
-      NumberOfValueMulti: 0
+    RewardMultis:
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    - RewardMulti: 0
+      LastRewardMulti: 0
+      Value: 0
+      NumberOfValueRewardMulti: 0
+    SpecialRewards: []
     Button:
       BuyButton: {fileID: 548543424}
       TextOfPrice: {fileID: 1065467867}
       ValuteImage: {fileID: 963798433}
-      AnimatorOfButton: {fileID: 548543428}
-    ValuesOfUpgrade: 000000000100000002000000030000000400000005000000
+    SpecialReward: 0
+    TypeOfSpecialUpgrade: 0
     CurrentPrice: 0
     TextOfMulti: {fileID: 1357418674}
-  SybwolsOfValue:
-  - 
-  - k
-  - M
-  - B
-  - T
-  - q
+  - NameOfUpgrade: Double Coins
+    NameOfValute: Fruit Dimonds
+    Prices:
+    - Price: 30
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 40
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 50
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 60
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 70
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 80
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 90
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 100
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 125
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 150
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 1007816092}
+      TextOfPrice: {fileID: 1729033391}
+      ValuteImage: {fileID: 806297043}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 0
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 0}
+  - NameOfUpgrade: More Dimonds
+    NameOfValute: Fruit Dimonds
+    Prices:
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 240472986}
+      TextOfPrice: {fileID: 438982444}
+      ValuteImage: {fileID: 1595165672}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 1
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 0}
+  - NameOfUpgrade: More Gold Boost Time
+    NameOfValute: Fruit Dimonds
+    Prices:
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 1978327849}
+      TextOfPrice: {fileID: 2036718880}
+      ValuteImage: {fileID: 1797245442}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 2
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 0}
+  - NameOfUpgrade: More Dimond Fruits Chance
+    NameOfValute: Fruit Dimonds
+    Prices:
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 358788443}
+      TextOfPrice: {fileID: 818656348}
+      ValuteImage: {fileID: 894260307}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 3
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 0}
+  - NameOfUpgrade: More Level Fruit
+    NameOfValute: MultiFruit Coins
+    Prices:
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 1113082212}
+      TextOfPrice: {fileID: 237544690}
+      ValuteImage: {fileID: 1088547199}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 4
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 0}
+  - NameOfUpgrade: More MultiFruitCoins Perzent
+    NameOfValute: MultiFruit Coins
+    Prices:
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 2056371793}
+      TextOfPrice: {fileID: 806610669}
+      ValuteImage: {fileID: 967424141}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 5
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 0}
+  - NameOfUpgrade: More Double Coins
+    NameOfValute: MultiFruit Coins
+    Prices:
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    - Price: 500
+      LastPrice: 0
+      Value: 0
+      NumberOfValuePrice: 0
+    RewardMultis: []
+    SpecialRewards:
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    - SpecialReward: 0
+    Button:
+      BuyButton: {fileID: 1593546847}
+      TextOfPrice: {fileID: 2001868077}
+      ValuteImage: {fileID: 1887861096}
+    SpecialReward: 1
+    TypeOfSpecialUpgrade: 6
+    CurrentPrice: 0
+    TextOfMulti: {fileID: 1357418674}
   ActiveSprite: {fileID: 2893777669117545954, guid: de8b2a506b24dcd46a2ec94df91144ef, type: 3}
   NonActiveSprite: {fileID: 8975302872623177582, guid: 56c4659b360088b4891eeb9fe9a10503, type: 3}
 --- !u!4 &1488049961
@@ -14754,9 +14884,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.362786, y: 3.9202647, z: -122.41882}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 737590331}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1488049962
 MonoBehaviour:
@@ -14771,7 +14902,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuteManager: {fileID: 591847389}
-  upgradeManager: {fileID: 1488049960}
+--- !u!114 &1488049963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488049959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339cace5d73ce9e459b51e648eb04be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChanceOfDoubleCoins: 0
+  ChanceOfMoreDimonds: 0
+  GoldBoostTime: 0
+  ChanceOfDimondFruits: 0
+  PerzentOfLevelFruit: 0
+  PerzentOfMultiFruitCoins: 0
+  ChanceOfDoubleDimonds: 0
 --- !u!1 &1490925622
 GameObject:
   m_ObjectHideFlags: 0
@@ -14894,7 +15043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2be5dd8973339f49b33072cf9f7b1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rebirth: {fileID: 1288674499}
   BuyFruit: {fileID: 1272295349}
   Locks:
   - {fileID: 1852899928}
@@ -15429,10 +15577,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 591847391}
-        m_TargetAssemblyTypeName: AccountValutes, Assembly-CSharp
-        m_MethodName: AddValute
-        m_Mode: 5
+      - m_Target: {fileID: 559216847}
+        m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
+        m_MethodName: ClickOnFruit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15451,18 +15599,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Click
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2133473330}
-        m_TargetAssemblyTypeName: CreateATextsOfFruitCoins, Assembly-CSharp
-        m_MethodName: MotionOnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1558081278
@@ -15522,50 +15658,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1563987388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1563987390}
-  - component: {fileID: 1563987389}
-  m_Layer: 0
-  m_Name: RebirthReseter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!114 &1563987389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563987388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4199f907058b948a7f74c81b60181b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
---- !u!4 &1563987390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563987388}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.711517, y: -9.66333, z: 8404.312}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1288674500}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1572073746
 GameObject:
   m_ObjectHideFlags: 0
@@ -15654,7 +15746,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572411482}
-  - component: {fileID: 1572411483}
   m_Layer: 5
   m_Name: AllUpgrades
   m_TagString: Untagged
@@ -15684,25 +15775,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.0192327, y: -56.838394}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1572411483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572411481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eec61461949ad342a5572fb01c3e819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CoinsUpgrade: {fileID: 11059581}
-  DimondUpgrades: {fileID: 1855594380}
-  MultiFruitCoinsUpgrade: {fileID: 960909994}
-  Buttons: []
-  ActibeToBuy: {fileID: 2893777669117545954, guid: de8b2a506b24dcd46a2ec94df91144ef, type: 3}
-  NonActiveToBuy: {fileID: 8975302872623177582, guid: 56c4659b360088b4891eeb9fe9a10503, type: 3}
-  ValueForBuy: 0
 --- !u!1 &1577076007
 GameObject:
   m_ObjectHideFlags: 0
@@ -15779,57 +15851,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577076007}
   m_CullTransparentMesh: 1
---- !u!1 &1583330074
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1583330075}
-  - component: {fileID: 1583330076}
-  m_Layer: 0
-  m_Name: TextOfListFruitsController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1583330075
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583330074}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1054562786}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1583330076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583330074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd650e0334875a4c8425030429d5dfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Describers:
-  - {fileID: 18198822}
-  - {fileID: 1039749073}
-  - {fileID: 1366515192}
-  TextsForLevels:
-  - {fileID: 1490925623}
-  - {fileID: 1598852567}
-  - {fileID: 1472315908}
 --- !u!1 &1584283567
 GameObject:
   m_ObjectHideFlags: 0
@@ -15926,7 +15947,7 @@ MonoBehaviour:
           m_StringArgument: ClickOnInformButtonAnimation
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2142535968}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShowCountOfFruitsText, Assembly-CSharp
         m_MethodName: GetUnlockFruits
         m_Mode: 1
@@ -16281,7 +16302,6 @@ GameObject:
   - component: {fileID: 1593546849}
   - component: {fileID: 1593546848}
   - component: {fileID: 1593546847}
-  - component: {fileID: 1593546850}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -16353,7 +16373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1593546848}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: More Double Coins
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1593546848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16392,36 +16424,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593546845}
   m_CullTransparentMesh: 1
---- !u!114 &1593546850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593546845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 2
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 2
-  price:
-  - 12
-  - 27
-  - 51
-  - 97
-  - 184
-  - 448
-  - 938
-  - 1720
-  - 2944
-  multi: 
-  MaxLevel: 9
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &1595165670
 GameObject:
   m_ObjectHideFlags: 0
@@ -16645,7 +16647,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1288674503}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: LoadAllValuesOfRebirthPanel, Assembly-CSharp
           m_MethodName: LoadValuesOfRebirthPanel
           m_Mode: 1
@@ -16721,39 +16723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelManager: {fileID: 266568130}
   PanelId: PanelForRebirth
---- !u!1 &1601556833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1601556834}
-  m_Layer: 0
-  m_Name: TextsControllers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1601556834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601556833}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 429.50497, y: 678.5208, z: -5183.3184}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2052715148}
-  - {fileID: 1210331302}
-  - {fileID: 1831751814}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1608724615
 GameObject:
   m_ObjectHideFlags: 0
@@ -16788,8 +16757,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -501.95, y: -11}
-  m_SizeDelta: {x: 210.0731, y: 207.0245}
+  m_AnchoredPosition: {x: -494.141, y: -1.5}
+  m_SizeDelta: {x: 202.562, y: 199.622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608724617
 MonoBehaviour:
@@ -18648,7 +18617,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 316666031}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConvertTextOfLoclPanel, Assembly-CSharp
         m_MethodName: SelectTextToRequpment
         m_Mode: 2
@@ -18737,50 +18706,6 @@ RectTransform:
   m_AnchoredPosition: {x: -6.1557617, y: -425.40027}
   m_SizeDelta: {x: 630.9149, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1831751813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1831751814}
-  - component: {fileID: 1831751815}
-  m_Layer: 0
-  m_Name: TextOfUpgradesController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1831751814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831751813}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1601556834}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1831751815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831751813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6988c050a6edb45af68741082ee86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UpgradeManager: {fileID: 1488049960}
 --- !u!1 &1838115813
 GameObject:
   m_ObjectHideFlags: 0
@@ -19327,7 +19252,7 @@ Transform:
   - {fileID: 1272295350}
   - {fileID: 2129077090}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852899928
 GameObject:
@@ -19475,7 +19400,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 316666031}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConvertTextOfLoclPanel, Assembly-CSharp
         m_MethodName: SelectTextToRequpment
         m_Mode: 2
@@ -19529,7 +19454,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1855594379}
-  - component: {fileID: 1855594380}
   m_Layer: 5
   m_Name: FruitDimondsUpgrades
   m_TagString: Untagged
@@ -19557,20 +19481,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000087870496, y: 7.4901237}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1855594380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855594378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1130cc30488a1b44a150812ae4f74c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerController: {fileID: 278162678}
-  GoldBoost: {fileID: 278162676}
 --- !u!1 &1858503275
 GameObject:
   m_ObjectHideFlags: 0
@@ -19724,6 +19634,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1881936314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881936315}
+  - component: {fileID: 1881936316}
+  m_Layer: 0
+  m_Name: Demisions Of Valutes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1881936315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881936314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 591847390}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881936316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881936314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49bfcb0f958b4d4f99bd72187eaf4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SybwolsOfValutes:
+  - Sybwol: ' '
+    HugeWord: 0
+  - Sybwol: k
+    HugeWord: 0
+  - Sybwol: M
+    HugeWord: 1
+  - Sybwol: B
+    HugeWord: 1
+  - Sybwol: T
+    HugeWord: 1
+  - Sybwol: q
+    HugeWord: 0
+  Values: 
 --- !u!1 &1883351431
 GameObject:
   m_ObjectHideFlags: 0
@@ -19916,8 +19883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 169.802}
-  m_SizeDelta: {x: 1280, y: 339.155}
+  m_AnchoredPosition: {x: 0, y: 164.439}
+  m_SizeDelta: {x: 1280, y: 328.429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885704189
 MonoBehaviour:
@@ -20297,7 +20264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288674499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuyRebirth, Assembly-CSharp
         m_MethodName: StartRebith
         m_Mode: 1
@@ -20580,57 +20547,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937763918}
   m_CullTransparentMesh: 1
---- !u!1 &1944039169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1944039170}
-  - component: {fileID: 1944039171}
-  m_Layer: 0
-  m_Name: TextsOfRebirthController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1944039170
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944039169}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2052715148}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1944039171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944039169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19a20a7e3ec7a746a04d48f4f1fd956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rebirth: {fileID: 1288674499}
-  Fruits: {fileID: 1288674502}
-  TextForMultiOfFruits: {fileID: 1503798262}
-  TextForCurrentFruit: {fileID: 935762015}
-  TextOfCountOfRebirth: {fileID: 23893232}
-  TextOfMultiFruitCoinsAfterPrestige: {fileID: 910746161}
-  TextOfMultiOfRebirth: {fileID: 209284861}
-  TextOfMultiFruitCoins: {fileID: 977142026}
 --- !u!1 &1946175722
 GameObject:
   m_ObjectHideFlags: 0
@@ -20803,7 +20719,6 @@ GameObject:
   - component: {fileID: 1978327851}
   - component: {fileID: 1978327850}
   - component: {fileID: 1978327849}
-  - component: {fileID: 1978327852}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -20875,7 +20790,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978327850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: More Gold Boost Time
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1978327850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20914,36 +20841,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978327847}
   m_CullTransparentMesh: 1
---- !u!114 &1978327852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978327847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 1
-  TypesOfDinondsUpgrades: 2
-  TypesOfMultiFruitCoinsUpgrades: 0
-  price:
-  - 200
-  - 350
-  - 600
-  - 800
-  - 1250
-  - 1700
-  - 2400
-  - 4000
-  - 7000
-  multi: 
-  MaxLevel: 9
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &1981139610
 GameObject:
   m_ObjectHideFlags: 0
@@ -20974,7 +20871,7 @@ Transform:
   - {fileID: 322978400}
   - {fileID: 892114253}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1998730813
 GameObject:
@@ -21218,7 +21115,7 @@ GameObject:
   - component: {fileID: 2024669234}
   - component: {fileID: 2024669233}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text Of Multi Fruit Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21840,38 +21737,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2052715147
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2052715148}
-  m_Layer: 0
-  m_Name: TextsOfRebirthPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &2052715148
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052715147}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1944039170}
-  - {fileID: 1054562786}
-  m_Father: {fileID: 1601556834}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056371791
 GameObject:
   m_ObjectHideFlags: 0
@@ -21884,7 +21749,6 @@ GameObject:
   - component: {fileID: 2056371795}
   - component: {fileID: 2056371794}
   - component: {fileID: 2056371793}
-  - component: {fileID: 2056371796}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -21956,7 +21820,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2056371794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1488049960}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: More MultiFruitCoins Perzent
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2056371794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21995,37 +21871,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056371791}
   m_CullTransparentMesh: 1
---- !u!114 &2056371796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056371791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85cf19d875db4d544bad017137f23d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Upgrades: {fileID: 1572411483}
-  TypeOfUpgrade: 2
-  TypesOfDinondsUpgrades: 0
-  TypesOfMultiFruitCoinsUpgrades: 1
-  price:
-  - 3
-  - 7
-  - 13
-  - 24
-  - 41
-  - 74
-  - 128
-  - 375
-  - 901
-  - 1592
-  multi: 
-  MaxLevel: 10
-  CurrentLevel: 0
-  BackgroundOfButton: {fileID: 0}
 --- !u!1 &2057104309
 GameObject:
   m_ObjectHideFlags: 0
@@ -22060,8 +21905,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278.16998, y: -11}
-  m_SizeDelta: {x: 594.4328, y: 178.3014}
+  m_AnchoredPosition: {x: -280.643, y: -1.5}
+  m_SizeDelta: {x: 588.272, y: 179.309}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057104311
 MonoBehaviour:
@@ -22472,53 +22317,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133473328}
   m_CullTransparentMesh: 1
---- !u!1 &2142535966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2142535967}
-  - component: {fileID: 2142535968}
-  m_Layer: 0
-  m_Name: TextofCountFruitsController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &2142535967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142535966}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1054562786}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2142535968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142535966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd06045463694540994f025c22e7624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Fruits: {fileID: 1288674502}
-  BuyFruit: {fileID: 1272295349}
-  TextOfCountFruits: {fileID: 1937763920}
-  CountOfUnlockedFruits: 0
 --- !u!1 &2144022581
 GameObject:
   m_ObjectHideFlags: 0

@@ -2741,7 +2741,7 @@ public class LeanTween : MonoBehaviour {
     }
 
     /**
-    * Add a listener method to be called when the appropriate LeanTween.dispatchEvent is called
+    * AddValues a listener method to be called when the appropriate LeanTween.dispatchEvent is called
     *
     * @method LeanTween.addListener
     * @param {GameObject} caller:GameObject the gameObject the listener is attached to

@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class ConvertTextForRebirth : MonoBehaviour
 {
    // Needed Classes
-   public BuyRebirth Rebirth;
    public FruitsController Fruits;
    // All Texts Of Rebirth Panel
    public Text TextForMultiOfFruits;
@@ -22,8 +21,7 @@ public class ConvertTextForRebirth : MonoBehaviour
    public void SetAllStatisticValues()
    {
       //ConvertAnyValueOfRebirthPanel(TextForMultiOfFruits, "Множитель Фруктов: ", FruitsCoins.MultiOfFruits);
-      ConvertAnyValueOfRebirthPanel(TextOfCountOfRebirth, "Количевство перерождений: ", Rebirth.CountOfRebirth);
-     //ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoins, "Множитель фрукткоинов: ", FruitsCoins.MultiFromClick);
+      //ConvertAnyValueOfRebirthPanel(TextOfMultiFruitCoins, "Множитель фрукткоинов: ", FruitsCoins.MultiFromClick);
       ConvertAnyStringValueOfStatisticPanel(TextForCurrentFruit, "Текущий фрукт: ",Fruits.CurrentFruitInString);
    }
 

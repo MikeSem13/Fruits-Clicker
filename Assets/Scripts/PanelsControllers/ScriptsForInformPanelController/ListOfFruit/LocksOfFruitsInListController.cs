@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 public class LocksOfFruitsInListController : MonoBehaviour
 {
-   // Class needed for change Locks
-   public BuyRebirth Rebirth;
-
-   public BuyFruit BuyFruit;
+    public BuyFruit BuyFruit;
    // Locks with Texts
    public List<GameObject> Locks;
    public List<Text> TextsOfFruits;
@@ -45,14 +42,14 @@ public class LocksOfFruitsInListController : MonoBehaviour
    {
        for (int i = 0; i < BuyFruit.AllFruitsDesctiber.Count; i++)
        {
-           if (Rebirth.CountOfRebirth >= BoardsOfUnlock[i])
+          /* if (Rebirth.CountOfRebirth >= BoardsOfUnlock[i])
            {
                BuyFruit.AllFruitsDesctiber[i].IsUnlocked = true;
            }
            else
            {
                BuyFruit.AllFruitsDesctiber[i].IsUnlocked = false;
-           }
+           }*/
        }
    }
 }
