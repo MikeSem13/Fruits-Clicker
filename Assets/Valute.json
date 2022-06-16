@@ -2,113 +2,43 @@
     "Valutes": [
         {
             "NameOfValute": "",
-            "Values": [
+            "Valute": 59.0,
+            "ValuteMultiplier": 10.0,
+            "MultiplierBoosts": [
                 {
-                    "ValueName": "Basic ",
-                    "Valute": 431.0,
-                    "MultiOfValute": 128.0
+                    "NameOfBoost": "Click Boost",
+                    "Boost": 1.0
                 },
                 {
-                    "ValueName": "Thousen",
-                    "Valute": 638.0,
-                    "MultiOfValute": 0.0
+                    "NameOfBoost": "Double Boost",
+                    "Boost": 1.0
                 },
                 {
-                    "ValueName": "Million",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Billion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Trillion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Quadrillion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
+                    "NameOfBoost": "Gold&Dimond Fruits Boost",
+                    "Boost": 10.0
                 }
             ],
             "TextOfValute": {
                 "instanceID": 0
-            },
-            "NumberOfValue": 1,
-            "NumberOfMulti": 0
+            }
         },
         {
             "NameOfValute": "",
-            "Values": [
-                {
-                    "ValueName": "Basic ",
-                    "Valute": 63.0,
-                    "MultiOfValute": 1.0
-                },
-                {
-                    "ValueName": "Thousen",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Million",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Billion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Trillion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                }
-            ],
+            "Valute": 0.0,
+            "ValuteMultiplier": 1.0,
+            "MultiplierBoosts": [],
             "TextOfValute": {
                 "instanceID": 0
-            },
-            "NumberOfValue": 0,
-            "NumberOfMulti": 0
+            }
         },
         {
             "NameOfValute": "",
-            "Values": [
-                {
-                    "ValueName": "Basic ",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Thousen",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Million",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Billion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                },
-                {
-                    "ValueName": "Trillion",
-                    "Valute": 0.0,
-                    "MultiOfValute": 0.0
-                }
-            ],
+            "Valute": 0.0,
+            "ValuteMultiplier": 1.0,
+            "MultiplierBoosts": [],
             "TextOfValute": {
                 "instanceID": 0
-            },
-            "NumberOfValue": 0,
-            "NumberOfMulti": 0
+            }
         }
     ]
 }

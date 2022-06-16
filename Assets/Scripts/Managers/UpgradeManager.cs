@@ -11,7 +11,7 @@ public class UpgradeManager : MonoBehaviour
    [SerializeField] private ValuteManager valuteManager;
    [SerializeField] private ValutesMathOperations valutesMathOperations;
    [SerializeField] private MathOperationsManager mathOperationsManager;
-   private BoostsOfUpgrades Boosts;
+   private BoostsFromUpgrades boostsFromUpgrades;
    
    [Space]
    [Header("Seriaseble Classes")]
@@ -24,14 +24,9 @@ public class UpgradeManager : MonoBehaviour
 
    private void Awake()
    {
-      Boosts = GetComponent<BoostsOfUpgrades>();
+      boostsFromUpgrades = GetComponent<BoostsFromUpgrades>();
    }
-
-   private void Start()
-   {
-      SetNumbersOfValueInUpgrade();
-   }
-
+   
    public void BuyUpgrade(string UpgradeName)
    {
       UpgradeModel upgradeModel = Upgrades.FirstOrDefault(model => model.NameOfUpgrade == UpgradeName);
@@ -45,27 +40,17 @@ public class UpgradeManager : MonoBehaviour
 
    public void RunActionsAfterUpgrade(ValutesModel valutesModel, UpgradeModel upgradeModel)
    {
-      if ( MatchValuteToPrice(valutesModel.Values[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice].Valute, upgradeModel.Prices[upgradeModel.CurrentPrice].Price) )
+      if ( MatchValuteToPrice(valutesModel.Valute, upgradeModel.Prices[upgradeModel.CurrentPrice].Price) )
       {
-         valutesMathOperations.TakeValuteForUpgrade(valutesModel.NameOfValute, upgradeModel.Prices[upgradeModel.CurrentPrice],upgradeModel);
+         valutesMathOperations.TakeValuteForUpgrade(valutesModel.NameOfValute, upgradeModel.Prices[upgradeModel.CurrentPrice]);
          ChooseRewardOfUpgrade(valutesModel, upgradeModel);
          upgradeModel.CurrentPrice++;
-      }
-      else
-      {
-         bool GetReward = false;
-         valutesMathOperations.TakeFromFarValutes(valutesModel.NameOfValute, upgradeModel.Prices[upgradeModel.CurrentPrice],upgradeModel, ref GetReward);
-         if (GetReward)
-         {
-            valutesMathOperations.AddMulti(valutesModel.NameOfValute, upgradeModel.NameOfUpgrade);
-            upgradeModel.CurrentPrice++;
-         }
       }
    }
 
    public void ChooseRewardOfUpgrade(ValutesModel valutesModel, UpgradeModel upgradeModel)
    {
-      if (!upgradeModel.SpecialReward) valutesMathOperations.AddMulti(valutesModel.NameOfValute, upgradeModel.NameOfValute);
+      if (!upgradeModel.SpecialReward) valutesMathOperations.AddMultiplierBoost(valutesModel.NameOfValute,"Click Boost", upgradeModel.NameOfUpgrade);
       else DefineSpecialReward(upgradeModel);
    }
 
@@ -74,51 +59,40 @@ public class UpgradeManager : MonoBehaviour
       switch (upgradeModel.TypeOfSpecialUpgrade)
       {
          case SpecialUpgradesEnum.DoubleCoinsChance:
-            mathOperationsManager.add.AddValues(ref Boosts.ChanceOfDoubleCoins, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.PercentOfDoubleCoins, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
          case SpecialUpgradesEnum.MoreDimondsChance:
-            mathOperationsManager.add.AddValues(ref Boosts.ChanceOfMoreDimonds, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.PercentOfMoreDimonds, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
          case SpecialUpgradesEnum.MoreTimeForGoldBoost:
-            mathOperationsManager.add.AddValues(ref Boosts.GoldBoostTime, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.GoldBoostTime, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
          case SpecialUpgradesEnum.MoreDimondFruitsChance:
-            mathOperationsManager.add.AddValues(ref Boosts.ChanceOfDimondFruits, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.PercentOfDimondFruits, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
          case SpecialUpgradesEnum.MoreLevelFruit:
-            mathOperationsManager.add.AddValues(ref Boosts.PerzentOfLevelFruit, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.PercentOfLevelFruit, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
          case SpecialUpgradesEnum.MoreMultiFruitCoins:
-            mathOperationsManager.add.AddValues(ref Boosts.PerzentOfMultiFruitCoins, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.PercentOfMultiFruitCoins, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
          case SpecialUpgradesEnum.DoubleDimondsChance:
-            mathOperationsManager.add.AddValues(ref Boosts.ChanceOfDoubleDimonds, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
+            mathOperationsManager.add.AddValues(ref boostsFromUpgrades.PercentOfDoubleDimonds, upgradeModel.SpecialRewards[upgradeModel.CurrentPrice].SpecialReward);
             break;
       }
    }
    
-   public bool MatchValuteToPrice(float valute, float price)
+   public bool MatchValuteToPrice(double valute, double price)
    {
       if (valute >= price) return true;
       else return false;
    }
 
-   public void SetNumbersOfValueInUpgrade()
+   public void ResetUpgrades()
    {
       foreach (var Upgrade in Upgrades)
       {
-         foreach (var Price in Upgrade.Prices)
-         {
-            Price.NumberOfValuePrice = (int) Price.Value;
-         }
-      }
-
-      foreach (var Upgrade in Upgrades)
-      {
-         foreach (var Reward in Upgrade.RewardMultis)
-         {
-            Reward.NumberOfValueRewardMulti = (int) Reward.Value;
-         }
+         Upgrade.CurrentPrice = 0;
       }
    }
 }

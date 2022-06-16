@@ -21,7 +21,6 @@ using UnityEngine.UI;
   public PriceOfUpgradeModel [] Prices;
   
   [Space]
-
   [Header("Награды с множителем")]
   public MultiRewardOfUpgradeModel [] RewardMultis;
   [Space]

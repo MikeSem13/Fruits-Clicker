@@ -8,7 +8,7 @@ public class Take : MonoBehaviour
     [Header("Classes")] 
     [SerializeField] private ValuteManager valuteManager;
 
-    public void TakeValues(ref float valute, float addValue)
+    public void TakeValues(ref double valute, double addValue)
     {
         valute -= addValue;
     }

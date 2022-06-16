@@ -7,13 +7,4 @@ using UnityEngine.UI;
 {
     [Header("Награда")]
     public float RewardMulti;
-    public float LastRewardMulti;
-    
-    [Space]
-    [Header("Размерность награды")]
-    public ValuesEnum Value;
-    
-    [Space]
-    [Header("Дополнительные параметры")]
-    public int NumberOfValueRewardMulti;
 }

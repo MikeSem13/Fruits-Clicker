@@ -10,12 +10,4 @@ using UnityEngine.UI;
 {
    [Header("Цена")]
    public float Price;
-   public float LastPrice;
-   
-   [Space]
-   [Header("Размерность цены")]
-   public ValuesEnum Value;
-
-
-   public int NumberOfValuePrice;
 }

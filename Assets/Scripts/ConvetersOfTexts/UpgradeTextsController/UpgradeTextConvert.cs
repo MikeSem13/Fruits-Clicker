@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UpgradeTextConvert : MonoBehaviour
 {
   [SerializeField] private UpgradeManager UpgradeManager;
-  [SerializeField] private DemisionsOfValutes DemisionsOfValutes;
+  [SerializeField] private TextConverter textConverter;
 
   private void Update()
   {
@@ -23,27 +23,15 @@ public class UpgradeTextConvert : MonoBehaviour
 
     if (upgradeModel.CurrentPrice < upgradeModel.Prices.Length)
     {
-      ConvertValuesOfPriceTexts(upgradeModel.Prices[upgradeModel.CurrentPrice], upgradeModel.Button.TextOfPrice, DemisionsOfValutes.SybwolsOfValutes[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice]);
-      if(!upgradeModel.SpecialReward) ConvertValuesOfMultiTexts(upgradeModel.RewardMultis[upgradeModel.CurrentPrice], upgradeModel.TextOfMulti, DemisionsOfValutes.SybwolsOfValutes[upgradeModel.RewardMultis[upgradeModel.CurrentPrice].NumberOfValueRewardMulti]); 
-      ControllFontSizeAndPositionOfPriceText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price, DemisionsOfValutes.SybwolsOfValutes[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice]);
+      textConverter.ConvertValuesToText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price, "");
+      if(!upgradeModel.SpecialReward) textConverter.ConvertValuesToText(upgradeModel.TextOfMulti, upgradeModel.RewardMultis[upgradeModel.CurrentPrice].RewardMulti,"+");
+      ControllFontSizeAndPositionOfPriceText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price);
     }
     else
     {
       SetPriceTextToMaxStage(upgradeModel.Button.TextOfPrice);
-      SetMultiTextToMaxStage(upgradeModel.TextOfMulti, upgradeModel, DemisionsOfValutes.SybwolsOfValutes[upgradeModel.RewardMultis[upgradeModel.CurrentPrice - 1].NumberOfValueRewardMulti]);
+      SetMultiTextToMaxStage(upgradeModel.TextOfMulti, upgradeModel);
     }
-  }
-
-  public void ConvertValuesOfPriceTexts(PriceOfUpgradeModel price, Text text, SybwolModel sybwol)
-  {
-    if (price.Price < 10  && price.LastPrice >= 100) text.text = price.Price + "." + Mathf.Floor(price.LastPrice / 100) + sybwol.Sybwol;
-    else if (price.Price < 1000) text.text = price.Price + sybwol.Sybwol;
-  }
-  
-  public void ConvertValuesOfMultiTexts(MultiRewardOfUpgradeModel multi,Text text, SybwolModel sybwol)
-  {
-    if (multi.RewardMulti < 10 && multi.LastRewardMulti >= 100) text.text = "+" + multi.RewardMulti + "." + Mathf.Floor(multi.LastRewardMulti / 100) + sybwol.Sybwol;
-    else if (multi.RewardMulti < 1000) text.text = "+" + multi.RewardMulti + sybwol.Sybwol;
   }
 
   public void SetPriceTextToMaxStage(Text textPrice)
@@ -53,46 +41,27 @@ public class UpgradeTextConvert : MonoBehaviour
     textPrice.fontSize = 110;
   }
 
-  public void SetMultiTextToMaxStage(Text textMulti, UpgradeModel upgradeModel, SybwolModel sybwol)
+  public void SetMultiTextToMaxStage(Text textMulti, UpgradeModel upgradeModel)
   {
     float sum = 0;
-    float LastSum = 0;
-    
-    for (int i = 0; i < upgradeModel.RewardMultis.Length; i++)
+
+    foreach (var price in upgradeModel.Prices)
     {
-      if (upgradeModel.RewardMultis[i].NumberOfValueRewardMulti == upgradeModel.RewardMultis[upgradeModel.RewardMultis.Length - 1].NumberOfValueRewardMulti)
-      {
-         sum += upgradeModel.RewardMultis[i].RewardMulti;
-         if (upgradeModel.RewardMultis[i].LastRewardMulti > 0) LastSum += upgradeModel.RewardMultis[i].LastRewardMulti;
-      }
-      else if (upgradeModel.RewardMultis[i].NumberOfValueRewardMulti == upgradeModel.RewardMultis[upgradeModel.RewardMultis.Length - 2].NumberOfValueRewardMulti)
-      {
-        LastSum += upgradeModel.RewardMultis[i].RewardMulti; 
-      }
+      sum += price.Price;
     }
 
-    if (sum < 10) textMulti.text = "+" + sum + "." + Mathf.Floor(LastSum/ 100) + sybwol.Sybwol;
-    else if (sum < 1000) textMulti.text = "+" + sum + sybwol.Sybwol;
+    textConverter.ConvertValuesToText(textMulti, sum, "+");
   }
   
-  public void ControllFontSizeAndPositionOfPriceText(Text textOfPrice, float price, SybwolModel sybwol)
+  public void ControllFontSizeAndPositionOfPriceText(Text textOfPrice, double price)
   {
-    if (sybwol.Sybwol == " ")
-    {
-      textOfPrice.fontSize = 100;
-    }
-    else if (sybwol.Sybwol.Length > 0)
-    {
-      if (sybwol.HugeWord)
-      {
-        
-      }
-      else
-      {
-        
-      }
-    }
+    textOfPrice.gameObject.transform.localPosition = new Vector2(78.43535f,0);
 
-    textOfPrice.gameObject.transform.localPosition = new Vector2(78.43f,0);
+    if (price < 1e+5) textOfPrice.fontSize = 100;
+    else if (price < 1e+7) textOfPrice.fontSize = 85;
+    else if (price < 1e+8) textOfPrice.fontSize = 95;
+    else if (price < 1e+9) textOfPrice.fontSize = 75;
+    else if (price < 1e+11) textOfPrice.fontSize = 90;
+    else if (price < 1e+12) textOfPrice.fontSize = 80;
   }
 }

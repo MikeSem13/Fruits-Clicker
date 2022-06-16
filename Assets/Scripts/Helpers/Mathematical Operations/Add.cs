@@ -3,16 +3,13 @@ using System.Linq;
 using UnityEngine;
 
 public class Add : MonoBehaviour
-{ 
-    [Header("Classes")] 
-    [SerializeField] private ValuteManager valuteManager;
-
-    public void AddValues(ref float value, float addValue)
+{
+    public void AddValues(ref double value, double addValue)
     {
          value += addValue;
     }
 
-    public void AddValuesWithChance(ref float value, float addValue, float percent)
+    public void AddValuesWithChance(ref double value, double addValue, double percent)
     {
         int Chance = Random.Range(0, 100);
         if (Chance < percent) value += addValue;

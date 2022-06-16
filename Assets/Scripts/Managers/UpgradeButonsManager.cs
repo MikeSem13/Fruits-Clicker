@@ -51,25 +51,13 @@ public class UpgradeButonsManager : MonoBehaviour
 
         if (upgradeModel.CurrentPrice < upgradeModel.Prices.Length)
         {
-            if (valuteModel.Values[upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice].Valute >= upgradeModel.Prices[upgradeModel.CurrentPrice].Price)
+            if (valuteModel.Valute >= upgradeModel.Prices[upgradeModel.CurrentPrice].Price)
             {
                 upgradeModel.Button.BuyButton.image.sprite = upgradeManager.ActiveSprite;
             }
             else
             {
-                for (int i = upgradeModel.Prices[upgradeModel.CurrentPrice].NumberOfValuePrice + 1; i < valuteModel.Values.Length; i++)
-                {
-                    if (valuteModel.Values[i].Valute >= 1)
-                    {
-                        upgradeModel.Button.BuyButton.image.sprite = upgradeManager.ActiveSprite;
-                        break;
-                    }
-                    else
-                    {
-                        upgradeModel.Button.BuyButton.image.sprite = upgradeManager.NonActiveSprite;     
-                        break;
-                    }
-                }
+                upgradeModel.Button.BuyButton.image.sprite = upgradeManager.NonActiveSprite;
             }
         }
         else

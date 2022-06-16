@@ -20,7 +20,6 @@ public class PanelManager : Singleton<PanelManager>
             panelModel.GameObjectPanel.SetActive(true);
             panelModel.Animator.SetTrigger("Apear");
             if(panelModel.BackGround != null) panelModel.BackGround.SetActive(true);
-            if(panelModel.BackGround != null) panelModel.BackGround.GetComponent<Animator>().SetTrigger("Apear");
             panelModel.IsShowing = true;
 
             ListOfShowPanels.Add(new PanelModel()
