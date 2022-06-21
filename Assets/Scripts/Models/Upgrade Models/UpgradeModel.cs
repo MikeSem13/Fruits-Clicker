@@ -18,7 +18,7 @@ using UnityEngine.UI;
   
   [Space]
   [Header("Цены")]
-  public PriceOfUpgradeModel [] Prices;
+  public PriceModel [] Prices;
   
   [Space]
   [Header("Награды с множителем")]

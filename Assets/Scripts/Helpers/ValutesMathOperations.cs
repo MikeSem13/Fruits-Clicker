@@ -16,18 +16,18 @@ public class ValutesMathOperations : MonoBehaviour
         valuteManager = GetComponent<ValuteManager>();
     }
 
-    public void AddValute(string ValuteName)
+    public void AddValute(string ValuteName, double addValue)
     {
         ValutesModel valuteModel = valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
 
-        mathOperations.add.AddValues(ref valuteModel.Valute, valuteModel.ValuteMultiplier);;
+        mathOperations.add.AddValues(ref valuteModel.Valute, addValue);;
     }
 
-    public void AddValuteWithChance(string ValuteName, double percent)
+    public void AddValuteWithChance(string ValuteName, double addValue , double percent)
     {
         ValutesModel valuteModel = valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
         
-        mathOperations.add.AddValuesWithChance( ref valuteModel.Valute, valuteModel.ValuteMultiplier, percent);
+        mathOperations.add.AddValuesWithChance( ref valuteModel.Valute, addValue, percent);
     }
 
     public void AddMultiplierBoost(string valuteName,string boostName, string UpgradeName)
@@ -38,7 +38,7 @@ public class ValutesMathOperations : MonoBehaviour
         mathOperations.add.AddValues(ref valuteModel.GetMultiBoost(boostName).Boost, upgradeModel.RewardMultis[upgradeModel.CurrentPrice].RewardMulti);
     }
     
-    public void TakeValuteForUpgrade(string valuteName, PriceOfUpgradeModel price)
+    public void TakeValute(string valuteName, PriceModel price)
     {
         ValutesModel valuteModel = valuteManager.Valutes.FirstOrDefault(model => model.NameOfValute == valuteName);
       

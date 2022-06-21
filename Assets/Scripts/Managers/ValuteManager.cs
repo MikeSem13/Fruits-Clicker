@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class ValuteManager : MonoBehaviour
 {
    [Header("Классы")]
-   public TextConverter textConverter;
+   public TextConvertManager TextConvertManager;
    public ValutesMathOperations valutesMathOperations;
    
    [Space]
@@ -19,9 +19,9 @@ public class ValuteManager : MonoBehaviour
 
    private void Update()
    {
-      ControllValuesOfValute("Fruit Coins");
-      ControllValuesOfValute("Fruit Dimonds");
-      ControllValuesOfValute("MultiFruit Coins");
+      ConvertValuteToText("Fruit Coins");
+      ConvertValuteToText("Fruit Dimonds");
+      ConvertValuteToText("MultiFruit Coins");
    }
 
    public ValutesModel GetValute(string ValuteName)
@@ -30,18 +30,19 @@ public class ValuteManager : MonoBehaviour
       return valutesModel;
    }
    
-   public void ControllValuesOfValute(string ValuteName)
+   public void ConvertValuteToText(string ValuteName)
    {
       ValutesModel valutesModel = Valutes.FirstOrDefault(model => model.NameOfValute == ValuteName);
       
-      textConverter.ConvertValuesToText(valutesModel.TextOfValute, valutesModel.Valute, "");
+      TextConvertManager.ValuesToText.ConvertValueToText(valutesModel.TextOfValute, valutesModel.Valute, "");
    }
 
-   public void ResetValute(string valuteName)
+   public void ResetValute(string valuteName, string nameOfBoost)
    {
       ValutesModel valutesModel = Valutes.FirstOrDefault(model => model.NameOfValute == valuteName);
+      MultiplierBoostModel multiplierBoost = valutesModel.MultiplierBoosts.FirstOrDefault(boost => boost.NameOfBoost == nameOfBoost);
 
-      valutesModel.Valute = 0;
-      valutesModel.ValuteMultiplier = 1;
+      valutesModel.Valute -= valutesModel.Valute;
+      multiplierBoost.Boost -= multiplierBoost.Boost - 1;
    }
 }

@@ -1,30 +1,26 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeTextConvert : MonoBehaviour
+[Serializable] public class UpgradeTextConvert 
 {
   [SerializeField] private UpgradeManager UpgradeManager;
-  [SerializeField] private TextConverter textConverter;
+  [SerializeField] private TextConvertManager textConvertManager;
 
-  private void Update()
+  public void ConvertAllTextOfUpgradesToText()
   {
-    for (int i = 0; i < UpgradeManager.Upgrades.Length; i++)
-    {
-      ConvertTextsOfUpgrades(UpgradeManager.Upgrades[i].NameOfUpgrade); 
-    }
+    foreach (UpgradeModel upgrade in UpgradeManager.Upgrades) ConvertTextsOfUpgrades(upgrade.NameOfUpgrade); 
   }
-  public void ConvertTextsOfUpgrades(string NameOfUpgrade)
+  
+  private void ConvertTextsOfUpgrades(string NameOfUpgrade)
   {
     UpgradeModel upgradeModel = UpgradeManager.Upgrades.FirstOrDefault(model => model.NameOfUpgrade == NameOfUpgrade);
 
     if (upgradeModel.CurrentPrice < upgradeModel.Prices.Length)
     {
-      textConverter.ConvertValuesToText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price, "");
-      if(!upgradeModel.SpecialReward) textConverter.ConvertValuesToText(upgradeModel.TextOfMulti, upgradeModel.RewardMultis[upgradeModel.CurrentPrice].RewardMulti,"+");
+      textConvertManager.ValuesToText.ConvertValueToText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price, "");
+      if(!upgradeModel.SpecialReward) textConvertManager.ValuesToText.ConvertValueToText(upgradeModel.TextOfMulti, upgradeModel.RewardMultis[upgradeModel.CurrentPrice].RewardMulti,"+");
       ControllFontSizeAndPositionOfPriceText(upgradeModel.Button.TextOfPrice, upgradeModel.Prices[upgradeModel.CurrentPrice].Price);
     }
     else
@@ -34,26 +30,26 @@ public class UpgradeTextConvert : MonoBehaviour
     }
   }
 
-  public void SetPriceTextToMaxStage(Text textPrice)
+  private void SetPriceTextToMaxStage(Text textPrice)
   {
     textPrice.text = "Max";
     textPrice.gameObject.transform.localPosition = new Vector2(0,0);
     textPrice.fontSize = 110;
   }
 
-  public void SetMultiTextToMaxStage(Text textMulti, UpgradeModel upgradeModel)
+  private void SetMultiTextToMaxStage(Text textMulti, UpgradeModel upgradeModel)
   {
-    float sum = 0;
+    double sum = 0;
 
     foreach (var price in upgradeModel.Prices)
     {
       sum += price.Price;
     }
 
-    textConverter.ConvertValuesToText(textMulti, sum, "+");
+    textConvertManager.ValuesToText.ConvertValueToText(textMulti, sum, "+");
   }
   
-  public void ControllFontSizeAndPositionOfPriceText(Text textOfPrice, double price)
+  private void ControllFontSizeAndPositionOfPriceText(Text textOfPrice, double price)
   {
     textOfPrice.gameObject.transform.localPosition = new Vector2(78.43535f,0);
 

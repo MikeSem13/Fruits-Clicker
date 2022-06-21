@@ -6,8 +6,8 @@ using System.Linq;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-[Serializable] public class PriceOfUpgradeModel
+[Serializable] public class PriceModel
 {
    [Header("Цена")]
-   public float Price;
+   public double Price;
 }

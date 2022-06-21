@@ -18,15 +18,15 @@ public class RebirthManager : MonoBehaviour
    public double Rebirths;
    [Space]
    [Header("Цена за перерождение")]
-   public double PriceOfRebirth;
+   [SerializeField] private double PriceOfRebirth;
 
    [Space] 
    [Header("Мультифрукт коины после перерождения")]
-   public double MultiFruitCoinsReward;
+   [SerializeField] private double MultiFruitCoinsReward; 
 
    private void Update()
    {
-      PrepareMultiFruitCoins(valuteManager.GetValute("Fruit Coins").Valute);
+      GetMultiFruitCoinsReward(valuteManager.GetValute("Fruit Coins").Valute);
    }
 
    public void BuyRebirth()
@@ -42,19 +42,18 @@ public class RebirthManager : MonoBehaviour
    public void GetRewardForRebirth()
    {
       mathOperations.add.AddValues(ref Rebirths, 1);
-      mathOperations.add.AddValues(ref valuteManager.GetValute("MultiFruit Coins").Valute, MultiFruitCoinsReward);
+      valuteManager.valutesMathOperations.AddValute(valuteManager.GetValute("MultiFruit Coins").NameOfValute, MultiFruitCoinsReward);
    }
 
    public void TakeForRebirth()
    {
-      valuteManager.ResetValute("Fruit Coins");
+      valuteManager.ResetValute("Fruit Coins", "Click Boost");
       upgradeManager.ResetUpgrades();
    }
 
-   public void PrepareMultiFruitCoins(double valuteToConvert)
+   public void GetMultiFruitCoinsReward(double valute)
    {
-      if (valuteToConvert < 250e+9) MultiFruitCoinsReward = (int)(valuteToConvert / 1e+9);
-      else if (valuteToConvert < 100e+10) MultiFruitCoinsReward = (int)(valuteToConvert / 1e+9 * 0.5 + 250);
-      else if (valuteToConvert < 1.5e+11) MultiFruitCoinsReward = (int)(valuteToConvert / 1e+9 * 0.5 + 250);
+      if (valute >= 1e+9) MultiFruitCoinsReward = valute / 1e+9;
+      if (valute >= 2.5e+11) MultiFruitCoinsReward = (valute / 1e+9) * 0.5 + 250 * (1 - 0.5);
    }
 }

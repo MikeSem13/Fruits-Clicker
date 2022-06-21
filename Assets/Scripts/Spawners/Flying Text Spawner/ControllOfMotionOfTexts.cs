@@ -20,7 +20,7 @@ public class ControllOfMotionOfTexts : MonoBehaviour
         transform.Translate(Vector * Time.deltaTime);
     }
 
-    public void StartMotion(ValutesModel valuteModel, TextConverter valueToTextConverter)
+    public void StartMotion(ValutesModel valuteModel, ConvertValuesToText valueToTextConverter)
     {
         TextConverter(valuteModel,valueToTextConverter);
         ControllPositionOfText();
@@ -37,8 +37,8 @@ public class ControllOfMotionOfTexts : MonoBehaviour
         Vector *= 20;
     }
     
-    public void TextConverter(ValutesModel valuteModel, TextConverter valueToTextConverter)
+    public void TextConverter(ValutesModel valuteModel, ConvertValuesToText valueToTextConverter)
     {
-       valueToTextConverter.ConvertValuesToText(GetComponent<Text>(), valuteModel.ValuteMultiplier, "+");
+       valueToTextConverter.ConvertValueToText(GetComponent<Text>(), valuteModel.ValuteMultiplier, "+");
     }
 }

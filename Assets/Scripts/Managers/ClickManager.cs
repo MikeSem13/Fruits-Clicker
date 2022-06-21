@@ -22,9 +22,8 @@ public class ClickManager : MonoBehaviour
       valuteManager.GetValute("Fruit Coins").ConectAllBoostsToMulti();
       valuteManager.GetValute("Fruit Dimonds").ConectAllBoostsToMulti();
       
-      valuteManager.valutesMathOperations.AddValute("Fruit Coins");
-
-      valuteManager.valutesMathOperations.AddValuteWithChance("Fruit Dimonds", boostsFromUpgrades.PercentOfMoreDimonds);
+      valuteManager.valutesMathOperations.AddValute("Fruit Coins", valuteManager.GetValute("Fruit Coins").ValuteMultiplier);
+      valuteManager.valutesMathOperations.AddValuteWithChance("Fruit Dimonds", valuteManager.GetValute("Fruit Dimonds").ValuteMultiplier,boostsFromUpgrades.PercentOfMoreDimonds);
    }
 
    private void TryGetDoubleBoost(ref double boost, double percent)

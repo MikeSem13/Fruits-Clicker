@@ -42,7 +42,7 @@ public class UpgradeManager : MonoBehaviour
    {
       if ( MatchValuteToPrice(valutesModel.Valute, upgradeModel.Prices[upgradeModel.CurrentPrice].Price) )
       {
-         valutesMathOperations.TakeValuteForUpgrade(valutesModel.NameOfValute, upgradeModel.Prices[upgradeModel.CurrentPrice]);
+         valutesMathOperations.TakeValute(valutesModel.NameOfValute, upgradeModel.Prices[upgradeModel.CurrentPrice]);
          ChooseRewardOfUpgrade(valutesModel, upgradeModel);
          upgradeModel.CurrentPrice++;
       }
@@ -90,9 +90,6 @@ public class UpgradeManager : MonoBehaviour
 
    public void ResetUpgrades()
    {
-      foreach (var Upgrade in Upgrades)
-      {
-         Upgrade.CurrentPrice = 0;
-      }
+      foreach (var Upgrade in Upgrades)  Upgrade.CurrentPrice = 0;
    }
 }
